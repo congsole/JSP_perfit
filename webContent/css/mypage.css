@@ -1,0 +1,395 @@
+body {
+    width: 100%;
+    margin:0 auto;
+    font-family: '경기천년제목 Light';
+}
+.mypage {
+	width: 1440px;
+	margin: 0 auto;
+}
+
+.mypage-logo {
+    text-align: center;
+    float: left;
+    display: block;
+    width: 1440px;
+}
+.mypage-main {
+    width: 100%;
+    height: 270px;
+    margin: 10px;
+    float: left;
+    display: block;
+}
+.mypage-main div {
+    background-color: rgb(246,246,246);
+}
+/* Ã«Â©â€Ã¬ÂÂ¸ Ã¬Â¢Å’Ã¬Â¸Â¡(Ã­â€â€žÃ«Â¡Å“Ã­â€¢â€ž Ã¬â€šÂ¬Ã¬Â§â€ž/Ã¬ÂÂ´Ã«Â¦â€ž/Ã¬ÂÂ´Ã«Â©â€Ã¬ÂÂ¼) */
+.mypage-main .left-contents {
+/*    position: absolute;
+    width: 695px;
+    height: 210px;
+    margin: 20px;
+    margin-left: 100px;
+    padding-left: 60px;
+    border: 1px solid rgb(219,176,159);
+    border-top-left-radius: 10px 10px; 
+    border-bottom-left-radius: 10px 10px;
+    float: left; */
+    
+    width: 800px;
+    height: 210px;
+    margin: auto;
+    border: 1px solid rgb(219,176,159);
+    border-radius: 10px;
+}
+.mypage-main .profile-img{
+    position: relative;
+    float: left;
+    text-align: center;
+    display: table;
+    width: 150px;
+    height: 150px;
+    border: 2px solid rgb(219,176,159);
+    border-radius: 50%;
+    margin: 30px;
+    margin-left: 80px;
+    overflow: hidden;
+    
+}
+.mypage-main .userinfo-img {
+    display: table-cell;
+    vertical-align: middle;
+}
+.mypage-main .userinfo-img img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    max-width: 150px;
+    max-height: 150px;
+    object-fit: cover;
+}
+.mypage-main .userinfo-txt {
+    /*position: relative;
+    float: left;
+    margin-top: 32px;
+    margin-left: 20px; */
+    float: left;
+    margin-top: 60px;
+    margin-left: 30px;
+}
+
+.mypage-main .userinfo-txt .name {
+    width: 350px;
+    color: rgb(34,34,34);
+    font-size: 24px;
+
+}
+.mypage-main .userinfo-txt .email {
+    width: 350px;
+    color: gray;
+    font-size: 15px;
+
+}
+.mypage-main .left-contents .setting {
+    text-align: center;
+    width: 50px;
+    height: 18px;
+    padding: 3px;
+    color: black;
+    background-color: rgb(255,255,255);
+    font-size: 15px;
+
+    float: right;
+    border-color: rgb(219,176,159);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 15%;
+}
+
+.setting {
+	cursor: pointer;
+}
+
+.mypage-main .left-contents .setting:hover {
+	color: rgb(246,246,246);
+    background-color: rgb(210,124,125);
+}
+
+.mypage-main .left-contents .setting img {
+    justify-content: center; 
+    width: 10px;
+    height: 10px;
+    padding-right: 3px;
+}
+/* ÃƒÂ«Ã‚Â©Ã¢â‚¬ÂÃƒÂ¬Ã‚ÂÃ‚Â¸ ÃƒÂ¬Ã…Â¡Ã‚Â°ÃƒÂ¬Ã‚Â¸Ã‚Â¡(ÃƒÂ¬Ã‚Â¿Ã‚Â ÃƒÂ­Ã‚ÂÃ‚Â°/ÃƒÂ­Ã‚ÂÃ‚Â¬ÃƒÂ¬Ã‚ÂÃ‚Â¸ÃƒÂ­Ã…Â Ã‚Â¸) */
+.mypage-main .right-contents {
+    position: relative;
+    float: left;
+    left: 820px;
+    width: 500px;
+    height: 210px;
+    margin: 20px;
+    border: 1px solid rgb(219,176,159);
+    border-top-right-radius: 10px 10px;
+    border-bottom-right-radius: 10px 10px;
+    float: left;
+}
+.mypage-main .right-contents .coupon {
+    color: black;
+    font-family: 'ê²½ê¸°ì²œë…„ì œëª© Light';
+    font-size: 18px;
+    width : 210px;
+    margin-left: 140px;
+    margin-top: 70px;
+}
+.mypage-main .right-contents .coupon-holdings {
+    float: right;
+    width: 100px;
+    font-size: 21px;
+    font-weight: bold;
+}
+.mypage-main .right-contents .point {
+    color: black;
+
+    font-size: 18px;
+    width : 210px;
+    height : 100px;
+    margin: auto;
+    margin-top: 60px;
+}
+.mypage-main .right-contents .pointholdings {
+    float: right;
+    width: 100px;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+/* Ã«Â§Ë†Ã¬ÂÂ´Ã­Å½ËœÃ¬ÂÂ´Ã¬Â§â‚¬ Ã¬Â¤â€˜Ã«â€¹Â¨ Ã¬Â£Â¼Ã«Â¬Â¸ Ã¬Æ’ÂÃ­â„¢Â© */
+.order-current-status-main {
+    clear: both;
+    width: 800px;
+    height: 150px;
+    margin: 10px;
+}
+.order-current-display {
+    width: 800px;
+    height: 100px;
+    margin-top: 20px;
+    margin-left: 330px;
+    text-align: center;
+    position: absolute;
+}
+.order-current-display div {
+    float: left;
+}
+.order-current-status {
+    width: 300px;
+    height: 120px;
+    border: 1px solid rgb(219,176,159);
+    border-top-left-radius: 10px 10px;
+    border-bottom-left-radius: 10px 10px;
+    cursor: pointer;
+}
+.order-current-display .order-current-1, 
+.order-current-display .order-current-2, 
+.order-current-display .order-current-3, 
+.order-current-display .order-current-4,
+.order-current-display .order-current-5 {
+    border: 1px solid rgb(219,176,159);
+    width: 150px;
+    height: 120px;
+    position: relative;
+    cursor: pointer;
+}
+.order-current-display .order-current-5{
+    border-top-right-radius: 10px 10px;
+    border-bottom-right-radius: 10px 10px;
+}
+.order-current-display img {
+    height: 50px;
+    margin-top: 5px;
+}
+
+.order-current-display p{
+    font-size: 21px;
+    font-weight: bold;
+
+    margin: 0px;
+    line-height: 30px;
+}
+.order-current-display span{
+    font-size: 18px;
+}
+/* Ã¬â€”Â¬ÃªÂ¸Â°Ã¬â€žÅ“Ã«Â¶â‚¬Ã­â€žÂ° Ã¬Â¤â€˜Ã«â€¹Â¨ Ã¬â€šÂ¬Ã¬ÂÂ´Ã¬Â¦Ë† Ã«Â©â€Ã¬ÂÂ¸ */
+.size-status-main {
+    width: 100%;
+    height: 650px;
+    margin: 10px;
+    position: relative;
+}
+.size-status-display {
+    padding: 10px;
+    width: 755px;
+    height: 480px;
+    margin: 20px;
+    position: absolute;
+    left: 245px;
+    top: 50px;
+}
+.size-status-display div {
+    float: left;
+    display: inline;
+}
+.size-status-display .size-status-left {
+    width: 350px;
+    height: 480px;
+}
+.size-status-display .size-status-left div {
+    display: inline-block;
+    vertical-align: center;
+}
+.size-status-display .size-status-left img {
+    float: left;
+    width: 150px;
+    height: 448px;
+    margin: 20px;
+}
+.size-status-display .size-status-right {
+    width: 400px;
+    height: 480px;
+    /* border: 1px solid rgb(219,176,159); */
+}
+.size-status-left .size-status-check {
+    display: inline;
+    text-align: center;
+    margin-top: 140px;
+}
+.size-status-left .size-status-check p {
+    font-size: 21px;
+    font-weight: bold;
+    color: rgb(34,34,34);
+}
+.size-status-left .size-status-check h4 {
+    font-size: 24px;
+    color: rgb(210,124,125);
+}
+.size-status-right .size-status-view {
+    height: 400px;
+    width: 399px;
+    background-color: rgb(246,246,246);
+    border: 1px solid rgb(219,176,159);
+    position: relative;
+}
+.size-status-view .size-status-txt {
+    margin: auto;
+    margin-top: 20px;
+    text-align: right;
+    font-size: 15px;
+    line-height: 30px;
+}
+.status {
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid rgb(219,176,159);
+    font-size: 18px;
+    font-weight: bold
+}
+.size-status-switch {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+.size-status-correction {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    text-align: center;
+    width: 50px;
+    height: 18px;
+    color: black;
+    background-color: rgb(255,255,255);
+    font-size: 15px;
+    float: right;
+    border-color: rgb(219,176,159);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 15%;
+    cursor: pointer;
+}
+
+.size-status-correction:hover {
+	color: rgb(246,246,246);
+    background-color: rgb(210,124,125);
+}
+
+.size-status-correction img {
+    height: 10px;
+    margin-top: 5px;
+}
+.size-status-icon {
+    background-color: rgb(210,124,125);
+    color: rgb(246,246,246);
+    width: 401px;
+    height: 80px;
+    text-align: center;
+    cursor: pointer;
+}
+.size-status-icon p{
+    margin-top: 30px;
+    font-size: 21px;
+    font-weight: bold;
+}
+.shortcuts-main {
+    height: 300px;
+    margin: 10px;
+    position: relative;
+}
+.shortcuts-view {
+    width:700px;
+    height:200px;
+    left: 300px;
+    position: absolute;
+    display: flex;
+    flex-flow:row wrap;
+    justify-content: space-between;
+}
+.shortcuts-view .mypagebox {
+    width:180px;
+    height:80px;
+    border: 2px groove rgb(219,176,159);
+    background-color: rgb(246,246,246);
+    border-radius: 10px 10px 10px 10px;
+    cursor: pointer;
+    color: rgb(210,124,125);
+}
+
+.shortcuts-view .mypagebox:hover {
+    width:180px;
+    height:80px;
+    border: 2px groove rgb(219,176,159);
+    background-color: rgb(210,124,125);
+    border-radius: 10px 10px 10px 10px;
+    cursor: pointer;
+    color: rgb(246,246,246);
+}
+
+.shortcuts-main .mypagebox p{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.shortcuts-view a {
+    text-decoration-line: none;
+}
+.size-status-txt>tr>td>input[type="text"] {
+	display: block;
+}
+.checkedYN {
+	display: none;
+}
+.statusAlert {
+    line-height: 350px;
+    font-size: 30px;
+}

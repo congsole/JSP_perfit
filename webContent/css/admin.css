@@ -1,0 +1,32 @@
+
+@charset "UTF-8";
+
+#caption {
+    width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    font-weight: bold;
+}
+
+#memberList {
+    width: 100%;
+    margin: 0 auto;
+    font-weight: bold;
+    font-size: 1.5em
+}
+
+#memberList tr td, #memberList tr th {
+    height: 40px;
+    text-align: center;
+    border: 1px dotted white
+}
+
+#memberList tr th {
+    background-color: rgba(210,124,125, .4);
+}
+
+
+#memberList tr td {
+    background-color: rgba(34,34,34, .1)
+}

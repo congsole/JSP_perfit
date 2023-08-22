@@ -1,0 +1,187 @@
+.main>* {
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.5em;
+}
+#control {
+	float:left;
+	z-index: 10;
+	position: absolute;
+	left: 100px;
+	top: 350px;
+}
+/*********** DETAIL 01 ***************/
+#detail_01 {
+	clear: both;
+    height: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: left;
+}
+#detail_info {
+    margin-top: 450px;
+    /* padding-left: 150px; */
+    text-align: center;
+    width: 300px;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+}
+#detail_pic {
+    width: 650px;
+    /* display: flex;
+    justify-content: center; */
+}
+#detail_pic>ul:first-child {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    text-align: center;
+    width: 538px;
+    height: 800px;
+    text-align: right;
+    float:left;
+}
+#detail_pic>ul:first-child>li {
+    /* width: 100%; */
+    /* height: 1px; */
+    margin: 0;
+    padding: 0;
+}
+#detail_pic>ul:first-child>li>img {
+    width: 528px;
+    margin: 0;
+    padding: 0;
+}
+#detail_pic>ul:last-child {
+    margin: 0 auto;
+    padding: 0;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    text-align: center;
+    width: 110px;
+    height: 800px;
+    text-align: right;
+    float:left;
+}
+#detail_pic>ul:last-child>li {
+    width: 100px;
+    margin: 0 auto;
+    padding: 0;
+}
+#detail_pic>ul:last-child>li>a>img {
+    width: 100px;
+    padding: 0;
+    cursor: pointer;
+}
+#detail_01 ::-webkit-scrollbar {
+    width: 8px;
+    /* height: 700px; */
+    background-color: rgb(230,230,230);
+}
+#detail_01 ::-webkit-scrollbar-thumb {
+    background-color: rgb(34,34,34);
+
+}
+#detail_pic>div {
+    height: 800px;
+    width: 500px;
+    float:left;
+   
+}
+#detail_pic>div>img {
+    height: 100%;
+
+    padding: 0;
+    margin: 0 auto;
+}
+
+
+
+/************ DETAIL ******************/
+div.detail {
+    border: 2px solid rgb(230,230,230);
+    border-radius: 20px;
+    width: 80%;
+    margin: 0 auto;
+    background-image: url('../img/logo_small.png');
+    background-repeat: no-repeat;
+    background-position: left top;
+}
+div.detail>h2 {
+    text-align: left;
+    padding: 30px 50px;
+}
+
+
+/*********** DETAIL 02 ***************/
+
+
+/*********** DETAIL 03 ***************/
+#detail_select {
+    /* vertical-align: bottom; */
+    bottom: 0;
+   margin-top: 150px;
+    width: 300px;
+}
+#detail_select p{
+    margin: 0;
+    /* text-align: center; */
+}
+#options {
+    font-weight: bold;
+    /* text-align: center; */
+}
+
+#options p {
+    
+}
+
+#options td {
+    border: 1px dotted red;
+}
+#options input[type="radio"] {
+    display: none;
+}
+#options input[type="radio"]+label {
+    display: block;
+    float: left;
+    background-color: rgb(246,246,246);
+    border: 1px solid rgb(34,34,34);
+    line-height: 30px;
+    height: 30px;
+    text-align: center;
+    margin-right: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+}
+#options input[name="color"]+label {
+    width: 80px;
+}
+#options input[name="size"]+label {
+    width: 30px;
+}
+#options input[type="radio"]:checked+label {
+    background-color: rgb(34,34,34);
+    color: white;
+}
+#options input[type="button"], #options input[type="submit"] {
+    /* margin-right: 5px; */
+    height: 50px;
+    width: 145px;
+    font-weight: bold;
+    font-family: '경기천년제목 Light';
+    font-size: 20px;
+
+    border: 3px solid rgb(210,124,125);
+    background-color: rgb(210,124,125);
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: rgb(246,246,246);
+}
+#options input[type="button"]:active, #options input[type="submit"]:active {
+    border: 3px solid rgb(34,34,34);
+    background-color: rgb(34,34,34);
+}

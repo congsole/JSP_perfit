@@ -1,0 +1,265 @@
+.main {
+    width: 100%;
+    margin:0 auto;
+    padding:0;
+}
+
+/*************** SECTION 01 (이미지슬라이드)*************/
+
+
+
+
+
+*:hover> .anchor > * {
+    bottom: 0;
+    cursor: pointer;
+    display: block;
+    left: 0;
+    position: absolute;
+}
+
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+
+
+
+/* jCarousel */
+
+.jcarousel-wrapper {
+    position: relative;
+    margin: 0;
+}
+
+
+
+.jcarousel-wrapper .photo-credits {
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+    font-size: 13px;
+    color: #fff;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.85);
+    opacity: .66;
+}
+
+.jcarousel-wrapper .photo-credits a {
+    color: #fff;
+}
+
+/** Carousel **/
+
+.jcarousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.jcarousel ul {
+    width: 20000em;
+    /* width: 100%; */
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.jcarousel li {
+    float: left;
+}
+
+.jcarousel img {
+    display: block;
+    max-width: 100%;
+    /* height: 300px !important;  */
+    height: auto !important;
+}
+
+/** Carousel Controls **/
+
+
+@media (max-width: 480px) {
+    .jcarousel-control-prev, .jcarousel-control-next {
+        margin-top: -10px;
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
+    }
+}
+
+.jcarousel-control-prev {
+    left: 15px;
+}
+
+.jcarousel-control-next {
+    right: 15px;
+}
+
+.jcarousel-control-prev:hover span,
+.jcarousel-control-next:hover span {
+    display: block;
+}
+
+.jcarousel-control-prev.inactive,
+.jcarousel-control-next.inactive {
+    opacity: .25;
+    cursor: default;
+}
+
+/** Carousel Pagination **/
+
+.jcarousel-pagination {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+
+    margin: 0;
+    margin-left: -45px;
+}
+
+@media (max-width: 620px) {
+    .jcarousel-pagination {
+        bottom: -35px;
+    }
+}
+
+.jcarousel-pagination a {
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px;
+    font-size: 7px;
+    height: 12px;
+    width: 12px;
+    line-height: 12px;
+
+    background: rgb(100,100,100);
+    border-radius: 10px;
+    text-indent: -9999px;
+
+    /* margin-right: 7px; */
+
+    /* -webkit-box-shadow: 0 0 5px #4E443C;
+    -moz-box-shadow: 0 0 5px #4E443C;
+    box-shadow: 0 0 5px #4E443C; */
+}
+
+.jcarousel-pagination a.active {
+    background: rgb(219,176,159);
+    color: #fff;
+    opacity: 1;
+
+    /* -webkit-box-shadow: 0 0 5px #4E443C;
+    -moz-box-shadow: 0 0 5px #4E443C;
+    box-shadow: 0 0 5px #4E443C; */
+}
+
+.main_section01 >div>a {
+    font-size: 60px;
+    color: rgb(246,246,246);
+    text-decoration: none;
+}
+.main_section01 {
+    width: 100%;
+    margin:0 auto;
+    text-align: center;
+    padding:0;
+    display:flex; 
+    /* float: left; */
+    justify-content: center;
+}
+.main_section01>div:first-child {
+    float:left;
+    background-color: rgb(219,176,159);
+
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.main_section01>div:nth-child(3) {
+    float:left;
+    background-color: rgb(139,151,141);
+
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.main_section01 p {
+    font-size: 30px;
+}
+.main_section01>img {
+    float:left;
+    width: 100%;
+    /* height: 100%; */
+}
+.main_section01>#slide_btn {
+    font-size: 20px;
+    text-align: center;
+    clear: both;
+    color: rgb(240,240,240);
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    padding:10px 0;
+}
+#slide_btn>input {
+    display: none;
+}
+#slide_btn>li>a:link, #slide_btn>li>a:visited {
+    color: rgb(240,240,240);
+    text-decoration: none;
+}
+#slide_btn>li>a:hover{
+    color: rgb(34,34,34);
+    text-decoration: none;
+}
+#slide_btn>li>a:active {
+    color: rgb(219,176,159);
+    text-decoration: none;
+}
+/**************** SECTION 02 (인기상품) **************/
+.main>.main_section02 {
+    width: 900px;
+    margin:70px auto;
+    display: block;
+    text-align: center;
+
+}
+.main>.main_section02 .main_prod {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+}
+/* .main>.main_section02>h2 {
+    margin: 40px;
+} */
+.main>.main_section02 .main_prod>img {
+    margin: 10px;
+}
+.main>.main_section02 .main_prod a img {
+    margin: 10px;
+}
+.main .thumbNail {
+	object-fit: cover;
+}
+/*************************** SECTION 03 ***************************/
+.main>.main_section03 {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    padding: 13px;
+}
+.main>.main_section03>img {
+    width: 23%;
+    /* margin: 20px; */
+}

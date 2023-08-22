@@ -1,0 +1,111 @@
+#login_container { 
+    width: 400px;
+    margin: 0 auto;
+}
+.title_wrap {
+    background-image: url('../img/logo_small.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    
+}
+.title_wrap h1 {
+    width: 300px;
+    height: 50px;
+    margin: 0 auto;
+    padding: 50px 0 0 0;
+    text-align: center;
+}
+#login_form {
+    width: 370px;
+    margin: 0 auto;
+}
+#login_form table {
+    width: 100%;
+    margin: 0 auto;
+    border-spacing: 20px;
+    /* border: 2px solid red; */
+}
+#login_form td {
+    /* margin: 0 auto; */
+    border-spacing: 20px;
+    width: 336px;
+    /* border: 2px solid red; */
+}
+/* .la {
+    text-align: right;
+    font-weight: bold;
+    font-size: 30px;
+} */
+.co {
+    /* border: 1px solid red; */
+    width: 100%;
+    text-align: center;
+}
+.co input {
+    height: 50px;
+    width: 336px;
+    height: 70px;
+    font-size: 20px;
+    padding-left: 10px;
+    /* font-family: HY견고딕; */
+    border: 3px solid rgb(210,124,125);
+    border-top-left-radius: 13px;
+    border-bottom-right-radius: 13px;
+    background-color: rgb(246,246,246);
+    color: rgb(34.34.34);
+    
+}
+.co input:focus {
+    border: 3px solid rgb(34,34,34);
+    border-top-left-radius: 13px;
+    border-bottom-right-radius: 13px;
+}
+::placeholder {
+    color: rgb(200,200,200);
+}
+
+
+
+
+.title_wrap form table tr td label {
+    margin: 10px;
+}
+.login_cb {
+    display: none;
+}
+input[id="lgncb1"]+label, input[id="lgncb2"]+label {
+    /* padding: 3px; */
+    border: 3px solid rgb(210,124,125);
+    cursor: pointer;
+    margin-right: 10px;
+    font-weight: bold;
+}
+input[id="lgncb1"]:checked + label, input[id="lgncb2"]:checked + label {
+    background-image: url('../img/checked.jpg');    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-weight: bold;
+}
+
+
+
+
+input[id="login_btn"] {
+    background-color: rgb(210,124,125);
+    color: #fff;
+    width: 360px;
+}
+
+#login_form>table p {
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px 0;
+    font-weight: bold;
+    
+}
+#login_form>table p>a {
+    text-align: center;
+    text-decoration: none;
+    color: rgb(34,34,34);
+}
