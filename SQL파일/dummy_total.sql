@@ -19,7 +19,7 @@ drop sequence cart_seq;
 drop sequence o_seq;
 drop sequence od_seq;
 
-/*********************** È¸¿ø Å×ÀÌºí *******************************/
+/*********************** íšŒì› í…Œì´ë¸” *******************************/
 CREATE TABLE MEMBER (
     ID VARCHAR2(20) PRIMARY KEY,
     PASSWORD	 VARCHAR2(20),
@@ -238,544 +238,544 @@ MAXVALUE 99999;
 /******************************** dummy data *************************************/
 /* manager id */
 INSERT INTO MEMBER VALUES(
-    'perfit00', '13138148', '¼ÕÇØ¼Ö', '01096061196', '7', '', '', '', 'qax741@gmail.com', '7', '¸Å´ÏÀú', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+    'perfit00', '13138148', 'ì†í•´ì†”', '01096061196', '7', '', '', '', 'qax741@gmail.com', '7', 'ë§¤ë‹ˆì €', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 );
 INSERT INTO MEMBER VALUES(
-    'perfit01', '13138148', '¿ÀÈ¯±¹', '01072379258', '7', '', '', '', 'kingook@naver.com', '7', '¸Å´ÏÀú', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+    'perfit01', '13138148', 'ì˜¤í™˜êµ­', '01072379258', '7', '', '', '', 'kingook@naver.com', '7', 'ë§¤ë‹ˆì €', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 );
 INSERT INTO MEMBER VALUES(
-    'perfit02', '13138148', '½Å½ÂÁø', '01042750721', '7', '', '', '', 'lumir@gmail.com', '7', '¸Å´ÏÀú', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+    'perfit02', '13138148', 'ì‹ ìŠ¹ì§„', '01042750721', '7', '', '', '', 'lumir@gmail.com', '7', 'ë§¤ë‹ˆì €', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 );
 INSERT INTO MEMBER VALUES(
-    'perfit03', '13138148', 'ÀÌÁØ¼º', '01089750946', '7', '', '', '', 'nocturn@naver', '7', '¸Å´ÏÀú', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+    'perfit03', '13138148', 'ì´ì¤€ì„±', '01089750946', '7', '', '', '', 'nocturn@naver', '7', 'ë§¤ë‹ˆì €', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 );
 commit;
 /* customer id */
 INSERT INTO MEMBER VALUES(
-    'solhe', 'q1231132', '±èÇØ¼Ö', '01045645678', '0', '', '', '', 'bendbtd@naver.com', '1', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+    'solhe', 'q1231132', 'ê¹€í•´ì†”', '01045645678', '0', '', '', '', 'bendbtd@naver.com', '1', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 );
 INSERT INTO MEMBER VALUES(
-    'custom1', '12345678', '±è±è±è', '01011111111', '0', '', '', '', 'ingook@naver.com', '1', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+    'custom1', '12345678', 'ê¹€ê¹€ê¹€', '01011111111', '0', '', '', '', 'ingook@naver.com', '1', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 );
 INSERT INTO MEMBER VALUES(
-    'custom2', '12345678', 'ÀÌÀÌÀÌ', '01022222222', '1', '', '', '', 'lu@gmail.com', '1', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+    'custom2', '12345678', 'ì´ì´ì´', '01022222222', '1', '', '', '', 'lu@gmail.com', '1', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 );
 INSERT INTO MEMBER VALUES(
-    'babo1', '12345678', '¹Ú¹Ú¹Ú', '01033333333', '1', '', '', '', 'turn@naver', '1', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+    'babo1', '12345678', 'ë°•ë°•ë°•', '01033333333', '1', '', '', '', 'turn@naver', '1', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 );
 INSERT INTO MEMBER VALUES(
-    'babo2', '12345678', 'ÃÖÃÖÃÖ', '01044444444', '1', '', '', '', 'urn@naver', '1', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+    'babo2', '12345678', 'ìµœìµœìµœ', '01044444444', '1', '', '', '', 'urn@naver', '1', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 );
 INSERT INTO MEMBER VALUES(
-    'babo3', '12345678', 'È²È²È²', '01055555555', '1', '', '', '', 'rn@naver', '1', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+    'babo3', '12345678', 'í™©í™©í™©', '01055555555', '1', '', '', '', 'rn@naver', '1', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 );
 INSERT INTO MEMBER VALUES(
-    'cosmos', '12345678', 'Á¤Á¤Á¤', '01066666666', '1', '', '', '', 'tn@naver', '1', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+    'cosmos', '12345678', 'ì •ì •ì •', '01066666666', '1', '', '', '', 'tn@naver', '1', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 );
 INSERT INTO MEMBER VALUES(
-    'moms', '12345678', 'ÇÑÇÑÇÑ', '01077777777', '1', '', '', '', 'maige@naver', '1', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+    'moms', '12345678', 'í•œí•œí•œ', '01077777777', '1', '', '', '', 'maige@naver', '1', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 );
 INSERT INTO MEMBER VALUES(
-    'sommer', '12345678', '±Ý±Ý±Ý', '01088883333', '1', '', '', '', 'misd@naver', '1', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+    'sommer', '12345678', 'ê¸ˆê¸ˆê¸ˆ', '01088883333', '1', '', '', '', 'misd@naver', '1', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 );
 INSERT INTO MEMBER VALUES(
-    'sdadada', '12345678', '½Å½Å½Å', '01099999999', '1', '', '', '', 'viam@naver', '1', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+    'sdadada', '12345678', 'ì‹ ì‹ ì‹ ', '01099999999', '1', '', '', '', 'viam@naver', '1', '', '', '', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 );
 
 /* product */
 INSERT INTO PRODUCT 
 VALUES(
-    CONCAT('N01',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'ONEPIECE','Mini','¼¿·Î³ª ¼Å¸µ ¹Ì´Ï ¿øÇÇ½º', 34000, 
-    '°¡º±°í ¾ãÀº ·¹ÀÌ¿Â È¥¹æ ¼ÒÀç·Î ¹«´õ¿î ¿©¸§ ½ÃÁð¿¡ ½Ã¿øÇÑ Âø¿ë°¨<br><b>ºÎµå·´°í À¯¿¬ÇÑ ¿ø´Ü°¨</b>ÀÌ ¸Å·ÂÀûÀÎ ¾ÆÀÌÅÛ',
-    '·¹ÀÌ¿Â(75%) + Æú¸®,Æú¸®¿¡½ºÅÍ(25%)', 'µå¶óÀÌÅ¬¸®´×', sysdate, '',
+    CONCAT('N01',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'ONEPIECE','Mini','ì…€ë¡œë‚˜ ì…”ë§ ë¯¸ë‹ˆ ì›í”¼ìŠ¤', 34000, 
+    'ê°€ë³ê³  ì–‡ì€ ë ˆì´ì˜¨ í˜¼ë°© ì†Œìž¬ë¡œ ë¬´ë”ìš´ ì—¬ë¦„ ì‹œì¦Œì— ì‹œì›í•œ ì°©ìš©ê°<br><b>ë¶€ë“œëŸ½ê³  ìœ ì—°í•œ ì›ë‹¨ê°</b>ì´ ë§¤ë ¥ì ì¸ ì•„ì´í…œ',
+    'ë ˆì´ì˜¨(75%) + í´ë¦¬,í´ë¦¬ì—ìŠ¤í„°(25%)', 'ë“œë¼ì´í´ë¦¬ë‹', sysdate, '',
     'skyblue', 'pink', 'black', '', '', '', '', '', '', '',
     'free','', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '',
-    'perfit ÆÛÇÍ', 'KOREA', '±¸ÀÔ ÈÄ 1³â', 'perfit / 010-8975-0946'
+    'perfit í¼í•', 'KOREA', 'êµ¬ìž… í›„ 1ë…„', 'perfit / 010-8975-0946'
 );
 INSERT INTO PRODUCT 
 VALUES(
-    CONCAT('N01',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'ONEPIECE','Mini','¼¿µð ¸°³Ù ³ª½Ã ¹Ì´Ï ¿øÇÇ½º', 39900, 
-    'µ¥ÀÏ¸®·èºÎÅÍ ÇÏ°´·è±îÁö È°¿ëµµ°¡ ÁÁÀº ¹Ì´Ï ¿øÇÇ½º!<br><b>½Ã¿øÇÑ ¸°³Ù ¼ÒÀç</b>·Î ¹«´õ¿î ¿©¸§ ÄèÀûÇÏ°Ô ÀÔÀ¸½Ç ¼ö ÀÖ¾î¿ä',
-    '¸°³Ù', 'µå¶óÀÌÅ¬¸®´×', sysdate, '',
+    CONCAT('N01',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'ONEPIECE','Mini','ì…€ë”” ë¦°ë„¨ ë‚˜ì‹œ ë¯¸ë‹ˆ ì›í”¼ìŠ¤', 39900, 
+    'ë°ì¼ë¦¬ë£©ë¶€í„° í•˜ê°ë£©ê¹Œì§€ í™œìš©ë„ê°€ ì¢‹ì€ ë¯¸ë‹ˆ ì›í”¼ìŠ¤!<br><b>ì‹œì›í•œ ë¦°ë„¨ ì†Œìž¬</b>ë¡œ ë¬´ë”ìš´ ì—¬ë¦„ ì¾Œì í•˜ê²Œ ìž…ìœ¼ì‹¤ ìˆ˜ ìžˆì–´ìš”',
+    'ë¦°ë„¨', 'ë“œë¼ì´í´ë¦¬ë‹', sysdate, '',
     'skyblue', 'black', '', '', '', '', '', '', '', '',
     'free','', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '',
-    'perfit ÆÛÇÍ', 'KOREA', '±¸ÀÔ ÈÄ 1³â', 'perfit / 010-8975-0946'
+    'perfit í¼í•', 'KOREA', 'êµ¬ìž… í›„ 1ë…„', 'perfit / 010-8975-0946'
 );
 INSERT INTO PRODUCT 
 VALUES(
-    CONCAT('N03',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'ONEPIECE','Long','·ÎÁî¾Ó Ä²Ä² ¿øÇÇ½º', 56600, 
-    'ÆíÇÏ¸é¼­µµ °í±Þ½º·¯¿î ¹«µå ´À²¸Áö´Â ¿øÇÇ½º',
-    '¸°³Ù', 'µå¶óÀÌÅ¬¸®´×', sysdate, '',
+    CONCAT('N03',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'ONEPIECE','Long','ë¡œì¦ˆì•™ ìº‰ìº‰ ì›í”¼ìŠ¤', 56600, 
+    'íŽ¸í•˜ë©´ì„œë„ ê³ ê¸‰ìŠ¤ëŸ¬ìš´ ë¬´ë“œ ëŠê»´ì§€ëŠ” ì›í”¼ìŠ¤',
+    'ë¦°ë„¨', 'ë“œë¼ì´í´ë¦¬ë‹', sysdate, '',
     'skyblue', 'black', 'white', '', '', '', '', '', '', '',
     'free','', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '',
-    'perfit ÆÛÇÍ', 'KOREA', '±¸ÀÔ ÈÄ 1³â', 'perfit / 010-8975-0946'
+    'perfit í¼í•', 'KOREA', 'êµ¬ìž… í›„ 1ë…„', 'perfit / 010-8975-0946'
 );
 INSERT INTO PRODUCT 
 VALUES(
-    CONCAT('N03',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'ONEPIECE','Long','Ç»¾î °ñÁö ½½¸² ¿øÇÇ½º', 19800, 
-    '¿©¼º½º·´°í ´Ü¾ÆÇÑ ½½¸²´ÏÆ® ¿øÇÇ½º',
-    '¸°³Ù', 'µå¶óÀÌÅ¬¸®´×', sysdate, '',
+    CONCAT('N03',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'ONEPIECE','Long','í“¨ì–´ ê³¨ì§€ ìŠ¬ë¦¼ ì›í”¼ìŠ¤', 19800, 
+    'ì—¬ì„±ìŠ¤ëŸ½ê³  ë‹¨ì•„í•œ ìŠ¬ë¦¼ë‹ˆíŠ¸ ì›í”¼ìŠ¤',
+    'ë¦°ë„¨', 'ë“œë¼ì´í´ë¦¬ë‹', sysdate, '',
     'ivory', 'skyblue', 'pink', '', '', '', '', '', '', '',
     'free','', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '',
-    'perfit ÆÛÇÍ', 'KOREA', '±¸ÀÔ ÈÄ 1³â', 'perfit / 010-8975-0946'
+    'perfit í¼í•', 'KOREA', 'êµ¬ìž… í›„ 1ë…„', 'perfit / 010-8975-0946'
 );
 INSERT INTO PRODUCT 
 VALUES(
-    CONCAT('N02',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'ONEPIECE','Medium','º£¸£ÅÚ ½ºÄù¾î³Ø ¿øÇÇ½º', 63000, 
-    '¿ø´Ü Á¤¸»Á¤¸» ÁÁ¾Æ¿ä!',
-    '¸°³Ù', 'µå¶óÀÌÅ¬¸®´×', sysdate, '',
+    CONCAT('N02',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'ONEPIECE','Medium','ë² ë¥´í…” ìŠ¤í€˜ì–´ë„¥ ì›í”¼ìŠ¤', 63000, 
+    'ì›ë‹¨ ì •ë§ì •ë§ ì¢‹ì•„ìš”!',
+    'ë¦°ë„¨', 'ë“œë¼ì´í´ë¦¬ë‹', sysdate, '',
     'black', '', '', '', '', '', '', '', '', '',
     'free','', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '',
-    'perfit ÆÛÇÍ', 'KOREA', '±¸ÀÔ ÈÄ 1³â', 'perfit / 010-8975-0946'
+    'perfit í¼í•', 'KOREA', 'êµ¬ìž… í›„ 1ë…„', 'perfit / 010-8975-0946'
 );
 INSERT INTO PRODUCT 
 VALUES(
-    CONCAT('N02',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'ONEPIECE','Medium','ÅÙ¼¿ µ¥´Ô ¼ÅÃ÷ ¿øÇÇ½º', 48800, 
-    'µ¥ÀÏ¸®ÇÏ°Ô ÈÖ¶Ñ·ç ¸¶¶Ñ·ç ÀÔÀ» ¼ö ÀÖ´Â µ¥´Ô ¿øÇÇ½º! Ã»·®ÇÑ ÄÃ·¯¿Í Â÷¸£¸£ÇÑ ÅÙ¼¿ ¿ø´ÜÀ¸·Î ÄèÀûÇÏ°Ô ÀÔ±â ÁÁ¾Æ¿ä',
-    '¸°³Ù', 'µå¶óÀÌÅ¬¸®´×', sysdate, '',
+    CONCAT('N02',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'ONEPIECE','Medium','í…ì…€ ë°ë‹˜ ì…”ì¸  ì›í”¼ìŠ¤', 48800, 
+    'ë°ì¼ë¦¬í•˜ê²Œ íœ˜ëšœë£¨ ë§ˆëšœë£¨ ìž…ì„ ìˆ˜ ìžˆëŠ” ë°ë‹˜ ì›í”¼ìŠ¤! ì²­ëŸ‰í•œ ì»¬ëŸ¬ì™€ ì°¨ë¥´ë¥´í•œ í…ì…€ ì›ë‹¨ìœ¼ë¡œ ì¾Œì í•˜ê²Œ ìž…ê¸° ì¢‹ì•„ìš”',
+    'ë¦°ë„¨', 'ë“œë¼ì´í´ë¦¬ë‹', sysdate, '',
     'blue', '', '', '', '', '', '', '', '', '',
     'free','', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '',
-    'perfit ÆÛÇÍ', 'KOREA', '±¸ÀÔ ÈÄ 1³â', 'perfit / 010-8975-0946'
+    'perfit í¼í•', 'KOREA', 'êµ¬ìž… í›„ 1ë…„', 'perfit / 010-8975-0946'
 );
 INSERT INTO PRODUCT 
 VALUES(
-    CONCAT('N05',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'ONEPIECE','TwoPiece','·Î¿¡ ²Ê¹è±â ´ÏÆ® ÅõÇÇ½º', 43200, 
-    '°¢°¢ ´ÜÇ°À¸·Î ÀÔ±â ÁÁÀº µðÀÚÀÎÀ¸·Î È°¿ëµµ°¡ ³ô¾Æ¼­ ¼ÒÀå °¡Ä¡ÀÖ´Â ¾ÆÀÌÅÛ!',
-    '¸°³Ù', 'µå¶óÀÌÅ¬¸®´×', sysdate, '',
+    CONCAT('N05',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'ONEPIECE','TwoPiece','ë¡œì— ê½ˆë°°ê¸° ë‹ˆíŠ¸ íˆ¬í”¼ìŠ¤', 43200, 
+    'ê°ê° ë‹¨í’ˆìœ¼ë¡œ ìž…ê¸° ì¢‹ì€ ë””ìžì¸ìœ¼ë¡œ í™œìš©ë„ê°€ ë†’ì•„ì„œ ì†Œìž¥ ê°€ì¹˜ìžˆëŠ” ì•„ì´í…œ!',
+    'ë¦°ë„¨', 'ë“œë¼ì´í´ë¦¬ë‹', sysdate, '',
     'black', 'ivory', '', '', '', '', '', '', '', '',
     'free','', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '',
-    'perfit ÆÛÇÍ', 'KOREA', '±¸ÀÔ ÈÄ 1³â', 'perfit / 010-8975-0946'
+    'perfit í¼í•', 'KOREA', 'êµ¬ìž… í›„ 1ë…„', 'perfit / 010-8975-0946'
 );
 INSERT INTO PRODUCT 
 VALUES(
-    CONCAT('N05',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'ONEPIECE','TwoPiece','¿ÀÇï Æ®À§µå ¼Â¾÷', 73800, 
-    '°í±Þ½º·´°í ÅºÅºÇÑ Æ®À§µå ¼ÒÀç·Î µÎ°íµÎ°í ÀÔ±â ÁÁÀº ¼Â¾÷',
-    '¸é', 'µå¶óÀÌÅ¬¸®´×', sysdate, '',
+    CONCAT('N05',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'ONEPIECE','TwoPiece','ì˜¤í—¬ íŠ¸ìœ„ë“œ ì…‹ì—…', 73800, 
+    'ê³ ê¸‰ìŠ¤ëŸ½ê³  íƒ„íƒ„í•œ íŠ¸ìœ„ë“œ ì†Œìž¬ë¡œ ë‘ê³ ë‘ê³  ìž…ê¸° ì¢‹ì€ ì…‹ì—…',
+    'ë©´', 'ë“œë¼ì´í´ë¦¬ë‹', sysdate, '',
     'black', 'pink', '', '', '', '', '', '', '', '',
     'free','', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '',
-    'perfit ÆÛÇÍ', 'KOREA', '±¸ÀÔ ÈÄ 1³â', 'perfit / 010-8975-0946'
+    'perfit í¼í•', 'KOREA', 'êµ¬ìž… í›„ 1ë…„', 'perfit / 010-8975-0946'
 );
 
 INSERT INTO PRODUCT 
 VALUES(
-    CONCAT('N04',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'ONEPIECE','JumpSuits','¿¡¸£½¬ ¼Å¸µ Á¡ÇÁ¼öÆ®', 37800, 
-    'ÄÚµð °ÆÁ¤¾øÀÌ ½»½» ÀÔ¾îÁÖ½Ã¸é ¿©¼º¹Ì ¾÷¾÷!µÇ¸é¼­ Âø¿ë°¨±îÁö Á¤¸» Æí¾ÈÇÑ ¾ÆÀÌÅÛ!',
-    '¸é', 'µå¶óÀÌÅ¬¸®´×', sysdate, '',
+    CONCAT('N04',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'ONEPIECE','JumpSuits','ì—ë¥´ì‰¬ ì…”ë§ ì í”„ìˆ˜íŠ¸', 37800, 
+    'ì½”ë”” ê±±ì •ì—†ì´ ìŠ¥ìŠ¥ ìž…ì–´ì£¼ì‹œë©´ ì—¬ì„±ë¯¸ ì—…ì—…!ë˜ë©´ì„œ ì°©ìš©ê°ê¹Œì§€ ì •ë§ íŽ¸ì•ˆí•œ ì•„ì´í…œ!',
+    'ë©´', 'ë“œë¼ì´í´ë¦¬ë‹', sysdate, '',
     'black', 'pink', '', '', '', '', '', '', '', '',
     'free','', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '',
-    'perfit ÆÛÇÍ', 'KOREA', '±¸ÀÔ ÈÄ 1³â', 'perfit / 010-8975-0946'
+    'perfit í¼í•', 'KOREA', 'êµ¬ìž… í›„ 1ë…„', 'perfit / 010-8975-0946'
 );
 INSERT INTO PRODUCT 
 VALUES(
-    CONCAT('O01',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'OUTER','Jacket','¸ð´ø ¼Ö¸®µå ¼ô ½½¸®ºê ÀÚÄÏ', 56900, 
-    'º£½ºÆ®ÇÍ°¨°ú º£½ºÆ®¿ø´ÜÀÌ ´õÇØÁ® ½æ¸Ó½ÃÁðÀ» Ã¥ÀÓÁú ÀÚÄÏ!',
-    '¸é', 'µå¶óÀÌÅ¬¸®´×', sysdate, '',
+    CONCAT('O01',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'OUTER','Jacket','ëª¨ë˜ ì†”ë¦¬ë“œ ìˆ ìŠ¬ë¦¬ë¸Œ ìžì¼“', 56900, 
+    'ë² ìŠ¤íŠ¸í•ê°ê³¼ ë² ìŠ¤íŠ¸ì›ë‹¨ì´ ë”í•´ì ¸ ì¸ë¨¸ì‹œì¦Œì„ ì±…ìž„ì§ˆ ìžì¼“!',
+    'ë©´', 'ë“œë¼ì´í´ë¦¬ë‹', sysdate, '',
     'black', 'pink', 'darkblue', '', '', '', '', '', '', '',
     'free','', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '',
-    'perfit ÆÛÇÍ', 'KOREA', '±¸ÀÔ ÈÄ 1³â', 'perfit / 010-8975-0946'
+    'perfit í¼í•', 'KOREA', 'êµ¬ìž… í›„ 1ë…„', 'perfit / 010-8975-0946'
 );
 INSERT INTO PRODUCT 
 VALUES(
-    CONCAT('O01',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'OUTER','Jacket','¼¾Æ® Æ®À§µå ÀÚÄÏ', 65800, 
-    'º£½ºÆ®ÇÍ°¨°ú º£½ºÆ®¿ø´ÜÀÌ ´õÇØÁ® ½æ¸Ó½ÃÁðÀ» Ã¥ÀÓÁú ÀÚÄÏ!',
-    '¸é', 'µå¶óÀÌÅ¬¸®´×', sysdate, '',
+    CONCAT('O01',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'OUTER','Jacket','ì„¼íŠ¸ íŠ¸ìœ„ë“œ ìžì¼“', 65800, 
+    'ë² ìŠ¤íŠ¸í•ê°ê³¼ ë² ìŠ¤íŠ¸ì›ë‹¨ì´ ë”í•´ì ¸ ì¸ë¨¸ì‹œì¦Œì„ ì±…ìž„ì§ˆ ìžì¼“!',
+    'ë©´', 'ë“œë¼ì´í´ë¦¬ë‹', sysdate, '',
     'black', 'white', '', '', '', '', '', '', '', '',
     'free','', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '',
-    'perfit ÆÛÇÍ', 'KOREA', '±¸ÀÔ ÈÄ 1³â', 'perfit / 010-8975-0946'
+    'perfit í¼í•', 'KOREA', 'êµ¬ìž… í›„ 1ë…„', 'perfit / 010-8975-0946'
 );
 INSERT INTO PRODUCT 
 VALUES(
-    CONCAT('O02',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'OUTER','Coat','¸ÞÀÌºó ·Õ ¹«½ºÅÁ', 70200, 
-    '¸ù±ÛÇÏ°í Æ÷±ÙÇÑ ÃË°¨À¸·Î ±âºÐ ÁÁ°Ô ÀÔ¾îÁö´Â Æä¹Ì´ÑÇÑ ¹«µåÀÇ ·Õ ¹«½ºÅÁ',
-    '¸é', 'µå¶óÀÌÅ¬¸®´×', sysdate, '',
+    CONCAT('O02',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'OUTER','Coat','ë©”ì´ë¹ˆ ë¡± ë¬´ìŠ¤íƒ•', 70200, 
+    'ëª½ê¸€í•˜ê³  í¬ê·¼í•œ ì´‰ê°ìœ¼ë¡œ ê¸°ë¶„ ì¢‹ê²Œ ìž…ì–´ì§€ëŠ” íŽ˜ë¯¸ë‹Œí•œ ë¬´ë“œì˜ ë¡± ë¬´ìŠ¤íƒ•',
+    'ë©´', 'ë“œë¼ì´í´ë¦¬ë‹', sysdate, '',
     'black', 'white', 'pink', '', '', '', '', '', '', '',
     'free','', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '',
-    'perfit ÆÛÇÍ', 'KOREA', '±¸ÀÔ ÈÄ 1³â', 'perfit / 010-8975-0946'
+    'perfit í¼í•', 'KOREA', 'êµ¬ìž… í›„ 1ë…„', 'perfit / 010-8975-0946'
 );
 INSERT INTO PRODUCT 
 VALUES(
-    CONCAT('O02',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'OUTER','Coat','¼¼´À¾Æ ³ëÄ«¶ó Æ®·»Ä¡ ÄÚÆ®', 108500, 
-    'Å¬·¡½ÄÇÑ ¹«µå·Î ·èÀ» ¿Ï¼º!',
-    '¸é', 'µå¶óÀÌÅ¬¸®´×', sysdate, '',
+    CONCAT('O02',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'OUTER','Coat','ì„¸ëŠì•„ ë…¸ì¹´ë¼ íŠ¸ë Œì¹˜ ì½”íŠ¸', 108500, 
+    'í´ëž˜ì‹í•œ ë¬´ë“œë¡œ ë£©ì„ ì™„ì„±!',
+    'ë©´', 'ë“œë¼ì´í´ë¦¬ë‹', sysdate, '',
     'black', 'ivory', '', '', '', '', '', '', '', '',
     'free','', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '',
-    'perfit ÆÛÇÍ', 'KOREA', '±¸ÀÔ ÈÄ 1³â', 'perfit / 010-8975-0946'
+    'perfit í¼í•', 'KOREA', 'êµ¬ìž… í›„ 1ë…„', 'perfit / 010-8975-0946'
 );
 INSERT INTO PRODUCT 
 VALUES(
-    CONCAT('O03',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'OUTER','Jumper','ÄÚ¿ï·¯ ºí·çÁ¾ Á¡ÆÛ', 26000, 
-    'º½ºÎÅÍ ÃÊ°¡À»±îÁö ÀÔ±â ÁÁÀº ¾Æ³ë¶ô ÀÚÄÏ',
-    'Æú¸®¿¡½ºÅÍ', 'µå¶óÀÌÅ¬¸®´×', sysdate, '',
+    CONCAT('O03',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'OUTER','Jumper','ì½”ìš¸ëŸ¬ ë¸”ë£¨ì¢… ì í¼', 26000, 
+    'ë´„ë¶€í„° ì´ˆê°€ì„ê¹Œì§€ ìž…ê¸° ì¢‹ì€ ì•„ë…¸ë½ ìžì¼“',
+    'í´ë¦¬ì—ìŠ¤í„°', 'ë“œë¼ì´í´ë¦¬ë‹', sysdate, '',
     'black', 'ivory', 'gray', '', '', '', '', '', '', '',
     'free','', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '',
-    'perfit ÆÛÇÍ', 'KOREA', '±¸ÀÔ ÈÄ 1³â', 'perfit / 010-8975-0946'
+    'perfit í¼í•', 'KOREA', 'êµ¬ìž… í›„ 1ë…„', 'perfit / 010-8975-0946'
 );
 INSERT INTO PRODUCT 
 VALUES(
-    CONCAT('O03',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'OUTER','Jumper','¸®½º Á¡ÆÛ', 61200, 
-    '°£Àý±â¿¡ ²À ÇÊ¿äÇÑ Á¡ÆÛ! µ¥ÀÏ¸®·Î Âø¿ëÇÏ±â ÁÁ¾Æ ¼ÒÀå°¡Ä¡°¡ ³ô´ä´Ï´Ù',
-    'Æú¸®¿¡½ºÅÍ', 'µå¶óÀÌÅ¬¸®´×', sysdate, '',
+    CONCAT('O03',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'OUTER','Jumper','ë¦¬ìŠ¤ ì í¼', 61200, 
+    'ê°„ì ˆê¸°ì— ê¼­ í•„ìš”í•œ ì í¼! ë°ì¼ë¦¬ë¡œ ì°©ìš©í•˜ê¸° ì¢‹ì•„ ì†Œìž¥ê°€ì¹˜ê°€ ë†’ë‹µë‹ˆë‹¤',
+    'í´ë¦¬ì—ìŠ¤í„°', 'ë“œë¼ì´í´ë¦¬ë‹', sysdate, '',
     'ivory', '', '', '', '', '', '', '', '', '',
     'free','', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '',
-    'perfit ÆÛÇÍ', 'KOREA', '±¸ÀÔ ÈÄ 1³â', 'perfit / 010-8975-0946'
+    'perfit í¼í•', 'KOREA', 'êµ¬ìž… í›„ 1ë…„', 'perfit / 010-8975-0946'
 );
 INSERT INTO PRODUCT 
 VALUES(
-    CONCAT('O04',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'OUTER','Cardigan','Á¦ÀÌµå ÄÉÀÌºí ³ª½Ã °¡µð°Ç', 34200, 
-    '°£Àý±âºÎÅÍ ¿©¸§±îÁö Áñ±â±â ÁÁÀº ³ª½Ã °¡µð°Ç!',
-    'Æú¸®¿¡½ºÅÍ', 'µå¶óÀÌÅ¬¸®´×', sysdate, '',
+    CONCAT('O04',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'OUTER','Cardigan','ì œì´ë“œ ì¼€ì´ë¸” ë‚˜ì‹œ ê°€ë””ê±´', 34200, 
+    'ê°„ì ˆê¸°ë¶€í„° ì—¬ë¦„ê¹Œì§€ ì¦ê¸°ê¸° ì¢‹ì€ ë‚˜ì‹œ ê°€ë””ê±´!',
+    'í´ë¦¬ì—ìŠ¤í„°', 'ë“œë¼ì´í´ë¦¬ë‹', sysdate, '',
     'ivory', 'skyblue', '', '', '', '', '', '', '', '',
     'free','', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '',
-    'perfit ÆÛÇÍ', 'KOREA', '±¸ÀÔ ÈÄ 1³â', 'perfit / 010-8975-0946'
+    'perfit í¼í•', 'KOREA', 'êµ¬ìž… í›„ 1ë…„', 'perfit / 010-8975-0946'
 );
 INSERT INTO PRODUCT 
 VALUES(
-    CONCAT('O04',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'OUTER','Cardigan','Á¦ÀÌµå ÄÉÀÌºí ³ª½Ã °¡µð°Ç', 34200, 
-    '°£Àý±âºÎÅÍ ¿©¸§±îÁö Áñ±â±â ÁÁÀº ³ª½Ã °¡µð°Ç!',
-    'Æú¸®¿¡½ºÅÍ', 'µå¶óÀÌÅ¬¸®´×', sysdate, '',
+    CONCAT('O04',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'OUTER','Cardigan','ì œì´ë“œ ì¼€ì´ë¸” ë‚˜ì‹œ ê°€ë””ê±´', 34200, 
+    'ê°„ì ˆê¸°ë¶€í„° ì—¬ë¦„ê¹Œì§€ ì¦ê¸°ê¸° ì¢‹ì€ ë‚˜ì‹œ ê°€ë””ê±´!',
+    'í´ë¦¬ì—ìŠ¤í„°', 'ë“œë¼ì´í´ë¦¬ë‹', sysdate, '',
     'ivory', 'skyblue', '', '', '', '', '', '', '', '',
     'free','', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '',
-    'perfit ÆÛÇÍ', 'KOREA', '±¸ÀÔ ÈÄ 1³â', 'perfit / 010-8975-0946'
+    'perfit í¼í•', 'KOREA', 'êµ¬ìž… í›„ 1ë…„', 'perfit / 010-8975-0946'
 );
 
 INSERT INTO PRODUCT 
 VALUES(
-    CONCAT('O04',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'OUTER','Cardigan','¿¡ºê¸®µ¥ÀÌ Äð °ñÁö ¿©¸® ¸®º» °¡µð°Ç', 19800, 
-    'Å¾ÀÌ³ª ½½¸®ºê¸®½º, ¿øÇÇ½º³ª ºí¶ó¿ì½º À§¿¡ Åö °ÉÄ¡±â ÁÁÀº °¡µð°ÇÀÌ¿¡¿ä!',
-    'Æú¸®¿¡½ºÅÍ', 'µå¶óÀÌÅ¬¸®´×', sysdate, '',
+    CONCAT('O04',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'OUTER','Cardigan','ì—ë¸Œë¦¬ë°ì´ ì¿¨ ê³¨ì§€ ì—¬ë¦¬ ë¦¬ë³¸ ê°€ë””ê±´', 19800, 
+    'íƒ‘ì´ë‚˜ ìŠ¬ë¦¬ë¸Œë¦¬ìŠ¤, ì›í”¼ìŠ¤ë‚˜ ë¸”ë¼ìš°ìŠ¤ ìœ„ì— íˆ­ ê±¸ì¹˜ê¸° ì¢‹ì€ ê°€ë””ê±´ì´ì—ìš”!',
+    'í´ë¦¬ì—ìŠ¤í„°', 'ë“œë¼ì´í´ë¦¬ë‹', sysdate, '',
     'ivory', 'yellow', 'pink', '', '', '', '', '', '', '',
     'free','', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '',
-    'perfit ÆÛÇÍ', 'KOREA', '±¸ÀÔ ÈÄ 1³â', 'perfit / 010-8975-0946'
+    'perfit í¼í•', 'KOREA', 'êµ¬ìž… í›„ 1ë…„', 'perfit / 010-8975-0946'
 );
 INSERT INTO PRODUCT 
 VALUES(
-    CONCAT('O05',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'OUTER','Padding','¸á¶û Ä÷ÆÃ ¼ô ÆÐµù', 64800, 
-    '¾çÅÐ Ä«¶ó¿Í Ä÷ÆÃ µðÀÚÀÎÀ¸·Î ·¯ºí¸®ÇÑ ¹«µå°¡ °¡µæÇÑ ÆÐµù',
-    'Æú¸®¿¡½ºÅÍ', 'µå¶óÀÌÅ¬¸®´×', sysdate, '',
+    CONCAT('O05',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'OUTER','Padding','ë©œëž‘ í€„íŒ… ìˆ íŒ¨ë”©', 64800, 
+    'ì–‘í„¸ ì¹´ë¼ì™€ í€„íŒ… ë””ìžì¸ìœ¼ë¡œ ëŸ¬ë¸”ë¦¬í•œ ë¬´ë“œê°€ ê°€ë“í•œ íŒ¨ë”©',
+    'í´ë¦¬ì—ìŠ¤í„°', 'ë“œë¼ì´í´ë¦¬ë‹', sysdate, '',
     'ivory', 'black', '', '', '', '', '', '', '', '',
     'free','', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '',
-    'perfit ÆÛÇÍ', 'KOREA', '±¸ÀÔ ÈÄ 1³â', 'perfit / 010-8975-0946'
+    'perfit í¼í•', 'KOREA', 'êµ¬ìž… í›„ 1ë…„', 'perfit / 010-8975-0946'
 );
 INSERT INTO PRODUCT 
 VALUES(
-    CONCAT('O05',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'OUTER','Padding','¼Ò´À¾Æ ÆÄ¿ì´õ ¼ô ÆÐµù', 75600, 
-    '¼¼¼¼ÇÑ µðÅ×ÀÏ·Î ÇÍÀ» Àâ¾ÆÁÖ¾î ºÎ´ã¾øÀÌ Æí¾ÈÇÏ°í µû¶æÇÏ°Ô Âø¿ëÇÒ ¼ö ÀÖ´Â ¼ôÆÐµù',
-    'Æú¸®¿¡½ºÅÍ', 'µå¶óÀÌÅ¬¸®´×', sysdate, '',
+    CONCAT('O05',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'OUTER','Padding','ì†ŒëŠì•„ íŒŒìš°ë” ìˆ íŒ¨ë”©', 75600, 
+    'ì„¸ì„¸í•œ ë””í…Œì¼ë¡œ í•ì„ ìž¡ì•„ì£¼ì–´ ë¶€ë‹´ì—†ì´ íŽ¸ì•ˆí•˜ê³  ë”°ëœ»í•˜ê²Œ ì°©ìš©í•  ìˆ˜ ìžˆëŠ” ìˆíŒ¨ë”©',
+    'í´ë¦¬ì—ìŠ¤í„°', 'ë“œë¼ì´í´ë¦¬ë‹', sysdate, '',
     'ivory', 'black', '', '', '', '', '', '', '', '',
     'free','', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '',
-    'perfit ÆÛÇÍ', 'KOREA', '±¸ÀÔ ÈÄ 1³â', 'perfit / 010-8975-0946'
+    'perfit í¼í•', 'KOREA', 'êµ¬ìž… í›„ 1ë…„', 'perfit / 010-8975-0946'
 );
 INSERT INTO PRODUCT 
 VALUES(
-    CONCAT('T01',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'TOP','T-Shirts','¿¡ºê¸®µ¥ÀÌ Äð ¿¡¾î¸®Áò ½½¸² ¹ÝÆÈ Æ¼', 19600, 
-    'ÇÑ ¿©¸§¿¡µµ ½Ã¿øÇÏ°Ô- ½ºÅÄ´Ùµå ÇÍÀ¸·Î ±º´õ´õ±â ¾øÀÌ ±ò²ûÇÑ ÇÍ',
-    'Æú¸®¿¡½ºÅÍ', 'µå¶óÀÌÅ¬¸®´×', sysdate, '',
+    CONCAT('T01',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'TOP','T-Shirts','ì—ë¸Œë¦¬ë°ì´ ì¿¨ ì—ì–´ë¦¬ì¦˜ ìŠ¬ë¦¼ ë°˜íŒ” í‹°', 19600, 
+    'í•œ ì—¬ë¦„ì—ë„ ì‹œì›í•˜ê²Œ- ìŠ¤íƒ ë‹¤ë“œ í•ìœ¼ë¡œ êµ°ë”ë”ê¸° ì—†ì´ ê¹”ë”í•œ í•',
+    'í´ë¦¬ì—ìŠ¤í„°', 'ë“œë¼ì´í´ë¦¬ë‹', sysdate, '',
     'pink', 'white', '', '', '', '', '', '', '', '',
     'free','', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '',
-    'perfit ÆÛÇÍ', 'KOREA', '±¸ÀÔ ÈÄ 1³â', 'perfit / 010-8975-0946'
+    'perfit í¼í•', 'KOREA', 'êµ¬ìž… í›„ 1ë…„', 'perfit / 010-8975-0946'
 );
 INSERT INTO PRODUCT 
 VALUES(
-    CONCAT('T01',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'TOP','T-Shirts','¿¡ºê¸®µ¥ÀÌ ÅºÅº ¿©¸® Å©·Ó ¹ÝÆÈ Æ¼', 11800, 
-    'º¯Çü¾øÀÌ ¿À·¡µµ·Ï ²¨³» ÀÔÀ» ¼ö ÀÖ´Â ÅºÅºÇÑ ¿¡ºê¸®µ¥ÀÌ Å©·Ó Æ¼',
-    'Æú¸®¿¡½ºÅÍ', 'µå¶óÀÌÅ¬¸®´×', sysdate, '',
+    CONCAT('T01',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'TOP','T-Shirts','ì—ë¸Œë¦¬ë°ì´ íƒ„íƒ„ ì—¬ë¦¬ í¬ë¡­ ë°˜íŒ” í‹°', 11800, 
+    'ë³€í˜•ì—†ì´ ì˜¤ëž˜ë„ë¡ êº¼ë‚´ ìž…ì„ ìˆ˜ ìžˆëŠ” íƒ„íƒ„í•œ ì—ë¸Œë¦¬ë°ì´ í¬ë¡­ í‹°',
+    'í´ë¦¬ì—ìŠ¤í„°', 'ë“œë¼ì´í´ë¦¬ë‹', sysdate, '',
     'pink', 'white', 'gray', '', '', '', '', '', '', '',
     'free','', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '',
-    'perfit ÆÛÇÍ', 'KOREA', '±¸ÀÔ ÈÄ 1³â', 'perfit / 010-8975-0946'
+    'perfit í¼í•', 'KOREA', 'êµ¬ìž… í›„ 1ë…„', 'perfit / 010-8975-0946'
 );
 INSERT INTO PRODUCT 
 VALUES(
-    CONCAT('T02',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'TOP','Hood','Á¶ÀÌ ÈÄµå Áý¾÷ ´ÏÆ®', 30600, 
-    'ÈÄµå Áý¾÷ µðÀÚÀÎ¿¡ Åõ¿þÀÌ µðÅ×ÀÏÀ» ´õÇØ Ä³ÁÖ¾óÇÑ ¹«µåÀÇ ´ÏÆ® Áý¾÷ÀÌ¿¡¿ä!',
-    'Æú¸®¿¡½ºÅÍ', 'µå¶óÀÌÅ¬¸®´×', sysdate, '',
+    CONCAT('T02',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'TOP','Hood','ì¡°ì´ í›„ë“œ ì§‘ì—… ë‹ˆíŠ¸', 30600, 
+    'í›„ë“œ ì§‘ì—… ë””ìžì¸ì— íˆ¬ì›¨ì´ ë””í…Œì¼ì„ ë”í•´ ìºì£¼ì–¼í•œ ë¬´ë“œì˜ ë‹ˆíŠ¸ ì§‘ì—…ì´ì—ìš”!',
+    'í´ë¦¬ì—ìŠ¤í„°', 'ë“œë¼ì´í´ë¦¬ë‹', sysdate, '',
     'black', 'ivory', '', '', '', '', '', '', '', '',
     'free','', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '',
-    'perfit ÆÛÇÍ', 'KOREA', '±¸ÀÔ ÈÄ 1³â', 'perfit / 010-8975-0946'
+    'perfit í¼í•', 'KOREA', 'êµ¬ìž… í›„ 1ë…„', 'perfit / 010-8975-0946'
 );
 INSERT INTO PRODUCT 
 VALUES(
-    CONCAT('T03',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'TOP','MANtoMAN','¼¼ÀÎÆ® ¸ÇÅõ¸Ç', 32400, 
-    'Å°Ä¡ÇÑ ÄÃ·¯°¨ÀÌ ¸Å·ÂÀûÀÎ ¸ÇÅõ¸Ç! µ¥ÀÏ¸®·Î ÄÚµðÇÏ±â ÁÁ¾Æ ÃßÃµµå·Á¿ä!',
-    'Æú¸®¿¡½ºÅÍ', 'µå¶óÀÌÅ¬¸®´×', sysdate, '',
+    CONCAT('T03',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'TOP','MANtoMAN','ì„¸ì¸íŠ¸ ë§¨íˆ¬ë§¨', 32400, 
+    'í‚¤ì¹˜í•œ ì»¬ëŸ¬ê°ì´ ë§¤ë ¥ì ì¸ ë§¨íˆ¬ë§¨! ë°ì¼ë¦¬ë¡œ ì½”ë””í•˜ê¸° ì¢‹ì•„ ì¶”ì²œë“œë ¤ìš”!',
+    'í´ë¦¬ì—ìŠ¤í„°', 'ë“œë¼ì´í´ë¦¬ë‹', sysdate, '',
     'gray', 'pink', '', '', '', '', '', '', '', '',
     'free','', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '',
-    'perfit ÆÛÇÍ', 'KOREA', '±¸ÀÔ ÈÄ 1³â', 'perfit / 010-8975-0946'
+    'perfit í¼í•', 'KOREA', 'êµ¬ìž… í›„ 1ë…„', 'perfit / 010-8975-0946'
 );
 INSERT INTO PRODUCT 
 VALUES(
-    CONCAT('T04',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'TOP','Knitted','¹Ì´º Åõ¿þÀÌ ´ÏÆ® ½½¸®ºê´Ï½º', 25500, 
-    '¾ÕµÚ ±¸ºÐ ¾øÀÌ ÀÔÀ» ¼ö ÀÖ´Â µðÀÚÀÎÀ¸·Î ´Üµ¶Àº ¹°·Ð ¾îµð¿¡ ·¹ÀÌ¾îµåÇØµµ Àß ¾î¿ï¸®´Â ½½¸®ºê´Ï½º ÄÃ·¯º°·Î ¼ÒÀåÇØº¸¼¼¿ä',
-    'Æú¸®¿¡½ºÅÍ', 'µå¶óÀÌÅ¬¸®´×', sysdate, '',
+    CONCAT('T04',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'TOP','Knitted','ë¯¸ë‰´ íˆ¬ì›¨ì´ ë‹ˆíŠ¸ ìŠ¬ë¦¬ë¸Œë‹ˆìŠ¤', 25500, 
+    'ì•žë’¤ êµ¬ë¶„ ì—†ì´ ìž…ì„ ìˆ˜ ìžˆëŠ” ë””ìžì¸ìœ¼ë¡œ ë‹¨ë…ì€ ë¬¼ë¡  ì–´ë””ì— ë ˆì´ì–´ë“œí•´ë„ ìž˜ ì–´ìš¸ë¦¬ëŠ” ìŠ¬ë¦¬ë¸Œë‹ˆìŠ¤ ì»¬ëŸ¬ë³„ë¡œ ì†Œìž¥í•´ë³´ì„¸ìš”',
+    'í´ë¦¬ì—ìŠ¤í„°', 'ë“œë¼ì´í´ë¦¬ë‹', sysdate, '',
     'black', 'skyblue', '', '', '', '', '', '', '', '',
     'free','', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '',
-    'perfit ÆÛÇÍ', 'KOREA', '±¸ÀÔ ÈÄ 1³â', 'perfit / 010-8975-0946'
+    'perfit í¼í•', 'KOREA', 'êµ¬ìž… í›„ 1ë…„', 'perfit / 010-8975-0946'
 );
 INSERT INTO PRODUCT 
 VALUES(
-    CONCAT('T05',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'TOP','Sleeveless','Ä¸³»Àå ·ÎÀÌºê Æ©ºêÅ¾', 13800, 
-    '³»ÀåÆÐµå·Î ¼Ó¿Ê µû·Î ÀÔÀ¸½Ç ÇÊ¿ä¾ø¾î¿ë ºÎµå·´°í ÂËÁ¸ÇÏ¸ç Ä¸ÀÌ ³»ÀåµÇ¾î ÀÖ´Â ½½¸² ²ö Å¥ºêÅ¾ ¼Ò°³ÇØµå·Á¿ä!',
-    'Æú¸®¿¡½ºÅÍ', 'µå¶óÀÌÅ¬¸®´×', sysdate, '',
+    CONCAT('T05',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'TOP','Sleeveless','ìº¡ë‚´ìž¥ ë¡œì´ë¸Œ íŠœë¸Œíƒ‘', 13800, 
+    'ë‚´ìž¥íŒ¨ë“œë¡œ ì†ì˜· ë”°ë¡œ ìž…ìœ¼ì‹¤ í•„ìš”ì—†ì–´ìš© ë¶€ë“œëŸ½ê³  ì«€ì¡´í•˜ë©° ìº¡ì´ ë‚´ìž¥ë˜ì–´ ìžˆëŠ” ìŠ¬ë¦¼ ëˆ íë¸Œíƒ‘ ì†Œê°œí•´ë“œë ¤ìš”!',
+    'í´ë¦¬ì—ìŠ¤í„°', 'ë“œë¼ì´í´ë¦¬ë‹', sysdate, '',
     'gray', 'white', '', '', '', '', '', '', '', '',
     'free','', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '',
-    'perfit ÆÛÇÍ', 'KOREA', '±¸ÀÔ ÈÄ 1³â', 'perfit / 010-8975-0946'
+    'perfit í¼í•', 'KOREA', 'êµ¬ìž… í›„ 1ë…„', 'perfit / 010-8975-0946'
 );
 INSERT INTO PRODUCT 
 VALUES(
-    CONCAT('T05',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'TOP','Sleeveless','¿¡ºê¸®µ¥ÀÌ Å©¸®¹Ì ½ºÆÇ Åõ¿þÀÌ ³ª½Ã', 15400, 
-    '¿øÇÏ´Â´ë·Î ¾ç¸é Âø¿ë °¡´ÉÇÑ Åõ¿þÀÌ ³ª½Ã',
-    'Æú¸®¿¡½ºÅÍ', 'µå¶óÀÌÅ¬¸®´×', sysdate, '',
+    CONCAT('T05',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'TOP','Sleeveless','ì—ë¸Œë¦¬ë°ì´ í¬ë¦¬ë¯¸ ìŠ¤íŒ íˆ¬ì›¨ì´ ë‚˜ì‹œ', 15400, 
+    'ì›í•˜ëŠ”ëŒ€ë¡œ ì–‘ë©´ ì°©ìš© ê°€ëŠ¥í•œ íˆ¬ì›¨ì´ ë‚˜ì‹œ',
+    'í´ë¦¬ì—ìŠ¤í„°', 'ë“œë¼ì´í´ë¦¬ë‹', sysdate, '',
     'yellow', 'ivory', '', '', '', '', '', '', '', '',
     'free','', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '',
-    'perfit ÆÛÇÍ', 'KOREA', '±¸ÀÔ ÈÄ 1³â', 'perfit / 010-8975-0946'
+    'perfit í¼í•', 'KOREA', 'êµ¬ìž… í›„ 1ë…„', 'perfit / 010-8975-0946'
 );
 INSERT INTO PRODUCT 
 VALUES(
-    CONCAT('T06',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'TOP','Blouse','Å©·¯½¬ ¸µÅ¬ÇÁ¸® ¹é¹öÆ° Å©·Ó ¼ÅÃ÷', 29900, 
-    'ÈÄ±â°¡ º¸ÀåµÈ Å©·¯½¬ ¸µÅ¬ÇÁ¸®¿ø´ÜÀ¸·Î Á¦ÀÛÇÑ ¹é¹öÆ° Å©·Ó¼ÅÃ÷¿¡¿ä',
-    'Æú¸®¿¡½ºÅÍ', 'µå¶óÀÌÅ¬¸®´×', sysdate, '',
+    CONCAT('T06',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'TOP','Blouse','í¬ëŸ¬ì‰¬ ë§í´í”„ë¦¬ ë°±ë²„íŠ¼ í¬ë¡­ ì…”ì¸ ', 29900, 
+    'í›„ê¸°ê°€ ë³´ìž¥ëœ í¬ëŸ¬ì‰¬ ë§í´í”„ë¦¬ì›ë‹¨ìœ¼ë¡œ ì œìž‘í•œ ë°±ë²„íŠ¼ í¬ë¡­ì…”ì¸ ì—ìš”',
+    'í´ë¦¬ì—ìŠ¤í„°', 'ë“œë¼ì´í´ë¦¬ë‹', sysdate, '',
     'red', 'blue', '', '', '', '', '', '', '', '',
     'free','', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '',
-    'perfit ÆÛÇÍ', 'KOREA', '±¸ÀÔ ÈÄ 1³â', 'perfit / 010-8975-0946'
+    'perfit í¼í•', 'KOREA', 'êµ¬ìž… í›„ 1ë…„', 'perfit / 010-8975-0946'
 );
 INSERT INTO PRODUCT 
 VALUES(
-    CONCAT('T06',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'TOP','Blouse','½æ¸Ó ÇÊ¸³ ¹ÝÆÈ ºí¶ó¿ì½º', 29500, 
-    'µ¥ÀÏ¸®·èÀº ¹°·Ð ¿ÀÇÇ½º·è±îÁö È°¿ëÇÏ±â ÁÁ¾Æ¿ä',
-    'Æú¸®¿¡½ºÅÍ', 'µå¶óÀÌÅ¬¸®´×', sysdate, '',
+    CONCAT('T06',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'TOP','Blouse','ì¸ë¨¸ í•„ë¦½ ë°˜íŒ” ë¸”ë¼ìš°ìŠ¤', 29500, 
+    'ë°ì¼ë¦¬ë£©ì€ ë¬¼ë¡  ì˜¤í”¼ìŠ¤ë£©ê¹Œì§€ í™œìš©í•˜ê¸° ì¢‹ì•„ìš”',
+    'í´ë¦¬ì—ìŠ¤í„°', 'ë“œë¼ì´í´ë¦¬ë‹', sysdate, '',
     'ivory', 'black', '', '', '', '', '', '', '', '',
     'free','', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '',
-    'perfit ÆÛÇÍ', 'KOREA', '±¸ÀÔ ÈÄ 1³â', 'perfit / 010-8975-0946'
+    'perfit í¼í•', 'KOREA', 'êµ¬ìž… í›„ 1ë…„', 'perfit / 010-8975-0946'
 );
 INSERT INTO PRODUCT 
 VALUES(
-    CONCAT('P01',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'PANTS','Demin','better jeans ½½¸² ½ºÆ®·¹ÀÌÆ®', 31600, 
-    '¾ãÀº ¿ø´Ü°¨À¸·Î ÇÑ¿©¸§ºÎÅÍ °¡À» ³»³» Áñ±â½Ç ¼ö ÀÖ´Â ÆÒÃ÷',
-    'Æú¸®¿¡½ºÅÍ', 'µå¶óÀÌÅ¬¸®´×', sysdate, '',
+    CONCAT('P01',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'PANTS','Demin','better jeans ìŠ¬ë¦¼ ìŠ¤íŠ¸ë ˆì´íŠ¸', 31600, 
+    'ì–‡ì€ ì›ë‹¨ê°ìœ¼ë¡œ í•œì—¬ë¦„ë¶€í„° ê°€ì„ ë‚´ë‚´ ì¦ê¸°ì‹¤ ìˆ˜ ìžˆëŠ” íŒ¬ì¸ ',
+    'í´ë¦¬ì—ìŠ¤í„°', 'ë“œë¼ì´í´ë¦¬ë‹', sysdate, '',
     'black', 'white', '', '', '', '', '', '', '', '',
     'free','', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '',
-    'perfit ÆÛÇÍ', 'KOREA', '±¸ÀÔ ÈÄ 1³â', 'perfit / 010-8975-0946'
+    'perfit í¼í•', 'KOREA', 'êµ¬ìž… í›„ 1ë…„', 'perfit / 010-8975-0946'
 );
 INSERT INTO PRODUCT 
 VALUES(
-    CONCAT('P02',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'PANTS','Slacks','¶óÀÌÇÁ ½æ¸Ó ÂËµæ ·Õ´Ù¸® ÆÒÃ÷', 36000, 
-    '´Ü±â°£¿¡ ¸¸Àå µ¹ÆÄÇÑ ÂËµæ ÆÒÃ÷ ½æ¸Ó ¹öÀü',
-    'Æú¸®¿¡½ºÅÍ', 'µå¶óÀÌÅ¬¸®´×', sysdate, '',
+    CONCAT('P02',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'PANTS','Slacks','ë¼ì´í”„ ì¸ë¨¸ ì«€ë“ ë¡±ë‹¤ë¦¬ íŒ¬ì¸ ', 36000, 
+    'ë‹¨ê¸°ê°„ì— ë§Œìž¥ ëŒíŒŒí•œ ì«€ë“ íŒ¬ì¸  ì¸ë¨¸ ë²„ì „',
+    'í´ë¦¬ì—ìŠ¤í„°', 'ë“œë¼ì´í´ë¦¬ë‹', sysdate, '',
     'yellow', 'black', '', '', '', '', '', '', '', '',
     'free','', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '',
-    'perfit ÆÛÇÍ', 'KOREA', '±¸ÀÔ ÈÄ 1³â', 'perfit / 010-8975-0946'
+    'perfit í¼í•', 'KOREA', 'êµ¬ìž… í›„ 1ë…„', 'perfit / 010-8975-0946'
 );
 INSERT INTO PRODUCT 
 VALUES(
-    CONCAT('P02',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'PANTS','Slacks','½æ¸Ó ÂËµæ ±Ø°­ÇÏÀÌ º¼·ýÇÍ ½½¸² ºÎÃ÷ÄÆ ÆÒÃ÷', 36000, 
-    '±Ø°­ ÇÏÀÌ¿þ½ºÆ®·Î ÇÑ¹ø, ÂÌ±êÇÑ ¿ø´ÜÀ¸·Î µÎ¹ø ¸ö¸Å¸¦ º¸Á¤ÇØÁÖ´Â °æÄèÇÑ ±âÀå°¨ÀÇ ºÎÃ÷ÄÆ ÆÒÃ÷ÀÔ´Ï´Ù.',
-    'Æú¸®¿¡½ºÅÍ', 'µå¶óÀÌÅ¬¸®´×', sysdate, '',
+    CONCAT('P02',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'PANTS','Slacks','ì¸ë¨¸ ì«€ë“ ê·¹ê°•í•˜ì´ ë³¼ë¥¨í• ìŠ¬ë¦¼ ë¶€ì¸ ì»· íŒ¬ì¸ ', 36000, 
+    'ê·¹ê°• í•˜ì´ì›¨ìŠ¤íŠ¸ë¡œ í•œë²ˆ, ì«„ê¹ƒí•œ ì›ë‹¨ìœ¼ë¡œ ë‘ë²ˆ ëª¸ë§¤ë¥¼ ë³´ì •í•´ì£¼ëŠ” ê²½ì¾Œí•œ ê¸°ìž¥ê°ì˜ ë¶€ì¸ ì»· íŒ¬ì¸ ìž…ë‹ˆë‹¤.',
+    'í´ë¦¬ì—ìŠ¤í„°', 'ë“œë¼ì´í´ë¦¬ë‹', sysdate, '',
     'black', '', '', '', '', '', '', '', '', '',
     'free','', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '',
-    'perfit ÆÛÇÍ', 'KOREA', '±¸ÀÔ ÈÄ 1³â', 'perfit / 010-8975-0946'
+    'perfit í¼í•', 'KOREA', 'êµ¬ìž… í›„ 1ë…„', 'perfit / 010-8975-0946'
 );
 INSERT INTO PRODUCT 
 VALUES(
-    CONCAT('P03',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'PANTS','Linen','½æ¸Ó ¶óÀÌÇÁ ¸°³Ù ¹êµù ¿ÍÀÌµå ÆÒÃ÷', 30400, 
-    '´Ù¸®°¡ ±æ¾î º¸ÀÌ´Â ÇÏÀÌ¿þ½ºÆ®·Î µðÀÚÀÎ¿¡ ÇÏÃ¼¶óÀÎÀ» ½Ï- Ä¿¹ö ÇØ ÁÖ´Â ¿ÍÀÌµå ÇÍÀÇ ½½·¢½º¿¡¿ä',
-    '¸°³Ù', 'µå¶óÀÌÅ¬¸®´×', sysdate, '',
+    CONCAT('P03',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'PANTS','Linen','ì¸ë¨¸ ë¼ì´í”„ ë¦°ë„¨ ë°´ë”© ì™€ì´ë“œ íŒ¬ì¸ ', 30400, 
+    'ë‹¤ë¦¬ê°€ ê¸¸ì–´ ë³´ì´ëŠ” í•˜ì´ì›¨ìŠ¤íŠ¸ë¡œ ë””ìžì¸ì— í•˜ì²´ë¼ì¸ì„ ì‹¹- ì»¤ë²„ í•´ ì£¼ëŠ” ì™€ì´ë“œ í•ì˜ ìŠ¬ëž™ìŠ¤ì—ìš”',
+    'ë¦°ë„¨', 'ë“œë¼ì´í´ë¦¬ë‹', sysdate, '',
     'ivory', 'black', '', '', '', '', '', '', '', '',
     'free','', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '',
-    'perfit ÆÛÇÍ', 'KOREA', '±¸ÀÔ ÈÄ 1³â', 'perfit / 010-8975-0946'
+    'perfit í¼í•', 'KOREA', 'êµ¬ìž… í›„ 1ë…„', 'perfit / 010-8975-0946'
 );
 INSERT INTO PRODUCT 
 VALUES(
-    CONCAT('P04',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'PANTS','Short','better jeans ¼ô µ¥´Ô', 29900, 
-    'ÀÏ¸í "Çã¹÷Áö ±º»ì Ä¿¹ö ÇÍ"À¸·Î ºÒ¸®´Â µ¥´Ô ÇÏÇÁ ÆÒÃ÷!',
-    'µ¥´Ô', 'µå¶óÀÌÅ¬¸®´×', sysdate, '',
+    CONCAT('P04',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'PANTS','Short','better jeans ìˆ ë°ë‹˜', 29900, 
+    'ì¼ëª… "í—ˆë²…ì§€ êµ°ì‚´ ì»¤ë²„ í•"ìœ¼ë¡œ ë¶ˆë¦¬ëŠ” ë°ë‹˜ í•˜í”„ íŒ¬ì¸ !',
+    'ë°ë‹˜', 'ë“œë¼ì´í´ë¦¬ë‹', sysdate, '',
     'blue', 'skyblue', '', '', '', '', '', '', '', '',
     'free','', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '',
-    'perfit ÆÛÇÍ', 'KOREA', '±¸ÀÔ ÈÄ 1³â', 'perfit / 010-8975-0946'
+    'perfit í¼í•', 'KOREA', 'êµ¬ìž… í›„ 1ë…„', 'perfit / 010-8975-0946'
 );
 INSERT INTO PRODUCT 
 VALUES(
-    CONCAT('P04',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'PANTS','Short','¶óÀÌÇÁ ÇÁ¸®¹Ì¾ö ÄÚÆ° ÇÏÇÁ A¶óÀÎ ÆÒÃ÷', 39200, 
-    'Æí¾ÈÇÑ Âø¿ë°¨À» À§ÇØ ½ºÆÇÀ» ³Ö¾îÁÖ¾î º¸´Ù µ¥ÀÏ¸®ÇÏ°Ô ÀÔ¾îÁö´Â ½ÃÁß¿¡ ÈçÇÑ ÄÚÆ° ¿ø´Ü°ú ºñ±³ÇÒ ¼ö ¾ø´Â Ä÷¸®Æ¼ÀÇ ¿ø´ÜÀ¸·Î Á¦ÀÛÇÑ ÆÒÃ÷¿¡¿ä',
-    '¸é', 'µå¶óÀÌÅ¬¸®´×', sysdate, '',
+    CONCAT('P04',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'PANTS','Short','ë¼ì´í”„ í”„ë¦¬ë¯¸ì—„ ì½”íŠ¼ í•˜í”„ Aë¼ì¸ íŒ¬ì¸ ', 39200, 
+    'íŽ¸ì•ˆí•œ ì°©ìš©ê°ì„ ìœ„í•´ ìŠ¤íŒì„ ë„£ì–´ì£¼ì–´ ë³´ë‹¤ ë°ì¼ë¦¬í•˜ê²Œ ìž…ì–´ì§€ëŠ” ì‹œì¤‘ì— í”í•œ ì½”íŠ¼ ì›ë‹¨ê³¼ ë¹„êµí•  ìˆ˜ ì—†ëŠ” í€„ë¦¬í‹°ì˜ ì›ë‹¨ìœ¼ë¡œ ì œìž‘í•œ íŒ¬ì¸ ì—ìš”',
+    'ë©´', 'ë“œë¼ì´í´ë¦¬ë‹', sysdate, '',
     'ivory', 'yellow', '', '', '', '', '', '', '', '',
     'free','', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '',
-    'perfit ÆÛÇÍ', 'KOREA', '±¸ÀÔ ÈÄ 1³â', 'perfit / 010-8975-0946'
+    'perfit í¼í•', 'KOREA', 'êµ¬ìž… í›„ 1ë…„', 'perfit / 010-8975-0946'
 );
 INSERT INTO PRODUCT 
 VALUES(
-    CONCAT('S01',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'SKIRT','Mini','¿Ãµ¥ÀÌ º£ÀÌÁ÷ ½ºÄ¿Æ®', 29800, 
-    '¸ÅÀÏ¸ÅÀÏ ÀÔ°í ½ÍÀº, ¿À·¡µµ·Ï ÀÔ¾îÁö´Â ¿Ãµ¥ÀÌ º£ÀÌÁ÷ ½ºÄ¿Æ®',
-    '¸é', 'µå¶óÀÌÅ¬¸®´×', sysdate, '',
+    CONCAT('S01',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'SKIRT','Mini','ì˜¬ë°ì´ ë² ì´ì§ ìŠ¤ì»¤íŠ¸', 29800, 
+    'ë§¤ì¼ë§¤ì¼ ìž…ê³  ì‹¶ì€, ì˜¤ëž˜ë„ë¡ ìž…ì–´ì§€ëŠ” ì˜¬ë°ì´ ë² ì´ì§ ìŠ¤ì»¤íŠ¸',
+    'ë©´', 'ë“œë¼ì´í´ë¦¬ë‹', sysdate, '',
     'black', 'yellow', '', '', '', '', '', '', '', '',
     'free','', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '',
-    'perfit ÆÛÇÍ', 'KOREA', '±¸ÀÔ ÈÄ 1³â', 'perfit / 010-8975-0946'
+    'perfit í¼í•', 'KOREA', 'êµ¬ìž… í›„ 1ë…„', 'perfit / 010-8975-0946'
 );
 INSERT INTO PRODUCT 
 VALUES(
-    CONCAT('S01',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'SKIRT','Mini','¿Ãµ¥ÀÌ º£ÀÌÁ÷ ·¦ ½ºÄ¿Æ®', 29900, 
-    '±ò²ûÇÏ¸é¼­ ¸ð´øÇÑ µðÀÚÀÎÀÇ ·¦½ºÄ¿Æ®, ÇÏ°´·è, Ãâ±Ù·èÀ¸·Î ÃßÃµµå¸®´Â µ¥ÀÏ¸®ÅÛÀÌ¿¡¿ä',
-    '¸é', 'µå¶óÀÌÅ¬¸®´×', sysdate, '',
+    CONCAT('S01',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'SKIRT','Mini','ì˜¬ë°ì´ ë² ì´ì§ ëž© ìŠ¤ì»¤íŠ¸', 29900, 
+    'ê¹”ë”í•˜ë©´ì„œ ëª¨ë˜í•œ ë””ìžì¸ì˜ ëž©ìŠ¤ì»¤íŠ¸, í•˜ê°ë£©, ì¶œê·¼ë£©ìœ¼ë¡œ ì¶”ì²œë“œë¦¬ëŠ” ë°ì¼ë¦¬í…œì´ì—ìš”',
+    'ë©´', 'ë“œë¼ì´í´ë¦¬ë‹', sysdate, '',
     'black', 'ivory', '', '', '', '', '', '', '', '',
     'free','', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '',
-    'perfit ÆÛÇÍ', 'KOREA', '±¸ÀÔ ÈÄ 1³â', 'perfit / 010-8975-0946'
+    'perfit í¼í•', 'KOREA', 'êµ¬ìž… í›„ 1ë…„', 'perfit / 010-8975-0946'
 );
 INSERT INTO PRODUCT 
 VALUES(
-    CONCAT('S02',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'SKIRT','Medium','¹Â¿£ ÇÉÅÎ ¹Ìµð ½ºÄ¿Æ®', 33500, 
-    'È²±ÝºñÀ²·Î ¸¸µé¾îÁÖ´Â ¹Ìµð±âÀåÀÇ ½ºÄ¿Æ®¿¡¿ä',
-    '¸é', 'µå¶óÀÌÅ¬¸®´×', sysdate, '',
+    CONCAT('S02',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'SKIRT','Medium','ë®¤ì—” í•€í„± ë¯¸ë”” ìŠ¤ì»¤íŠ¸', 33500, 
+    'í™©ê¸ˆë¹„ìœ¨ë¡œ ë§Œë“¤ì–´ì£¼ëŠ” ë¯¸ë””ê¸°ìž¥ì˜ ìŠ¤ì»¤íŠ¸ì—ìš”',
+    'ë©´', 'ë“œë¼ì´í´ë¦¬ë‹', sysdate, '',
     'black', 'white', '', '', '', '', '', '', '', '',
     'free','', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '',
-    'perfit ÆÛÇÍ', 'KOREA', '±¸ÀÔ ÈÄ 1³â', 'perfit / 010-8975-0946'
+    'perfit í¼í•', 'KOREA', 'êµ¬ìž… í›„ 1ë…„', 'perfit / 010-8975-0946'
 );
 INSERT INTO PRODUCT 
 VALUES(
-    CONCAT('S02',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'SKIRT','Medium','¿¥¹ö ÇÃ·¹¾î ½ºÄ¿Æ®', 43200, 
-    'Ç³¼ºÇÏ°Ô ¶³¾îÁö´Â A¶óÀÎÀÌ ¹Ì¿î ±º»ìÀº °¡·ÁÁÖ°í ÇÏÃ¼´Â ´õ¿í ½½¸²ÇÏ°Ô º¸¿©Áà¼­ ÇÍÀÌ Âü ¿¹»Û ½ºÄ¿Æ®¿¡¿ä',
-    '¸é', 'µå¶óÀÌÅ¬¸®´×', sysdate, '',
+    CONCAT('S02',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'SKIRT','Medium','ì— ë²„ í”Œë ˆì–´ ìŠ¤ì»¤íŠ¸', 43200, 
+    'í’ì„±í•˜ê²Œ ë–¨ì–´ì§€ëŠ” Aë¼ì¸ì´ ë¯¸ìš´ êµ°ì‚´ì€ ê°€ë ¤ì£¼ê³  í•˜ì²´ëŠ” ë”ìš± ìŠ¬ë¦¼í•˜ê²Œ ë³´ì—¬ì¤˜ì„œ í•ì´ ì°¸ ì˜ˆìœ ìŠ¤ì»¤íŠ¸ì—ìš”',
+    'ë©´', 'ë“œë¼ì´í´ë¦¬ë‹', sysdate, '',
     'black', 'white', '', '', '', '', '', '', '', '',
     'free','', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '',
-    'perfit ÆÛÇÍ', 'KOREA', '±¸ÀÔ ÈÄ 1³â', 'perfit / 010-8975-0946'
+    'perfit í¼í•', 'KOREA', 'êµ¬ìž… í›„ 1ë…„', 'perfit / 010-8975-0946'
 );
 INSERT INTO PRODUCT 
 VALUES(
-    CONCAT('S03',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'SKIRT','Long','½æ¸Ó µ¥ÀÏ¸® H ½ºÄ¿Æ®', 23500, 
-    '½æ¸Ó¿Í ¾î¿ï¸®´Â µ¥ÀÏ¸® ½ºÄ¿Æ®¿¡¿ä',
-    '¸é', 'µå¶óÀÌÅ¬¸®´×', sysdate, '',
+    CONCAT('S03',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'SKIRT','Long','ì¸ë¨¸ ë°ì¼ë¦¬ H ìŠ¤ì»¤íŠ¸', 23500, 
+    'ì¸ë¨¸ì™€ ì–´ìš¸ë¦¬ëŠ” ë°ì¼ë¦¬ ìŠ¤ì»¤íŠ¸ì—ìš”',
+    'ë©´', 'ë“œë¼ì´í´ë¦¬ë‹', sysdate, '',
     'black', 'pink', '', '', '', '', '', '', '', '',
     'free','', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '',
-    'perfit ÆÛÇÍ', 'KOREA', '±¸ÀÔ ÈÄ 1³â', 'perfit / 010-8975-0946'
+    'perfit í¼í•', 'KOREA', 'êµ¬ìž… í›„ 1ë…„', 'perfit / 010-8975-0946'
 );
 INSERT INTO PRODUCT 
 VALUES(
-    CONCAT('S03',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'SKIRT','Long','»þ¿¤ ÇÃ·¹¾î ½ºÄ¿Æ®', 33000, 
-    'º½°ú ¾î¿ï¸®´Â È­»çÇÑ ºÐÀ§±âÀÇ ¿©¼º½º·± ½ºÄ¿Æ®',
-    '¸é', 'µå¶óÀÌÅ¬¸®´×', sysdate, '',
+    CONCAT('S03',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'SKIRT','Long','ìƒ¤ì—˜ í”Œë ˆì–´ ìŠ¤ì»¤íŠ¸', 33000, 
+    'ë´„ê³¼ ì–´ìš¸ë¦¬ëŠ” í™”ì‚¬í•œ ë¶„ìœ„ê¸°ì˜ ì—¬ì„±ìŠ¤ëŸ° ìŠ¤ì»¤íŠ¸',
+    'ë©´', 'ë“œë¼ì´í´ë¦¬ë‹', sysdate, '',
     'black', 'yellow', '', '', '', '', '', '', '', '',
     'free','', '', '', '', '', '', '', '', '',
     '', '', '', '', '', '', '', '', '', '',
-    'perfit ÆÛÇÍ', 'KOREA', '±¸ÀÔ ÈÄ 1³â', 'perfit / 010-8975-0946'
+    'perfit í¼í•', 'KOREA', 'êµ¬ìž… í›„ 1ë…„', 'perfit / 010-8975-0946'
 );
 
 
 
 
-insert into PRODUCT_SIZE values((select p_id from product where p_name='¼¿·Î³ª ¼Å¸µ ¹Ì´Ï ¿øÇÇ½º'), 'ONEPIECE', 'Mini', 'free', 25, 44, 62, 72, 81, 0, 0, 0, 0, 0);
-update PRODUCT set P_SHAPE='Triangle' where P_ID=((select P_ID from PRODUCT where P_NAME='¼¿·Î³ª ¼Å¸µ ¹Ì´Ï ¿øÇÇ½º')); 
+insert into PRODUCT_SIZE values((select p_id from product where p_name='ì…€ë¡œë‚˜ ì…”ë§ ë¯¸ë‹ˆ ì›í”¼ìŠ¤'), 'ONEPIECE', 'Mini', 'free', 25, 44, 62, 72, 81, 0, 0, 0, 0, 0);
+update PRODUCT set P_SHAPE='Triangle' where P_ID=((select P_ID from PRODUCT where P_NAME='ì…€ë¡œë‚˜ ì…”ë§ ë¯¸ë‹ˆ ì›í”¼ìŠ¤')); 
 
-insert into PRODUCT_SIZE values((select p_id from product where p_name='¼¿µð ¸°³Ù ³ª½Ã ¹Ì´Ï ¿øÇÇ½º'), 'ONEPIECE', 'Mini', 'free', 36, 47, 44, 51, 84, 0, 0, 0, 0, 0);
-update PRODUCT set P_SHAPE='Triangle' where P_ID=((select P_ID from PRODUCT where P_NAME='¼¿µð ¸°³Ù ³ª½Ã ¹Ì´Ï ¿øÇÇ½º')); 
+insert into PRODUCT_SIZE values((select p_id from product where p_name='ì…€ë”” ë¦°ë„¨ ë‚˜ì‹œ ë¯¸ë‹ˆ ì›í”¼ìŠ¤'), 'ONEPIECE', 'Mini', 'free', 36, 47, 44, 51, 84, 0, 0, 0, 0, 0);
+update PRODUCT set P_SHAPE='Triangle' where P_ID=((select P_ID from PRODUCT where P_NAME='ì…€ë”” ë¦°ë„¨ ë‚˜ì‹œ ë¯¸ë‹ˆ ì›í”¼ìŠ¤')); 
 
-insert into PRODUCT_SIZE values((select p_id from product where p_name='º£¸£ÅÚ ½ºÄù¾î³Ø ¿øÇÇ½º'), 'ONEPIECE', 'Medium', 'free', 34, 43, 35, 43, 88, 0, 0, 0, 0, 0);
-update PRODUCT set P_SHAPE='Hourglass' where P_ID=((select P_ID from PRODUCT where P_NAME='º£¸£ÅÚ ½ºÄù¾î³Ø ¿øÇÇ½º')); 
+insert into PRODUCT_SIZE values((select p_id from product where p_name='ë² ë¥´í…” ìŠ¤í€˜ì–´ë„¥ ì›í”¼ìŠ¤'), 'ONEPIECE', 'Medium', 'free', 34, 43, 35, 43, 88, 0, 0, 0, 0, 0);
+update PRODUCT set P_SHAPE='Hourglass' where P_ID=((select P_ID from PRODUCT where P_NAME='ë² ë¥´í…” ìŠ¤í€˜ì–´ë„¥ ì›í”¼ìŠ¤')); 
 
-insert into PRODUCT_SIZE values((select p_id from product where p_name='ÅÙ¼¿ µ¥´Ô ¼ÅÃ÷ ¿øÇÇ½º'), 'ONEPIECE', 'Medium', 'free', 51, 57, 62, 60, 87, 0, 0, 0, 0, 0);
-update PRODUCT set P_SHAPE='Triangle' where P_ID=((select P_ID from PRODUCT where P_NAME='ÅÙ¼¿ µ¥´Ô ¼ÅÃ÷ ¿øÇÇ½º')); 
+insert into PRODUCT_SIZE values((select p_id from product where p_name='í…ì…€ ë°ë‹˜ ì…”ì¸  ì›í”¼ìŠ¤'), 'ONEPIECE', 'Medium', 'free', 51, 57, 62, 60, 87, 0, 0, 0, 0, 0);
+update PRODUCT set P_SHAPE='Triangle' where P_ID=((select P_ID from PRODUCT where P_NAME='í…ì…€ ë°ë‹˜ ì…”ì¸  ì›í”¼ìŠ¤')); 
 
-insert into PRODUCT_SIZE values((select p_id from product where p_name='·ÎÁî¾Ó Ä²Ä² ¿øÇÇ½º'), 'ONEPIECE', 'Long', 'free', 33, 49, 40, 55, 116, 0, 0, 0, 0, 0);
-update PRODUCT set P_SHAPE='Triangle' where P_ID=((select P_ID from PRODUCT where P_NAME='·ÎÁî¾Ó Ä²Ä² ¿øÇÇ½º')); 
+insert into PRODUCT_SIZE values((select p_id from product where p_name='ë¡œì¦ˆì•™ ìº‰ìº‰ ì›í”¼ìŠ¤'), 'ONEPIECE', 'Long', 'free', 33, 49, 40, 55, 116, 0, 0, 0, 0, 0);
+update PRODUCT set P_SHAPE='Triangle' where P_ID=((select P_ID from PRODUCT where P_NAME='ë¡œì¦ˆì•™ ìº‰ìº‰ ì›í”¼ìŠ¤')); 
 
-insert into PRODUCT_SIZE values((select p_id from product where p_name='Ç»¾î °ñÁö ½½¸² ¿øÇÇ½º'), 'ONEPIECE', 'Long', 'free', 32, 34, 30, 34, 128, 0, 0, 0, 0, 0);
-update PRODUCT set P_SHAPE='Hourglass' where P_ID=((select P_ID from PRODUCT where P_NAME='Ç»¾î °ñÁö ½½¸² ¿øÇÇ½º')); 
+insert into PRODUCT_SIZE values((select p_id from product where p_name='í“¨ì–´ ê³¨ì§€ ìŠ¬ë¦¼ ì›í”¼ìŠ¤'), 'ONEPIECE', 'Long', 'free', 32, 34, 30, 34, 128, 0, 0, 0, 0, 0);
+update PRODUCT set P_SHAPE='Hourglass' where P_ID=((select P_ID from PRODUCT where P_NAME='í“¨ì–´ ê³¨ì§€ ìŠ¬ë¦¼ ì›í”¼ìŠ¤')); 
 
-insert into PRODUCT_SIZE values((select p_id from product where p_name='¿¡¸£½¬ ¼Å¸µ Á¡ÇÁ¼öÆ®'), 'ONEPIECE', 'JumpSuits', 'free',  44, 31, 28, 49, 128, 0, 0, 0, 0, 0);
-update PRODUCT set P_SHAPE='Triangle' where P_ID=((select P_ID from PRODUCT where P_NAME='¿¡¸£½¬ ¼Å¸µ Á¡ÇÁ¼öÆ®')); 
+insert into PRODUCT_SIZE values((select p_id from product where p_name='ì—ë¥´ì‰¬ ì…”ë§ ì í”„ìˆ˜íŠ¸'), 'ONEPIECE', 'JumpSuits', 'free',  44, 31, 28, 49, 128, 0, 0, 0, 0, 0);
+update PRODUCT set P_SHAPE='Triangle' where P_ID=((select P_ID from PRODUCT where P_NAME='ì—ë¥´ì‰¬ ì…”ë§ ì í”„ìˆ˜íŠ¸')); 
 
-insert into PRODUCT_SIZE values((select p_id from product where p_name='·Î¿¡ ²Ê¹è±â ´ÏÆ® ÅõÇÇ½º'), 'ONEPIECE', 'TwoPiece', 'free', 50, 54, 50, 31, 41, 0, 0, 0, 0, 0);
-update PRODUCT set P_SHAPE='InvertedTriangle' where P_ID=((select P_ID from PRODUCT where P_NAME='·Î¿¡ ²Ê¹è±â ´ÏÆ® ÅõÇÇ½º')); 
+insert into PRODUCT_SIZE values((select p_id from product where p_name='ë¡œì— ê½ˆë°°ê¸° ë‹ˆíŠ¸ íˆ¬í”¼ìŠ¤'), 'ONEPIECE', 'TwoPiece', 'free', 50, 54, 50, 31, 41, 0, 0, 0, 0, 0);
+update PRODUCT set P_SHAPE='InvertedTriangle' where P_ID=((select P_ID from PRODUCT where P_NAME='ë¡œì— ê½ˆë°°ê¸° ë‹ˆíŠ¸ íˆ¬í”¼ìŠ¤')); 
 
-insert into PRODUCT_SIZE values((select p_id from product where p_name='¿ÀÇï Æ®À§µå ¼Â¾÷'), 'ONEPIECE', 'TwoPiece', 'free', 60, 43, 33, 47, 83, 0, 0, 0, 0, 0);
-update PRODUCT set P_SHAPE='Triangle' where P_ID=((select P_ID from PRODUCT where P_NAME='¿ÀÇï Æ®À§µå ¼Â¾÷')); 
+insert into PRODUCT_SIZE values((select p_id from product where p_name='ì˜¤í—¬ íŠ¸ìœ„ë“œ ì…‹ì—…'), 'ONEPIECE', 'TwoPiece', 'free', 60, 43, 33, 47, 83, 0, 0, 0, 0, 0);
+update PRODUCT set P_SHAPE='Triangle' where P_ID=((select P_ID from PRODUCT where P_NAME='ì˜¤í—¬ íŠ¸ìœ„ë“œ ì…‹ì—…')); 
 
 
 
 
 insert into PRODUCT_PICTURE values(
-    (select p_id from product where p_name='¼¿·Î³ª ¼Å¸µ ¹Ì´Ï ¿øÇÇ½º'), 
+    (select p_id from product where p_name='ì…€ë¡œë‚˜ ì…”ë§ ë¯¸ë‹ˆ ì›í”¼ìŠ¤'), 
     'cdetail1.png', 'cdetail2.jpg', '', '', '', '', '', 'cDetail8.PNG', '',
     'cmodel1.PNG', 'cmodel2.jpg', 'cmodel3.PNG', 'cmodel4.PNG', 'ccolor1.png', 'ccolor2.png', 'ccolor3.png', '', ''
 );
 insert into PRODUCT_PICTURE values(
-    (select p_id from product where p_name='¼¿µð ¸°³Ù ³ª½Ã ¹Ì´Ï ¿øÇÇ½º'), 
+    (select p_id from product where p_name='ì…€ë”” ë¦°ë„¨ ë‚˜ì‹œ ë¯¸ë‹ˆ ì›í”¼ìŠ¤'), 
     'smoDetail.jpg', 'smoDetail2.jpg', '', '', '', '', '', 'smoDetail8.PNG', '',
     'smoModel.jpg', '', '', '', '', '', '', '', ''
 );
 insert into PRODUCT_PICTURE values(
-    (select p_id from product where p_name='º£¸£ÅÚ ½ºÄù¾î³Ø ¿øÇÇ½º'), 
+    (select p_id from product where p_name='ë² ë¥´í…” ìŠ¤í€˜ì–´ë„¥ ì›í”¼ìŠ¤'), 
     'bsoDetail.jpg', '', '', '', '', '', '', 'bsoDetail8.PNG', '',
     'bsoModel.jpg', 'bsoDetail.jpg', '', '', '', '', '', '', ''
 );
 insert into PRODUCT_PICTURE values(
-    (select p_id from product where p_name='ÅÙ¼¿ µ¥´Ô ¼ÅÃ÷ ¿øÇÇ½º'), 
+    (select p_id from product where p_name='í…ì…€ ë°ë‹˜ ì…”ì¸  ì›í”¼ìŠ¤'), 
     'tdsoDetail.jpg', '', '', '', '', '', '', 'tdsoDetail8.PNG', '',
     'tdsoModel.jpg', 'tdsoDetail.jpg', '', '', '', '', '', '', ''
 
 );
 insert into PRODUCT_PICTURE values(
-    (select p_id from product where p_name='·ÎÁî¾Ó Ä²Ä² ¿øÇÇ½º'), 
+    (select p_id from product where p_name='ë¡œì¦ˆì•™ ìº‰ìº‰ ì›í”¼ìŠ¤'), 
     'lkoDetail1.jpg', 'lkoDetail2.jpg', 'lkoDetail3.jpg', '', '', '', '', 'lkoDetail8.PNG', '',
     'lkoModel.jpg', 'lkoDetail1.jpg', 'lkoDetail2.jpg', 'lkoDetail3.jpg', '', '', '', '', ''
 
 );
 insert into PRODUCT_PICTURE values(
-    (select p_id from product where p_name='Ç»¾î °ñÁö ½½¸² ¿øÇÇ½º'), 
+    (select p_id from product where p_name='í“¨ì–´ ê³¨ì§€ ìŠ¬ë¦¼ ì›í”¼ìŠ¤'), 
     'pgsoDetail1.jpg', 'pgsoDetail2.jpg', 'pgsoDetail3.jpg', 'pgsoDetail4.jpg', '', '', '', 'pgsoDetail8.PNG', '',
     'pgsoModel.jpg', 'pgsoDetail1.jpg', 'pgsoDetail2.jpg', 'pgsoDetail3.jpg', 'pgsoDetail4.jpg', '', '', '', ''
 
 );
 insert into PRODUCT_PICTURE values(
-    (select p_id from product where p_name='¿¡¸£½¬ ¼Å¸µ Á¡ÇÁ¼öÆ®'), 
+    (select p_id from product where p_name='ì—ë¥´ì‰¬ ì…”ë§ ì í”„ìˆ˜íŠ¸'), 
     'esjDetail.jpg', '', '', '', '', '', '', 'esjDetail8.PNG', 'esjDetail9.PNG',
     'esjModel.jpg', 'esjDetail.jpg', '', '', '', '', '', '', ''
 
 );
 insert into PRODUCT_PICTURE values(
-    (select p_id from product where p_name='·Î¿¡ ²Ê¹è±â ´ÏÆ® ÅõÇÇ½º'), 
+    (select p_id from product where p_name='ë¡œì— ê½ˆë°°ê¸° ë‹ˆíŠ¸ íˆ¬í”¼ìŠ¤'), 
     'rntDetail1.jpg', 'rntDetail2.jpg', 'rntDetail3.jpg', 'rntDetail4.jpg', '', '', '', 'rntDetail8.PNG', 'rntDetail9.PNG',
     'rntModel.jpg', 'rntDetail1.jpg', 'rntDetail2.jpg', 'rntDetail3.jpg', 'rntDetail4.jpg', '', '', '', ''
 
 );
 insert into PRODUCT_PICTURE values(
-    (select p_id from product where p_name='¿ÀÇï Æ®À§µå ¼Â¾÷'), 
+    (select p_id from product where p_name='ì˜¤í—¬ íŠ¸ìœ„ë“œ ì…‹ì—…'), 
     'otsDetail1.jpg', 'otsDetail2.jpg', 'otsDetail3.jpg', 'otsDetail4.jpg', '', '', '', '', '',
     'otsModel.jpg', 'otsDetail1.jpg', 'otsDetail2.jpg', 'otsDetail3.jpg', 'otsDetail4.jpg', '', '', '', ''
 
@@ -821,8 +821,10 @@ CREATE TABLE ORDER_TBL (
     D_ADDRESS1 VARCHAR2(50),
     D_ADDRESS2 VARCHAR2(50),
     ORDER_DATE DATE,
-    D_DATE DATE
-); /*D_´Â µô¸®¹ö¸®¸¦ ¶æÇÕ´Ï´Ù.*/
+    D_DATE DATE,
+	D_EMAIL VARCHAR2(50),
+	D_STATUS NUMBER
+); /*D_ëŠ” ë”œë¦¬ë²„ë¦¬ë¥¼ ëœ»í•©ë‹ˆë‹¤.*/
 CREATE TABLE ORDER_DETAIL (
     ORDER_DETAIL_NUM VARCHAR2(10) primary key,
     ORDER_NUM VARCHAR2(10) references ORDER_TBL(ORDER_NUM),
@@ -838,22 +840,22 @@ CREATE TABLE ORDER_DETAIL (
 
 
 INSERT INTO NOTICE_TABLE VALUES
-(NOTICE_SEQ.NEXTVAL, '°øÁö»çÇ× ÀÔ´Ï´Ù.','°øÁöÀÔ´Ï´Ù
-Âü°í ºÎÅ¹µå¸³´Ï´Ù
-°¨»çÇÕ´Ï´Ù.','2023/07/03','Áö¼öÄ¸Ã³.PNG');
+(NOTICE_SEQ.NEXTVAL, 'ê³µì§€ì‚¬í•­ ìž…ë‹ˆë‹¤.','ê³µì§€ìž…ë‹ˆë‹¤
+ì°¸ê³  ë¶€íƒë“œë¦½ë‹ˆë‹¤
+ê°ì‚¬í•©ë‹ˆë‹¤.','2023/07/03','ì§€ìˆ˜ìº¡ì²˜.PNG');
 INSERT INTO NOTICE_TABLE VALUES
-(NOTICE_SEQ.NEXTVAL, 'ÀÌº¥Æ® °ü·Ã ¾È³».','ÀÌº¥Æ® °ü·Ã ³»¿ëÀ»
-¾Æ·¡¿¡ Ã·ºÎÇÕ´Ï´Ù 
-Âü°í ºÎÅ¹µå¸³´Ï´Ù 
-°¨»çÇÕ´Ï´Ù.','2023/07/03','´Ù¿î·Îµå.png');
+(NOTICE_SEQ.NEXTVAL, 'ì´ë²¤íŠ¸ ê´€ë ¨ ì•ˆë‚´.','ì´ë²¤íŠ¸ ê´€ë ¨ ë‚´ìš©ì„
+ì•„ëž˜ì— ì²¨ë¶€í•©ë‹ˆë‹¤ 
+ì°¸ê³  ë¶€íƒë“œë¦½ë‹ˆë‹¤ 
+ê°ì‚¬í•©ë‹ˆë‹¤.','2023/07/03','ë‹¤ìš´ë¡œë“œ.png');
 INSERT INTO NOTICE_TABLE VALUES
-(NOTICE_SEQ.NEXTVAL, 'Æ÷ÀÎÆ® °ü·Ã ¾È³».','Æ÷ÀÎÆ®¿Í °ü·ÃµÈ ³»¿ëÀ»
-¾Æ·¡¿¡ Ã·ºÎÇÕ´Ï´Ù 
-Âü°í ºÎÅ¹µå¸³´Ï´Ù 
-°¨»çÇÕ´Ï´Ù.','2023/07/03','´Ù¿î·Îµå.jpg');
+(NOTICE_SEQ.NEXTVAL, 'í¬ì¸íŠ¸ ê´€ë ¨ ì•ˆë‚´.','í¬ì¸íŠ¸ì™€ ê´€ë ¨ëœ ë‚´ìš©ì„
+ì•„ëž˜ì— ì²¨ë¶€í•©ë‹ˆë‹¤ 
+ì°¸ê³  ë¶€íƒë“œë¦½ë‹ˆë‹¤ 
+ê°ì‚¬í•©ë‹ˆë‹¤.','2023/07/03','ë‹¤ìš´ë¡œë“œ.jpg');
 INSERT INTO NOTICE_TABLE VALUES
-(NOTICE_SEQ.NEXTVAL, '¿©¸§ ÇÒÀÎ °ü·Ã ¾È³».','¿©¸§ ÀÌº¥Æ®¿Í °ü·ÃµÈ ³»¿ëÀ»
-¾Æ·¡¿¡ Ã·ºÎÇÕ´Ï´Ù 
-¸¹Àº ÀÌ¿ë ºÎÅ¹µå¸³´Ï´Ù 
-°¨»çÇÕ´Ï´Ù.','2023/07/03','images.jpg');
+(NOTICE_SEQ.NEXTVAL, 'ì—¬ë¦„ í• ì¸ ê´€ë ¨ ì•ˆë‚´.','ì—¬ë¦„ ì´ë²¤íŠ¸ì™€ ê´€ë ¨ëœ ë‚´ìš©ì„
+ì•„ëž˜ì— ì²¨ë¶€í•©ë‹ˆë‹¤ 
+ë§Žì€ ì´ìš© ë¶€íƒë“œë¦½ë‹ˆë‹¤ 
+ê°ì‚¬í•©ë‹ˆë‹¤.','2023/07/03','images.jpg');
 commit;
