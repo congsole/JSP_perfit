@@ -76,8 +76,8 @@
 			<!--  -->
 			<div class="main_prod">
 				<c:forEach var="pVo" items="${productList1}" varStatus="status">
-						<a href="ProductServlet?command=Product_view&id=${pVo.id}"> <c:forEach
-								var="ppVo" items="${pictureList1}">
+						<a href="ProductServlet?command=Product_view&id=${pVo.id}"> 
+							<c:forEach var="ppVo" items="${pictureList1}">
 								<c:if test="${ppVo.id eq pVo.id}">
 									<c:choose>
 										<c:when test="${ppVo.model1 != null}">
