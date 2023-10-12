@@ -19,7 +19,5 @@
 	<classpathentry kind="lib" path="webContent/WEB-INF/lib/ojdbc6.jar"/>
 	<classpathentry kind="lib" path="webContent/WEB-INF/lib/standard.jar"/>
 	<classpathentry kind="lib" path="webContent/WEB-INF/lib/tomcat-dbcp.jar"/>
-	<classpathentry kind="lib" path="C:/apache-tomcat-9.0.75/lib/jsp-api.jar"/>
-	<classpathentry kind="lib" path="C:/apache-tomcat-9.0.75/lib/servlet-api.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
