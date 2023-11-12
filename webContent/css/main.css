@@ -166,32 +166,46 @@
     display:flex; 
     /* float: left; */
     justify-content: center;
+    
+    overflow: hidden;
+    position: relative;
+
+    
 }
 .main_section01>div:first-child {
-    float:left;
+    
     background-color: rgb(219,176,159);
 
     margin: 0;
     padding: 0;
+    top: 0;
     height: 100%;
     width: 10%;
     display: flex;
     align-items: center;
     justify-content: center;
+    
+    position: absolute;
+	top: 0;
+	left: 0;
 
 }
 .main_section01>div:nth-child(3) {
-    float:left;
+    
     background-color: rgb(139,151,141);
 
     margin: 0;
     padding: 0;
+    top: 0;
     height: 100%;
     width: 10%;
     display: flex;
     align-items: center;
     justify-content: center;
-
+	
+	position: absolute;
+	top: 0;
+	right: 0;
 }
 .main_section01 p {
     font-size: 30px;

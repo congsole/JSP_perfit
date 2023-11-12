@@ -143,13 +143,16 @@ header>#top_menu {
     line-height: 2.2em;
     height: 2.2em;
 }
+#main_menu a {
+	display: inline-block;
+}
 #main_menu a:link, #main_menu a:visited{
     text-decoration: none;
     color: rgb(34,34,34);
     line-height: 2.2em;
     height: 2.2em;
 }
-#main_menu li:hover,#main_menu a:hover {
+#main_menu a:hover {
     color: rgb(246,246,246);
     background-color: rgb(34,34,34);
     line-height: 2.2em;

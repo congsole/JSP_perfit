@@ -102,6 +102,7 @@
 </head>
 
 <body class="home">
+   <%@ include file="../common/header.jsp"%>
 
 
 	<form name="frm" method="post" action="ProductServlet">
@@ -112,7 +113,7 @@
 
 			<ul class="tabs">
 				<li class="tab-link current" data-tab="tab-1">
-					<input type="radio" name="type" value="OUTER" id="outer">
+					<input type="radio" name="type" value="OUTER" id="outer" checked="true">
 					<label for="outer">OUTER</label>
 				</li>
 				<li class="tab-link" data-tab="tab-2">
@@ -138,7 +139,7 @@
 			</ul>
 			<script>
 				$(document).ready(function () {
-					$('ul.tabs li').click(function () {
+					$('ul.tabs li').click(function (e) {
 						var tab_id = $(this).attr('data-tab');
 
 						$('ul.tabs li').removeClass('current');
@@ -146,6 +147,9 @@
 
 						$(this).addClass('current');
 						$("#" + tab_id).addClass('current');
+						
+						e.target.children[0].checked = true;
+						
 					})
 				})
 			</script>
@@ -337,6 +341,7 @@
 		<br><br>
 	</form>
 	
+   <%@ include file="../common/footer.jsp"%>
 
 </body>
 

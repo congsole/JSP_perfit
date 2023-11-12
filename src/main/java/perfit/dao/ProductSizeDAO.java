@@ -78,7 +78,9 @@ public class ProductSizeDAO {
 	}
 
 	public void insertProductSize(ProductSizeVO psVo) {
-		String sql = "INSERT INTO Product_Size "
+		String sql = "INSERT INTO Product_Size (id, type, category, p_size, "
+				+ "shoulder, bust, waist, hip, total_length, "
+				+ "arm_length, arm, rise, thigh, hem)"
 					+ "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 		Connection conn = null;
 		PreparedStatement pstmt = null; 
@@ -94,11 +96,13 @@ public class ProductSizeDAO {
 			pstmt.setInt(5, psVo.getShoulder());
 			pstmt.setInt(6, psVo.getBust());
 			pstmt.setInt(7, psVo.getWaist());
-			pstmt.setInt(8, psVo.getTotal_length());
-			pstmt.setInt(9, psVo.getArm_length());
-			pstmt.setInt(10, psVo.getArm());
-			pstmt.setInt(11, psVo.getRise());
-			pstmt.setInt(12, psVo.getHip());
+			pstmt.setInt(8, psVo.getHip());
+			pstmt.setInt(9, psVo.getTotal_length());
+			
+			pstmt.setInt(10, psVo.getArm_length());
+			pstmt.setInt(11, psVo.getArm());
+			pstmt.setInt(12, psVo.getRise());
+
 			pstmt.setInt(13, psVo.getThigh());
 			pstmt.setInt(14, psVo.getHem());
 			pstmt.executeUpdate();

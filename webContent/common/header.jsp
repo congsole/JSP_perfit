@@ -54,13 +54,10 @@
 	</div>
 
 	<hr>
-
+	
 	<nav id="main_menu">
-		<!--제이쿼리 ch07 효과-->
 		<ul>
-			<li id="slideToggle"><a href="#">&nbsp;&nbsp;&nbsp;<span
-					style="font-size: 25px;">≡</span> CATEGORY&nbsp;&nbsp;&nbsp;
-			</a></li>
+			<li id="slideToggle"><a href="#">&nbsp;&nbsp;&nbsp;<span style="font-size: 25px;">≡</span> CATEGORY&nbsp;&nbsp;&nbsp;</a></li>
 			<li>|</li>
 			<li><a href="ProductServlet?command=Product_list&type=OUTER">&nbsp;&nbsp;&nbsp;OUTER&nbsp;&nbsp;&nbsp;</a></li>
 			<li><a href="ProductServlet?command=Product_list&type=TOP">&nbsp;&nbsp;&nbsp;TOP&nbsp;&nbsp;&nbsp;</a></li>
@@ -72,6 +69,8 @@
 			<li class="pink_btn"><a href="ProductServlet?command=member_size_form">&nbsp;&nbsp;&nbsp;체형검사&nbsp;&nbsp;&nbsp;</a></li>
 		</ul>
 	</nav>
+
+	
 	<div id="slideMenu">
 
 		<div id="slideMenu_left">

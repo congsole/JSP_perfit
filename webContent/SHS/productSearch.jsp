@@ -43,9 +43,9 @@
                     <div class="middle">
                         <span>가격 PRICE</span>
                         <div class="multi-range-slider">
-                            <input type="range" id="price-input-left" min="0" step="1000" max="100000" value="0" name="price_L"
+                            <input type="range" id="price-input-left" min="0" step="1000" max="1000000" value="0" name="price_L"
                                 oninput="document.getElementById('price_left').innerHTML=(Math.min((this.value), document.getElementById('price-input-right').value-1) + '￦');">
-                            <input type="range" id="price-input-right" min="0" step="1000" max="100000" value="100000" name="price_R"
+                            <input type="range" id="price-input-right" min="0" step="1000" max="1000000" value="1000000" name="price_R"
                                 oninput="document.getElementById('price_right').innerHTML=(Math.max((this.value), document.getElementById('price-input-left').value-(-1)) + '￦');">
 
                             <div class="slider price">
@@ -56,11 +56,11 @@
                                 <span
                                     style="float: left; color: rgb(200,200,200); transform: translateX(-21px)">0￦</span>
                                 <span
-                                    style="float: right; color: rgb(200,200,200); transform: translateX(22px)">100000￦</span>
+                                    style="float: right; color: rgb(200,200,200); transform: translateX(22px)">1000000￦</span>
                                 <span id="price_left"
                                     style="position: absolute; transform: translateX(-22px)">0￦</span>
                                 <span id="price_right"
-                                    style="position: absolute; transform: translateX(26px)">100000￦</span>
+                                    style="position: absolute; transform: translateX(26px)">1000000￦</span>
                             </div>
                         </div>
                     </div>

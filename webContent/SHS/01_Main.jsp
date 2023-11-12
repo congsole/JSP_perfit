@@ -21,7 +21,7 @@
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/common.js"></script>
 <link rel="stylesheet" type="text/css" href="css/common.css">
-<link rel="stylesheet" type="text/css" href="css/main.css?Ss">
+<link rel="stylesheet" type="text/css" href="css/main.css">
 <script type="text/javascript" src="js/analytics.js"></script>
 <script type="text/javascript" src="js/modernizr.js"></script>
 <script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>

@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ page import="perfit.dto.ProductPictureVO"%>
-
+<%@ page import="perfit.dto.ProductVO"%>
 <!DOCTYPE html>
 
 <html>
@@ -121,7 +121,8 @@
 							</c:forEach>
 
 							<p>${pVo.name}</p>
-							<p>${pVo.price}원</p>
+							<p><fmt:formatNumber value="${pVo.price}" pattern="#,###"/>원</p>
+							
 							<br>
 							<hr>
 							<ul id="color_list">

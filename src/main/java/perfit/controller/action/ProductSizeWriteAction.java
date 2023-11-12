@@ -17,27 +17,41 @@ public class ProductSizeWriteAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ProductSizeVO psVo = new ProductSizeVO();
+		ProductSizeVO[] psVoList = new ProductSizeVO[10];
+		ProductSizeDAO psDao = ProductSizeDAO.getInstance();
+		for(int i = 1; i <=10; i++) {
+			if(request.getParameter("p_size"+i) == null) {
+				break;
+			} else {
+				psVoList[i] = new ProductSizeVO();
+				
+				psVoList[i].setId(request.getParameter("id"));
+				psVoList[i].setType(request.getParameter("type"));
+				psVoList[i].setCategory(request.getParameter("category"));
+				psVoList[i].setP_size(request.getParameter("p_size"+i));
+				psVoList[i].setShoulder(Integer.parseInt(request.getParameter("shoulder"+i)));
+				psVoList[i].setBust(Integer.parseInt(request.getParameter("bust"+i)));
+				psVoList[i].setWaist(Integer.parseInt(request.getParameter("waist"+i)));
+				psVoList[i].setTotal_length(Integer.parseInt(request.getParameter("total_length"+i)));
+				psVoList[i].setArm_length(Integer.parseInt(request.getParameter("arm_length"+i)));
+				psVoList[i].setArm(Integer.parseInt(request.getParameter("arm"+i)));
+				psVoList[i].setRise(Integer.parseInt(request.getParameter("rise"+i)));
+				psVoList[i].setHip(Integer.parseInt(request.getParameter("hip"+i)));
+				psVoList[i].setThigh(Integer.parseInt(request.getParameter("thigh"+i)));
+				psVoList[i].setHem(Integer.parseInt(request.getParameter("hem"+i)));
 
-		psVo.setId(request.getParameter("id"));
-		psVo.setType(request.getParameter("type"));
-		psVo.setCategory(request.getParameter("category"));
-		psVo.setP_size(request.getParameter("p_size"));
-		psVo.setShoulder(Integer.parseInt(request.getParameter("shoulder")));
-		psVo.setBust(Integer.parseInt(request.getParameter("bust")));
-		psVo.setWaist(Integer.parseInt(request.getParameter("waist")));
-		psVo.setTotal_length(Integer.parseInt(request.getParameter("total_length")));
-		psVo.setArm_length(Integer.parseInt(request.getParameter("arm_length")));
-		psVo.setArm(Integer.parseInt(request.getParameter("arm")));
-		psVo.setRise(Integer.parseInt(request.getParameter("rise")));
-		psVo.setHip(Integer.parseInt(request.getParameter("hip")));
-		psVo.setThigh(Integer.parseInt(request.getParameter("thigh")));
-		psVo.setHem(Integer.parseInt(request.getParameter("hem")));
+				psDao.insertProductSize(psVoList[i]);
+
+			}
+			
+		}
+		
+
+
+
 
 		
-		ProductSizeDAO psDao = ProductSizeDAO.getInstance();
-		psDao.insertProductSize(psVo);
-
+		
 		ProductVO pVo = new ProductVO();
 		pVo.setid(request.getParameter("id"));
 		pVo.setshape(request.getParameter("shape"));

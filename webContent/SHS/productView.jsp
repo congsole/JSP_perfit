@@ -99,7 +99,7 @@
 
 			<div id="detail_select">
 				<h2>${pVo.name}</h2>
-				<h2>${pVo.price}&nbsp;원</h2>
+				<h2><fmt:formatNumber value="${pVo.price}" pattern="#,###"/> 원</h2>
 				<pre>${pVo.description}</pre>
 
 				<br>
