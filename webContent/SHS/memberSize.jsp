@@ -39,9 +39,9 @@ button:active {
 
 <script src="js/jquery.js"></script>
 <script src="js/common.js"></script>
-<script src="js/size.js?qwffd95"></script>
+<script src="js/size.js"></script>
 <link rel="stylesheet" href="css/common.css">
-<link rel="stylesheet" href="css/personalSize.css">
+<link rel="stylesheet" href="css/personalSize.css?D">
 
 
 </head>
@@ -308,7 +308,7 @@ button:active {
 			<h1>체형 측정 결과</h1>
 
 			<div class="result above" id="result_above">
-				<div class="shape img"></div>
+				<div class="shape img"><img src="img/female_body_shape_inverted_triangle.jpg"></div>
 				<div class="shape name">
 					<h2>역삼각형</h2>
 					<button type="button" onclick="location.href=''">추천상품 보러가기</button>
@@ -319,8 +319,8 @@ button:active {
 
 				<h4>분석</h4>
 				<ol>
-					<li>역삼각형 체형은 넓은 어깨와 큰 가슴으로 상체에 무게감이 있습니다.</li>
-					<li>이 형태의 목표는 상대적으로 넓은 상체와 좁은 하체 사이의 균형잡힌 실루엣을 만드는 것입니다.</li>
+					<li>넓은 어깨와 큰 가슴으로 무게감 있는 상체.</li>
+					<li>상대적으로 넓은 상체와 좁은 하체 사이의 균형잡힌 실루엣 만들기!</li>
 				</ol>
 
 				<h4>
@@ -341,13 +341,13 @@ button:active {
 			</div>
 		</div>
 		</c:if>
-		<c:if test="${mVo.shape == 'Rectangle'}">22222222222
+		<c:if test="${mVo.shape == 'Rectangle'}">
 		<div id="result">
 
 			<h1>체형 측정 결과</h1>
 
 			<div class="result above" id="result_above">
-				<div class="shape img"></div>
+				<div class="shape img"><img src="img/female_body_shape_rectangle.jpg"></div>
 				<div class="shape name">
 					<h2>사각형</h2>
 					<button type="button" onclick="location.href=''">추천상품 보러가기</button>
@@ -358,8 +358,8 @@ button:active {
 
 				<h4>분석</h4>
 				<ol>
-					<li>사각형 체형은 상체와 하체가 균형 잡힌 실루엣을 연출합니다.</li>
-					<li>사각형을 분리하여 허리 라인을 잡아주는 것이 목표입니다.</li>
+					<li>상체와 하체가 균형 잡힌 형태.</li>
+					<li>허리라인을 잡아서 상하체를 분리시키기!</li>
 				</ol>
 
 				<h4>
@@ -386,7 +386,7 @@ button:active {
 			<h1>체형 측정 결과</h1>
 
 			<div class="result above" id="result_above">
-				<div class="shape img"></div>
+				<div class="shape img"><img src="img/female_body_shape_triangle.jpg"></div>
 				<div class="shape name">
 					<h2>삼각형</h2>
 					<button type="button" onclick="location.href=''">추천상품 보러가기</button>
@@ -397,8 +397,8 @@ button:active {
 
 				<h4>분석</h4>
 				<ol>
-					<li>삼각형 체형은 우리나라에서 가장 흔한 체형으로, 상체보다 하체가 발달한 체형입니다.</li>
-					<li>삼각형 체형은 시선이을 상체에 집중시시키는 것이 목표입니다.</li>
+					<li>우리나라에서 가장 흔한 체형, 상체보다 하체가 발달한 체형.</li>
+					<li>시선을 상체에 집중시키기!</li>
 				</ol>
 
 				<h4>
@@ -425,7 +425,7 @@ button:active {
 			<h1>체형 측정 결과</h1>
 
 			<div class="result above" id="result_above">
-				<div class="shape img"></div>
+				<div class="shape img"><img src="img/female_body_shape_round.jpg"></div>
 				<div class="shape name">
 					<h2>둥근형</h2>
 					<button type="button" onclick="location.href=''">추천상품 보러가기</button>
@@ -436,8 +436,8 @@ button:active {
 
 				<h4>분석</h4>
 				<ol>
-					<li>둥근형은 둥글고 넓은 어깨 라인과 단조로운 하체가 특징입니다. </li>
-					<li>둥근형은 팔다리로 시선을 분산시키는 것이 목표입니다.</li>
+					<li>둥글고 넓은 어깨 라인, 단조로운 하체. </li>
+					<li>팔다리로 시선을 분산시키기!</li>
 				</ol>
 
 				<h4>
@@ -464,7 +464,7 @@ button:active {
 			<h1>체형 측정 결과</h1>
 
 			<div class="result above" id="result_above">
-				<div class="shape img"></div>
+				<div class="shape img"><img src="img/female_body_shape_hourglass.jpg"></div>
 				<div class="shape name">
 					<h2>모래시계형</h2>
 					<button type="button" onclick="location.href=''">추천상품 보러가기</button>
@@ -475,8 +475,8 @@ button:active {
 
 				<h4>분석</h4>
 				<ol>
-					<li>모래시계형은 상체와 하체의 균형잡힌 실루엣이 특징입니다.</li>
-					<li>모래시계형은 자연스러운 실루엣의 의상이 잘 어울립니다.</li>
+					<li>상체와 하체의 균형잡힌 형태.</li>
+					<li>자연스러운 실루엣의 의상이 좋아요!</li>
 				</ol>
 
 				<h4>

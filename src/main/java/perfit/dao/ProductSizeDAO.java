@@ -76,7 +76,7 @@ public class ProductSizeDAO {
 		}
 		return idList;
 	}
-
+// insert도 리스트로 할 수 있또록 고쳐야함!!!!!!
 	public void insertProductSize(ProductSizeVO psVo) {
 		String sql = "INSERT INTO Product_Size (id, type, category, p_size, "
 				+ "shoulder, bust, waist, hip, total_length, "
@@ -113,7 +113,81 @@ public class ProductSizeDAO {
 		}
 		
 	}
-
+	
+	public void updateProductSize(List<ProductSizeVO> psVoList) {
+		String sql = "UPDATE Product_Size "
+				+ "SET shoulder=?, bust=?, waist=?, hip=?, total_length=?, "
+				+ "arm_length=?, arm=?, rise=?, thigh=?, hem=? "	
+					+ "WHERE id=? AND p_size=?";
+		Connection conn = null;
+		PreparedStatement pstmt = null; 
+		try {
+			conn = DBManager.getConnection();
+			for(ProductSizeVO psVo : psVoList) {
+				pstmt = conn.prepareStatement(sql);
+				
+				pstmt.setInt(1, psVo.getShoulder());
+				pstmt.setInt(2, psVo.getBust());
+				pstmt.setInt(3, psVo.getWaist());
+				pstmt.setInt(4, psVo.getHip());			
+				pstmt.setInt(5, psVo.getTotal_length());
+				
+				pstmt.setInt(6, psVo.getArm_length());
+				pstmt.setInt(7, psVo.getArm());
+				pstmt.setInt(8, psVo.getRise());
+				pstmt.setInt(9, psVo.getThigh());				
+				pstmt.setInt(10, psVo.getHem());
+				
+				pstmt.setString(11, psVo.getId());
+				pstmt.setString(12, psVo.getP_size());
+				
+				pstmt.executeUpdate();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(conn, pstmt);
+		}
+		
+	}
+	
+	
+	public List<ProductSizeVO> selectSizeById(String id) {
+		List<ProductSizeVO> list = new ArrayList<>();
+		String sql = "SELECT * FROM product_size WHERE id='"+id+"'";
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		ProductSizeVO vo;
+		try {
+			conn = DBManager.getConnection();
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+			while(rs.next()) {
+				vo = new ProductSizeVO();
+				vo.setArm(Integer.parseInt(rs.getString("arm")));
+				vo.setArm_length(Integer.parseInt(rs.getString("arm_length")));
+				vo.setBust(Integer.parseInt(rs.getString("bust")));
+				vo.setCategory(rs.getString("category"));
+				vo.setHem(Integer.parseInt(rs.getString("hem")));
+				vo.setHip(Integer.parseInt(rs.getString("hip")));
+				vo.setId(rs.getString("id"));
+				vo.setP_size(rs.getString("p_size"));
+				vo.setRise(Integer.parseInt(rs.getString("rise")));
+				vo.setShoulder(Integer.parseInt(rs.getString("shoulder")));
+				vo.setThigh(Integer.parseInt(rs.getString("thigh")));
+				vo.setTotal_length(Integer.parseInt(rs.getString("total_length")));
+				vo.setType(rs.getString("type"));
+				vo.setWaist(Integer.parseInt(rs.getString("waist")));
+				list.add(vo);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(conn, stmt);
+		}
+		return list;
+	}
 
 	
 	

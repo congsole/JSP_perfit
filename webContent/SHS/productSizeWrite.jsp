@@ -22,7 +22,7 @@
 
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/common.js"></script>
-<script type="text/javascript" src="js/size.js"></script>
+<script type="text/javascript" src="js/size.js?loff"></script>
 <link rel="stylesheet" type="text/css" href="css/common.css">
 
 </head>
@@ -202,7 +202,7 @@
 			밑단 : <input type="text" name="hem10" value="0"> <br>
 			<br><hr><br>
 		</c:if>
-			<input type="submit" value="전  송"> <br><br>
+			<input type="submit" value="전  송" onclick="return check()"> <br><br>
 		</form>
 	</div>
 

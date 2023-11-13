@@ -35,16 +35,18 @@
 	<div class="main">
 		<div id="control">
 
-				<a class="picup" href="ProductServlet?command=picture_upload_form&id=${pVo.id}">사진등록→</a><br>
-				<a class="picup" href="ProductServlet?command=size_write_form&id=${pVo.id}">상세사이즈등록→</a>
-				 
+			<input type="button" class="picup" onclick="location.href='ProductServlet?command=picture_upload_form&id=${pVo.id}'" value="사진등록">
+			<input type="button" value="사진 수정" onclick="location.href='ProductServlet?command=picture_update_form&id=${pVo.id}'">
+			<a href="ProductServlet?command=picture_delete&id=${pVo.id}" onclick="return confirm('[${pVo.name}]의 사진을 일괄 삭제합니까?')">사진 삭제</a><br>
+			
+			<input type="button" class="picup" onclick="location.href='ProductServlet?command=size_write_form&id=${pVo.id}'" value="상세사이즈등록"><br>
+			<input type="button" class="picup" onclick="location.href='ProductServlet?command=size_update_form&id=${pVo.id}'" value="상세사이즈수정"><br>	 
 			<input type="button" value="상품 정보 수정" onclick="location.href='ProductServlet?command=product_update_form&id=${pVo.id}'">
 			<a href="ProductServlet?command=product_delete&id=${pVo.id}" onclick="return confirm('[${pVo.name}] 상품을 삭제하시겠습니까?')">상품 삭제</a><br>
 
-			<input type="button" value="사진 수정" onclick="location.href='ProductServlet?command=picture_update_form&id=${pVo.id}'">
-			<a href="ProductServlet?command=picture_delete&id=${pVo.id}" onclick="return confirm('[${pVo.name}]의 사진을 일괄 삭제합니까?')">사진 삭제</a><br>
+			
 
-			<a href="ProductServlet?command=Product_list">목록 보기</a>
+			<!-- <a href="ProductServlet?command=Product_list">목록 보기</a> -->
 		</div>
 		<div id="detail_01">
 			<div id="detail_info">${pVo.fabric}</div>

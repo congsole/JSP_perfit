@@ -163,8 +163,8 @@ input[type="submit"]:focus, input[type="reset"]:focus {
 .shape.img {
     width: 230px;
     height: 450px;
-    background: url("../img/역삼각.jpg") center no-repeat ;
-
+/*     background: url("../img/역삼각.jpg") center no-repeat ;
+ */
     background-size: cover;
 
 }

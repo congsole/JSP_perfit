@@ -53,6 +53,8 @@ import perfit.controller.action.ProductDeleteAction;
 import perfit.controller.action.ProductListAction;
 import perfit.controller.action.ProductSearchAction;
 import perfit.controller.action.ProductSearchFormAction;
+import perfit.controller.action.ProductSizeUpdateAction;
+import perfit.controller.action.ProductSizeUpdateFormAction;
 import perfit.controller.action.ProductSizeWriteAction;
 import perfit.controller.action.ProductSizeWriteFormAction;
 import perfit.controller.action.ProductUpdateAction;
@@ -113,6 +115,10 @@ public class ActionFactory {
 			action = new ProductSizeWriteFormAction();
 		} else if (command.equals("size_write")) {
 			action = new ProductSizeWriteAction();
+		} else if (command.equals("size_update_form")) {
+			action = new ProductSizeUpdateFormAction();
+		} else if (command.equals("size_update")) {
+			action = new ProductSizeUpdateAction();
 		}
 
 		else if (command.equals("picture_upload_form")) {

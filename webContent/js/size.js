@@ -11,7 +11,21 @@ $(document).ready(function() {
 	//		describeBox.style.display = "block";		
 
 	resultS();
+	resultP();
+/*document.querySelectorAll('input').forEach(
+	this.addEventListener("keyup", (e) => resultS());
+);*/
 
+
+document.getElementById('bust').addEventListener('keyup', (e) => {
+	if(document.querySelector('#hip').value != null && document.querySelector('#hip').value !="0")
+	resultP();});
+document.getElementById('waist').addEventListener('keyup', (e) => {
+	if(document.querySelector('#hip').value != null && document.querySelector('#hip').value !="0")
+	resultP();});
+document.getElementById('hip').addEventListener('keyup', (e) => {
+	if(document.querySelector('#hip').value != null && document.querySelector('#hip').value !="0")
+	resultP();});
 	//	}
 });
 
@@ -124,11 +138,6 @@ function resultP() {
 	if (b != 0 && w != 0 && h != 0) { document.querySelector('[name="shape"]').value = shape; }
 		
 }
-
-
-document.querySelectorAll('input').forEach(
-	this.addEventListener("keyup", (e) => resultS())
-);
 
 
 
