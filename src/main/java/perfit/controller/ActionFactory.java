@@ -1,6 +1,7 @@
 package perfit.controller;
 
 import perfit.controller.action.Action;
+import perfit.controller.action.DirectBuyFormAction;
 import perfit.controller.action.ExchangeFormAction;
 import perfit.controller.action.FaqListAction;
 import perfit.controller.action.HeaderSearchAction;
@@ -172,6 +173,9 @@ public class ActionFactory {
 
 		else if (command.equals("main")) {
 			action = new MainAction();
+		}
+		else if(command.equals("direct_buy_form")) {
+			action = new DirectBuyFormAction();
 		}
 
 		/* OHK */

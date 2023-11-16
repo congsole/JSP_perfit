@@ -21,7 +21,7 @@
 
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/common.js"></script>
-<script type="text/javascript" src="js/payment.js"></script>
+<script type="text/javascript" src="js/payment.js?Fd"></script>
 <script src="https://cdn.iamport.kr/v1/iamport.js"></script>
 
 </head>

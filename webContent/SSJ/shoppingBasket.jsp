@@ -97,7 +97,7 @@
 						<td id="goodssize">${sbVo.size}</td>
 						<td id="goodsoption">${sbVo.option}</td>
 						<td id="goodsamount">${sbVo.amount}<span> 개</span></td>
-						<td id="goodsprice">${sbVo.price*sbVo.amount}<span> 원</span></td>
+						<td id="goodsprice"><fmt:formatNumber value="${sbVo.price*sbVo.amount}" pattern="#,###"/><span> 원</span></td>
 					</tr>
 				</c:forEach>
 			</table>
@@ -163,7 +163,7 @@
 	</div>
 	<!-- sb 메인 끝-->
 	<%@ include file="../common/footer.jsp"%>
-	<script type="text/javascript" src="js/sb.js"></script>
+	<script type="text/javascript" src="js/sb.js?Fd"></script>
 </body>
 
 </html>

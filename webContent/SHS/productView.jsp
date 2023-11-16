@@ -23,9 +23,9 @@
 
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/common.js"></script>
-<script type="text/javascript" src="js/detail.js?Sffdffdsf"></script>
+<script type="text/javascript" src="js/detail.js"></script>
 <link rel="stylesheet" type="text/css" href="css/common.css">
-<link rel="stylesheet" type="text/css" href="css/detail.css?sf">
+<link rel="stylesheet" type="text/css" href="css/detail.css">
 
 </head>
 
@@ -110,10 +110,11 @@
 	               	<input type="hidden" name="command" value="member_login">
 	               </c:if>
 	               <c:if test="${mVo != null}">
-	               	<input type="hidden" name="command" value="shoppingBasket_add">
+	               	<input type="hidden" id="comm" name="command" value="">
 	               	<input type="hidden" name="pid" value="${pVo.id}">
 	               	<input type="hidden" name="mid" value="${mVo.id}">
-				</c:if>
+
+					</c:if>
 					<h2>색&nbsp;&nbsp;&nbsp;상</h2>
 
 					<input type="radio" name="color" id="color01" value="${pVo.color_01}" style="display: none">
@@ -210,9 +211,10 @@
 					<h2>수량</h2>
 					<input type="number" name="amount" id="amount "value="1">
 					<br> <br> <br> <br> 
-					<input type="button" value="바로구매" id="directBuy" onclick="return buyCheck()">&nbsp; 
+					<input type="submit" value="바로구매" id="directBuy" onclick="return buyCheck()">&nbsp; 
 					<input type="submit" value="장바구니" id="addToCart" onclick="return cartCheck()">
 				</form>
+			
 			</div>
 		</div>
 		<br>

@@ -47,7 +47,8 @@ function buyCheck() {
 	   	return false;
    		}
    }
-   return true;
+	$('#comm').attr("value", "direct_buy_form");
+   	return true;
 }
 
 function cartCheck() {
@@ -68,6 +69,7 @@ function cartCheck() {
 	   	return false;
    		}
    }
+	$('#comm').attr("value", "shoppingBasket_add");
    return true;
 }
 
