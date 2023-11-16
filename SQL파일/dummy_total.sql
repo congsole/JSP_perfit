@@ -781,6 +781,84 @@ insert into PRODUCT_PICTURE values(
 
 );
 
+/**************** product 추가 **********************/
+INSERT INTO PRODUCT 
+VALUES(
+    CONCAT('N01',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'ONEPIECE','Mini','Collar knit dress',  108000, 
+    '늘어나지 않는 니트 원단으로<Br>바디를 부드럽게 잡아주는 착용감.<br>허리 라인의 절개 포인트로<br> 여성스러움 강조.<br>골드 단추 디테일.<br>',
+    'VISCOUS 50%<br>NYLON 22%<br>PBT 28%', '드라이클리닝', sysdate, '',
+    'Black', '', '', '', '', '', '', '', '', '',
+    'free','', '', '', '', '', '', '', '', '',
+    '', '', '', '', '', '', '', '', '', '',
+    'JMARKNEWYORK', 'KOREA', '구입 후 1년', 'JMARKNEWYORK');
+
+insert into PRODUCT_PICTURE values(
+    (select p_id from product where p_name='Collar knit dress'), 
+    'ckd_d1.jpg', 'ckd_d2.jpg', 'ckd_d3.jpg', 'ckd_d4.jpg', '', '', '', '', 'dkc_d9.png',
+    'ckd_m1.jpg', 'ckd_m2.jpg', 'ckd_m3.jpg', '', '', '', '', '', ''
+);
+insert into PRODUCT_SIZE (id, 
+							type, category, p_size, 
+								shoulder, bust, waist, hip, 
+									total_length, arm_length, arm, 
+										rise, thigh, hem)
+values((select p_id from product where p_name='Collar knit dress'), 
+'ONEPIECE', 'Mini', 'free', 40, 40, 36, 40, 90, 62, 0, 0, 0, 0);
+--
+
+INSERT INTO PRODUCT 
+VALUES(
+    CONCAT('N01',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'ONEPIECE','Mini','어텀 티어드 원피스',  65000, 
+    '퍼프소매와 티어드 디테일이<Br>사랑스러운 무드를 연출해주는<br>원피스입니다.<br>',
+    'COTTON 68%<br>POLYESTER 30%<br>POLYURETHANE 2%', '드라이클리닝', sysdate, '',
+    'Black', 'Blue', 'Ivory', 'Violet', '', '', '', '', '', '',
+    'free','', '', '', '', '', '', '', '', '',
+    '', '', '', '', '', '', '', '', '', '',
+    'DELICENT/WONDERPLACE', '중국', '구입 후 1년', '1668-3508');
+
+insert into PRODUCT_PICTURE values(
+    (select p_id from product where p_name='어텀 티어드 원피스'), 
+    'ato_d1.jpg', '', '', '', '', '', '', '', 'ato_d9.jpg',
+    'ato_m1.jpg', 'ato_m2.jpg', '', '', '', '', '', '', ''
+);
+insert into PRODUCT_SIZE (id, 
+							type, category, p_size, 
+								shoulder, bust, waist, hip, 
+									total_length, arm_length, arm, 
+										rise, thigh, hem)
+values((select p_id from product where p_name='어텀 티어드 원피스'), 
+'ONEPIECE', 'Mini', 'free', 0, 50, 70, 93, 83, 62, 0, 0, 0, 116);
+--
+INSERT INTO PRODUCT 
+VALUES(
+    CONCAT('N01',LPAD(P_ID_SEQ.NEXTVAL,5,0)), 'ONEPIECE','Mini','컷아웃 카라 반팔 원피스',  104300, 
+    '카라 반팔 미니원피스입니다.<Br>허리라인이 잡혀 슬림한 실루엣이며<br>뒷판 컷아웃이 포인트입니다.<br>',
+    'COTTON 53%<br>NYLON 42%<br>SPAN 5%', '드라이클리닝', sysdate, '',
+    'Skyblue', 'Black', '', '', '', '', '', '', '', '',
+    'S','M', '', '', '', '', '', '', '', '',
+    '', '', '', '', '', '', '', '', '', '',
+    '무신사 아울렛', '한국', '구입 후 1년', '무신사 아울렛');
+
+insert into PRODUCT_PICTURE values(
+    (select p_id from product where p_name='컷아웃 카라 반팔 원피스'), 
+    'outlet_d1.jpg', 'outlet_d2.jpg', '', '', '', '', '', '', 'outlet_d9.jpg',
+    'outlet_m1.jpg', 'outlet_m2.jpg', 'outlet_m3.jpg', '', '', '', '', '', ''
+);
+insert into PRODUCT_SIZE (id, 
+							type, category, p_size, 
+								shoulder, bust, waist, hip, 
+									total_length, arm_length, arm, 
+										rise, thigh, hem)
+values((select p_id from product where p_name='컷아웃 카라 반팔 원피스'), 
+'ONEPIECE', 'Mini', 'S', 40, 45, 33, 47, 82, 17, 17, 0, 0, 54);
+insert into PRODUCT_SIZE (id, 
+							type, category, p_size, 
+								shoulder, bust, waist, hip, 
+									total_length, arm_length, arm, 
+										rise, thigh, hem)
+values((select p_id from product where p_name='컷아웃 카라 반팔 원피스'), 
+'ONEPIECE', 'Mini', 'M', 41, 47, 36, 49, 83, 18, 18, 0, 0, 54);
+--
 /***************************** cart, order etc...*********************************/
 CREATE SEQUENCE cart_seq
 INCREMENT BY 1

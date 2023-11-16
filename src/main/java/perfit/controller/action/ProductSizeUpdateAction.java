@@ -8,8 +8,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import perfit.dao.ProductDAO;
 import perfit.dao.ProductSizeDAO;
 import perfit.dto.ProductSizeVO;
+import perfit.dto.ProductVO;
 
 public class ProductSizeUpdateAction implements Action {
 
@@ -46,7 +48,12 @@ public class ProductSizeUpdateAction implements Action {
 		
 		ProductSizeDAO psDao = ProductSizeDAO.getInstance();
 		psDao.updateProductSize(list);
-
+		
+		ProductVO pVo = new ProductVO();
+		pVo.setid(request.getParameter("id"));
+		pVo.setshape(request.getParameter("shape"));
+		ProductDAO pDao = ProductDAO.getInstance();
+		pDao.shapeUpdate(pVo);
 	}
 
 }

@@ -72,7 +72,7 @@
 			밑위 : <input type="text" name="rise2" value="${psVoList[1].rise}"> <br>
 			엉덩이단면 : <input type="text" name="hip2" value="${psVoList[1].hip}"> <br>
 			허벅지단면 : <input type="text" name="thigh2" value="${psVoList[1].thigh}"> <br>
-			밑단 : <input type="text" name="hem" value="${psVoList[1].hem}"> <br>
+			밑단 : <input type="text" name="hem2" value="${psVoList[1].hem}"> <br>
 			<br><hr><br>
 		</c:if>
 		
