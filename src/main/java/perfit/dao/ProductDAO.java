@@ -61,7 +61,7 @@ public class ProductDAO {
 //		}
 //		return list;
 //	}
-	
+
 	public List<ProductVO> selectAllProducts() {
 		String sql = "SELECT * FROM PRODUCT ORDER BY P_ID";
 		List<ProductVO> list = new ArrayList<ProductVO>();
@@ -114,12 +114,12 @@ public class ProductDAO {
 				pVo.setoption_08(rs.getString("P_OPTION_08"));
 				pVo.setoption_09(rs.getString("P_OPTION_09"));
 				pVo.setoption_10(rs.getString("P_OPTION_10"));
-				
+
 				pVo.setCompany(rs.getString("COMPANY"));
 				pVo.setCountry(rs.getString("COUNTRY"));
 				pVo.setWarranty(rs.getString("WARRANTY"));
 				pVo.setAs(rs.getString("A_S"));
-				
+
 				list.add(pVo);
 			}
 		} catch (Exception e) {
@@ -127,7 +127,7 @@ public class ProductDAO {
 		} finally {
 			DBManager.close(conn, stmt, rs);
 		}
-		
+
 		return list;
 	}
 
@@ -250,7 +250,8 @@ public class ProductDAO {
 			if (colors[i] != null) {
 				for (int j = 0; j < 10; j++) {
 					if (sizes[j] != null) {
-						sql = "insert into PRODUCT_STATUS values('" + id + "', '" + colors[i] + "', '" + sizes[j] + "', '',  'ready')";
+						sql = "insert into PRODUCT_STATUS values('" + id + "', '" + colors[i] + "', '" + sizes[j]
+								+ "', '',  'ready')";
 						try {
 							conn = DBManager.getConnection();
 							stmt = conn.createStatement();
@@ -263,7 +264,7 @@ public class ProductDAO {
 					}
 				}
 			}
-		} 
+		}
 	}
 
 	public ProductVO selectOneProductById(String id) {
@@ -332,6 +333,7 @@ public class ProductDAO {
 		}
 		return pVo;
 	}
+
 	public ProductVO selectOneProductByName(String name) {
 		ProductVO pVo = null;
 		String sql = "select * from product where p_name = ?";
@@ -398,6 +400,7 @@ public class ProductDAO {
 		}
 		return pVo;
 	}
+
 	public String selectLatestProduct() {
 		String sql = "select P_ID from PRODUCT where P_DATE = (select max(P_DATE) from PRODUCT)";
 		String id = "";
@@ -531,8 +534,8 @@ public class ProductDAO {
 		}
 
 		try {
-			sql = "select * from product where p_price>=" + price_L + 
-				  " and p_price<=" + price_R + " and p_shape in("+ str + ")";
+			sql = "select * from product where p_price>=" + price_L + " and p_price<=" + price_R + " and p_shape in("
+					+ str + ")";
 			System.out.println(sql);
 
 			conn = DBManager.getConnection();
@@ -614,7 +617,7 @@ public class ProductDAO {
 
 	public List<String> todayTop8Products() {
 		String sql = "SELECT * FROM (SELECT P_ID, SUM(P_AMOUNT) AS QUANTITY FROM (select * from ORDER_TBL, ORDER_DETAIL WHERE substr(ORDER_DATE, 1, 8) = substr(sysdate, 1,8) and ORDER_TBL.ORDER_NUM = ORDER_DETAIL.ORDER_NUM)"
-				 +"GROUP BY P_ID ORDER BY QUANTITY DESC) WHERE ROWNUM<9";
+				+ "GROUP BY P_ID ORDER BY QUANTITY DESC) WHERE ROWNUM<9";
 		List<String> list = new ArrayList<String>();
 		Connection conn = null;
 		Statement stmt = null;
@@ -635,6 +638,7 @@ public class ProductDAO {
 
 		return list;
 	}
+
 	public List<String> new8Products() {
 
 		String sql = "SELECT P_ID, P_DATE FROM (SELECT P_ID, P_DATE FROM PRODUCT ORDER BY P_DATE DESC)"
@@ -662,7 +666,7 @@ public class ProductDAO {
 	}
 
 	public int thisTypeTotal(String type) {
-		String sql = "select count(*) TOTAL from product where p_type='"+ type +"'";
+		String sql = "select count(*) TOTAL from product where p_type='" + type + "'";
 		int total = 0;
 		Connection conn = null;
 		Statement stmt = null;
@@ -681,5 +685,76 @@ public class ProductDAO {
 		}
 		return total;
 	}
-	
+
+	public List<ProductVO> recommend(String shape) {
+		List<ProductVO> list = new ArrayList<>();
+		ProductVO pVo;
+		String sql = "SELECT * FROM PRODUCT WHERE p_shape='" + shape + "'";
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+
+		try {
+			conn = DBManager.getConnection();
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+
+			while (rs.next()) {
+				pVo = new ProductVO();
+				pVo.setid(rs.getString("P_ID"));
+//				pVo.settype(rs.getString("P_TYPE"));
+//				pVo.setcategory(rs.getString("P_CATEGORY"));
+				pVo.setname(rs.getString("P_NAME"));
+				pVo.setprice(rs.getInt("P_PRICE"));
+//				pVo.setdescription(rs.getString("P_DESCRIPTION"));
+//				pVo.setfabric(rs.getString("P_FABRIC"));
+//				pVo.setcleaning(rs.getString("P_CLEANING"));
+//				pVo.setdate(rs.getTimestamp("P_DATE"));
+//				pVo.setshape(rs.getString("P_SHAPE"));
+				pVo.setcolor_01(rs.getString("P_COLOR_01"));
+				pVo.setcolor_02(rs.getString("P_COLOR_02"));
+				pVo.setcolor_03(rs.getString("P_COLOR_03"));
+				pVo.setcolor_04(rs.getString("P_COLOR_04"));
+				pVo.setcolor_05(rs.getString("P_COLOR_05"));
+				pVo.setcolor_06(rs.getString("P_COLOR_06"));
+				pVo.setcolor_07(rs.getString("P_COLOR_07"));
+				pVo.setcolor_08(rs.getString("P_COLOR_08"));
+				pVo.setcolor_09(rs.getString("P_COLOR_09"));
+				pVo.setcolor_10(rs.getString("P_COLOR_10"));
+//				pVo.setsize_01(rs.getString("P_SIZE_01"));
+//				pVo.setsize_02(rs.getString("P_SIZE_02"));
+//				pVo.setsize_03(rs.getString("P_SIZE_03"));
+//				pVo.setsize_04(rs.getString("P_SIZE_04"));
+//				pVo.setsize_05(rs.getString("P_SIZE_05"));
+//				pVo.setsize_06(rs.getString("P_SIZE_06"));
+//				pVo.setsize_07(rs.getString("P_SIZE_07"));
+//				pVo.setsize_08(rs.getString("P_SIZE_08"));
+//				pVo.setsize_09(rs.getString("P_SIZE_09"));
+//				pVo.setsize_10(rs.getString("P_SIZE_10"));
+//				pVo.setoption_01(rs.getString("P_OPTION_01"));
+//				pVo.setoption_02(rs.getString("P_OPTION_02"));
+//				pVo.setoption_03(rs.getString("P_OPTION_03"));
+//				pVo.setoption_04(rs.getString("P_OPTION_04"));
+//				pVo.setoption_05(rs.getString("P_OPTION_05"));
+//				pVo.setoption_06(rs.getString("P_OPTION_06"));
+//				pVo.setoption_07(rs.getString("P_OPTION_07"));
+//				pVo.setoption_08(rs.getString("P_OPTION_08"));
+//				pVo.setoption_09(rs.getString("P_OPTION_09"));
+//				pVo.setoption_10(rs.getString("P_OPTION_10"));
+//				pVo.setCompany(rs.getString("COMPANY"));
+//				pVo.setCountry(rs.getString("COUNTRY"));
+//				pVo.setWarranty(rs.getString("WARRANTY"));
+//				pVo.setAs(rs.getString("A_S"));
+				list.add(pVo);
+
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(conn, stmt, rs);			
+		}
+
+		return list;
+	}
+
 }

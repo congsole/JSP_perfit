@@ -17,7 +17,7 @@
 }
 </style>
 <link rel="icon" type="image/x-icon" href="img/favicon.png">
-<title>perfit | 검색결과 </title>
+<title>perfit | 추천상품 </title>
 
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/common.js"></script>
@@ -30,7 +30,7 @@
 	<%@ include file="../common/header.jsp"%>
 	<div id="prod_list_wrap">
 		<br> <br> <br>
-		<h1>검색 결과</h1>
+		<h1>${type}</h1>
 
 		<br> <br> <br>
 		<div id="prod_list">

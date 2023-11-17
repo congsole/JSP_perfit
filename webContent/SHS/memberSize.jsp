@@ -302,7 +302,11 @@ button:active {
 		</div>
 		</c:if>
 		
+		<form action="ProductServlet" method="POST">
+		<input type="hidden" name="command" value="recommend">
 		<c:if test="${mVo.shape == 'InvertedTriangle'}">
+				<input type="hidden" name="shape" value="InvertedTriangle">
+		
 		<div id="result">
 
 			<h1>체형 측정 결과</h1>
@@ -311,7 +315,7 @@ button:active {
 				<div class="shape img"><img src="img/female_body_shape_inverted_triangle.jpg"></div>
 				<div class="shape name">
 					<h2>역삼각형</h2>
-					<button type="button" onclick="location.href=''">추천상품 보러가기</button>
+					<input type="submit"value="추천상품 보러가기">
 				</div>
 			</div>
 
@@ -342,6 +346,8 @@ button:active {
 		</div>
 		</c:if>
 		<c:if test="${mVo.shape == 'Rectangle'}">
+		<input type="hidden" name="shape" value="Rectangle">
+		
 		<div id="result">
 
 			<h1>체형 측정 결과</h1>
@@ -350,7 +356,7 @@ button:active {
 				<div class="shape img"><img src="img/female_body_shape_rectangle.jpg"></div>
 				<div class="shape name">
 					<h2>사각형</h2>
-					<button type="button" onclick="location.href=''">추천상품 보러가기</button>
+					<input type="submit" value="추천상품 보러가기">
 				</div>
 			</div>
 
@@ -381,6 +387,8 @@ button:active {
 		</div>
 		</c:if>
 		<c:if test="${mVo.shape == 'Triangle'}">
+		<input type="hidden" name="shape" value="Trialgne">
+		
 		<div id="result">
 
 			<h1>체형 측정 결과</h1>
@@ -389,7 +397,7 @@ button:active {
 				<div class="shape img"><img src="img/female_body_shape_triangle.jpg"></div>
 				<div class="shape name">
 					<h2>삼각형</h2>
-					<button type="button" onclick="location.href=''">추천상품 보러가기</button>
+					<input type="submit" value="추천상품 보러가기">
 				</div>
 			</div>
 
@@ -420,6 +428,8 @@ button:active {
 		</div>
 		</c:if>
 		<c:if test="${mVo.shape == 'Circle'}">
+		<input type="hidden" name="shape" value="Circle">
+		
 		<div id="result">
 
 			<h1>체형 측정 결과</h1>
@@ -428,7 +438,7 @@ button:active {
 				<div class="shape img"><img src="img/female_body_shape_round.jpg"></div>
 				<div class="shape name">
 					<h2>둥근형</h2>
-					<button type="button" onclick="location.href=''">추천상품 보러가기</button>
+					<input type="submit" value="추천상품 보러가기">
 				</div>
 			</div>
 
@@ -459,6 +469,7 @@ button:active {
 		</div>
 		</c:if>
 		<c:if test="${mVo.shape == 'Hourglass'}">
+		<input type="hidden" name="shape" value="Hourglass">
 		<div id="result">
 
 			<h1>체형 측정 결과</h1>
@@ -467,7 +478,7 @@ button:active {
 				<div class="shape img"><img src="img/female_body_shape_hourglass.jpg"></div>
 				<div class="shape name">
 					<h2>모래시계형</h2>
-					<button type="button" onclick="location.href=''">추천상품 보러가기</button>
+					<input type="submit" value="추천상품 보러가기">
 				</div>
 			</div>
 
@@ -497,6 +508,7 @@ button:active {
 			</div>
 		</div>
 		</c:if>
+		</form>
 	</div>
 
 

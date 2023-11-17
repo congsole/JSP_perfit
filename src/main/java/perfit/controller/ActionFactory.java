@@ -73,6 +73,7 @@ import perfit.controller.action.QnaUpdateFormAction;
 import perfit.controller.action.QnaViewAction;
 import perfit.controller.action.QnaWriteAction;
 import perfit.controller.action.QnaWriteFormAction;
+import perfit.controller.action.RecommendAction;
 import perfit.controller.action.ShoppingBasketAddAction;
 import perfit.controller.action.ShoppingBasketDeleteAction;
 import perfit.controller.action.ShoppingBasketFormAction;
@@ -176,6 +177,9 @@ public class ActionFactory {
 		}
 		else if(command.equals("direct_buy_form")) {
 			action = new DirectBuyFormAction();
+		}
+		else if(command.equals("recommend")) {
+			action = new RecommendAction();
 		}
 
 		/* OHK */
