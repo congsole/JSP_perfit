@@ -30,7 +30,7 @@
 	<%@ include file="../common/header.jsp"%>
 	<div id="prod_list_wrap">
 		<br> <br> <br>
-		<h1>${type}</h1>
+		<h1>'${shape}' 추천상품</h1>
 
 		<br> <br> <br>
 		<div id="prod_list">
