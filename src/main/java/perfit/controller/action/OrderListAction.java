@@ -18,8 +18,8 @@ public class OrderListAction implements Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = "SSJ/orderList.jsp";
 		HttpSession session = request.getSession();
-		MemberVO mVo = (MemberVO)session.getAttribute("mVo");
-		
+		MemberVO mVo = (MemberVO) session.getAttribute("mVo");
+
 		OrderDAO oDao = OrderDAO.getInstance();
 		List<OrderVO> orderList = oDao.orderList(mVo.getId());
 

@@ -11,17 +11,21 @@ import perfit.dto.MemberVO;
 import perfit.util.DBManager;
 
 public class MemberDAO {
-	private MemberDAO() {}
+	private MemberDAO() {
+	}
+
 	private static MemberDAO instance = new MemberDAO();
+
 	public static MemberDAO getInstance() {
 		return instance;
 	}
+
 	public void insertMember(MemberVO mVo) {
 		String sql = "INSERT INTO MEMBER"
 				+ "(ID, PASSWORD, NAME, PHONE, SMS_YorN, ZIP, ADDRESS1, ADDRESS2, EMAIL, EMAIL_YorN) "
 				+ "VALUES(?,?,?,?,?,?,?,?,?,?)";
 		Connection conn = null;
-		PreparedStatement pstmt = null; 
+		PreparedStatement pstmt = null;
 		try {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
@@ -42,6 +46,7 @@ public class MemberDAO {
 			DBManager.close(conn, pstmt);
 		}
 	}
+
 	public MemberVO getMember(String id) {
 		MemberVO mVo = null;
 		String sql = "SELECT * FROM MEMBER WHERE ID='" + id + "'";
@@ -51,8 +56,8 @@ public class MemberDAO {
 		try {
 			conn = DBManager.getConnection();
 			stmt = conn.createStatement();
-			rs = stmt.executeQuery(sql); 
-			if(rs.next()) {
+			rs = stmt.executeQuery(sql);
+			if (rs.next()) {
 				mVo = new MemberVO();
 				mVo.setId(rs.getString("ID"));
 				mVo.setPassword(rs.getString("PASSWORD"));
@@ -77,7 +82,7 @@ public class MemberDAO {
 				mVo.setHip(rs.getInt("HIP"));
 				mVo.setThigh(rs.getInt("THIGH"));
 				mVo.setLeg_length(rs.getInt("LEG_LENGTH"));
-				
+
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -86,6 +91,7 @@ public class MemberDAO {
 		}
 		return mVo;
 	}
+
 	public int confirmID(String userid) {
 		int result = -1;
 		String sql = "SELECT ID FROM MEMBER WHERE ID=?";
@@ -109,6 +115,7 @@ public class MemberDAO {
 		}
 		return result;
 	}
+
 	public int memCheck(String id, String pw) {
 		int result = -1;
 		String sql = "SELECT PASSWORD FROM MEMBER WHERE ID='" + id + "'";
@@ -120,7 +127,7 @@ public class MemberDAO {
 			conn = DBManager.getConnection();
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
-			
+
 			if (rs.next()) { // 회원
 				if (rs.getString("PASSWORD") != null && rs.getString("PASSWORD").equals(pw)) {
 					result = 1; // 비밀번호 일치
@@ -138,46 +145,48 @@ public class MemberDAO {
 		}
 		return result;
 	}
+
 	public void memberUpdate(MemberVO mVo) {
 		String sql = "update member set password=?, name=?, phone=?, sms_yorn=?, zip=?, address1=?, address2=?, email=?, email_yorn=? where id=?";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		
+
 		try {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1,mVo.getPassword());
-			pstmt.setString(2,mVo.getName());
-			pstmt.setString(3,mVo.getPhone());
-			pstmt.setString(4,mVo.getSms_YorN());
-			pstmt.setString(5,mVo.getZip());
-			pstmt.setString(6,mVo.getAddress1());
-			pstmt.setString(7,mVo.getAddress2());
-			pstmt.setString(8,mVo.getEmail());
-			pstmt.setString(9,mVo.getEmail_YorN());
-			pstmt.setString(10,mVo.getId());
+			pstmt.setString(1, mVo.getPassword());
+			pstmt.setString(2, mVo.getName());
+			pstmt.setString(3, mVo.getPhone());
+			pstmt.setString(4, mVo.getSms_YorN());
+			pstmt.setString(5, mVo.getZip());
+			pstmt.setString(6, mVo.getAddress1());
+			pstmt.setString(7, mVo.getAddress2());
+			pstmt.setString(8, mVo.getEmail());
+			pstmt.setString(9, mVo.getEmail_YorN());
+			pstmt.setString(10, mVo.getId());
 			pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
-		} finally { 
+		} finally {
 			DBManager.close(conn, pstmt);
 		}
 	}
+
 	public List<MemberVO> memberList() {
 		MemberVO mVo = null;
 		List<MemberVO> memberList = new ArrayList<MemberVO>();
-		
+
 		String sql = "SELECT * FROM MEMBER";
-		
+
 		Connection conn = null;
 		Statement stmt = null;
 		ResultSet rs = null;
-		
+
 		try {
 			conn = DBManager.getConnection();
 			stmt = conn.createStatement();
-			rs = stmt.executeQuery(sql); 
-			while(rs.next()) {
+			rs = stmt.executeQuery(sql);
+			while (rs.next()) {
 				mVo = new MemberVO();
 				mVo.setId(rs.getString("ID"));
 				mVo.setPassword(rs.getString("PASSWORD"));
@@ -220,25 +229,26 @@ public class MemberDAO {
 		System.out.println(Name + Phone);
 		try {
 			conn = DBManager.getConnection();
-			
+
 			String sql = "select id from MEMBER where Name=? and Phone=? ";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, Name);
 			pstmt.setString(2, Phone);
-			
+
 			rs = pstmt.executeQuery();
-			
-			if(rs.next()) {
+
+			if (rs.next()) {
 				id = rs.getString("id");
-			System.out.println(id);
+				System.out.println(id);
 			}
-				
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return id;
 	}
-	public String findPwd(String Id, String Name, String Phone ) {
+
+	public String findPwd(String Id, String Name, String Phone) {
 		String password = null;
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -252,41 +262,41 @@ public class MemberDAO {
 			pstmt.setString(1, Id);
 			pstmt.setString(2, Name);
 			pstmt.setString(3, Phone);
-			
+
 			rs = pstmt.executeQuery();
 			System.out.println("rs에 담음");
-			if(rs.next()) {
+			if (rs.next()) {
 				password = rs.getString("password");
-			System.out.println(password);
+				System.out.println(password);
 			}
-				
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return password;
 	}
-	
+
 	public void updateMemberSize(MemberVO mVo) {
 		String sql = "update member set shape=?, height=?, weight=?, shoulder=?, bust=?, arm_length=?, arm_size=?, waist=?, hip=?, thigh=?, leg_length=? where id=?";
 		Connection conn = null;
-		PreparedStatement pstmt = null; 
+		PreparedStatement pstmt = null;
 		try {
 			conn = DBManager.getConnection();
-			
+
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1,mVo.getShape());
-			pstmt.setInt(2,mVo.getHeight());
-			pstmt.setInt(3,mVo.getWeight());
-			pstmt.setInt(4,mVo.getShoulder());
-			pstmt.setInt(5,mVo.getBust());
-			pstmt.setInt(6,mVo.getArm_length());
-			pstmt.setInt(7,mVo.getArm_size());
-			pstmt.setInt(8,mVo.getWaist());
-			pstmt.setInt(9,mVo.getHip());
-			pstmt.setInt(10,mVo.getThigh());
-			pstmt.setInt(11,mVo.getLeg_length());
-			pstmt.setString(12,mVo.getId());
-			
+			pstmt.setString(1, mVo.getShape());
+			pstmt.setInt(2, mVo.getHeight());
+			pstmt.setInt(3, mVo.getWeight());
+			pstmt.setInt(4, mVo.getShoulder());
+			pstmt.setInt(5, mVo.getBust());
+			pstmt.setInt(6, mVo.getArm_length());
+			pstmt.setInt(7, mVo.getArm_size());
+			pstmt.setInt(8, mVo.getWaist());
+			pstmt.setInt(9, mVo.getHip());
+			pstmt.setInt(10, mVo.getThigh());
+			pstmt.setInt(11, mVo.getLeg_length());
+			pstmt.setString(12, mVo.getId());
+
 			pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -294,53 +304,42 @@ public class MemberDAO {
 			DBManager.close(conn, pstmt);
 		}
 	}
+
 	public void withdrawalMember(MemberVO mVo) {
-	      String sql = "delete member where id = ?";
-	      Connection conn = null;
-	      PreparedStatement pstmt = null; 
-	      
-	      try {
-	         conn = DBManager.getConnection();
-	         pstmt = conn.prepareStatement(sql);
-	         pstmt.setString(1,mVo.getId());
-	         pstmt.executeUpdate();
-	      } catch (Exception e) {
-	         e.printStackTrace();
-	      } finally {
-	         DBManager.close(conn, pstmt);
-	      }
-	   }
+		String sql = "delete member where id = ?";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+
+		try {
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, mVo.getId());
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(conn, pstmt);
+		}
+	}
 }
 
-/* [회원 조회] □
- * ① 회원 전체보기 ■
- * 		SELECT * FROM MEMBER;
+/*
+ * [회원 조회] □ ① 회원 전체보기 ■ SELECT * FROM MEMBER;
  * 
- * ② 한 명의 회원 정보 조회하기 ■ 
- * 		--> 주문할 때 승진씨 폼에서 쓰이려나?
- * 		SELECT * FROM MEMBER WHERE ID=?
+ * ② 한 명의 회원 정보 조회하기 ■ --> 주문할 때 승진씨 폼에서 쓰이려나? SELECT * FROM MEMBER WHERE ID=?
  * 
- * ③ 체형 계산 메쏘드에 갖다 쓰기 □
- * 		SELECT BUST, WAIST, HIP FROM MEMBER WHERE ID=?
+ * ③ 체형 계산 메쏘드에 갖다 쓰기 □ SELECT BUST, WAIST, HIP FROM MEMBER WHERE ID=?
  * 
  * 
- * [회원가입] ■
- * INSERT INTO MEMBER(ID, PASSWORD, NAME, PHONE, SMS_YorN, ZIP, ADDRESS1, ADDRESS2, EMAIL, EMAIL_YorN) 
- * 			   VALUES(?,?,?,?,?,?,?,?,?,?)
+ * [회원가입] ■ INSERT INTO MEMBER(ID, PASSWORD, NAME, PHONE, SMS_YorN, ZIP,
+ * ADDRESS1, ADDRESS2, EMAIL, EMAIL_YorN) VALUES(?,?,?,?,?,?,?,?,?,?)
  * 
- * [회원정보 변경] □
- * 	① 기본 정보 변경 ■
- * 		UPDATE MEMBER ()
- *	② 체형 측정시 ■
- *		UPDATE MEMBER(HEIGHT, WEIGHT, SHOULDER, BUST, ARM_LENGTH, ARM_SIZE, WAIST, HIP, THIGHT, LEG_LENGTH)
- *			   VALUES(?,?,?,?,?,?,?,?,?,?)
- *		UPDATE MEMBER(SHAPE) VALUES(?)
- *	③ 프사, 닉네임 설정 시 □
- *		UPDATE MEMBER(NICKNAME, MEM_PIC) VALUES(?,?)
- *		
- * [회원탈퇴] □
- * DELETE □
+ * [회원정보 변경] □ ① 기본 정보 변경 ■ UPDATE MEMBER () ② 체형 측정시 ■ UPDATE MEMBER(HEIGHT,
+ * WEIGHT, SHOULDER, BUST, ARM_LENGTH, ARM_SIZE, WAIST, HIP, THIGHT, LEG_LENGTH)
+ * VALUES(?,?,?,?,?,?,?,?,?,?) UPDATE MEMBER(SHAPE) VALUES(?) ③ 프사, 닉네임 설정 시 □
+ * UPDATE MEMBER(NICKNAME, MEM_PIC) VALUES(?,?)
+ * 
+ * [회원탈퇴] □ DELETE □
  * 
  * 
  */
-		

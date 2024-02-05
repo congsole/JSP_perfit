@@ -26,7 +26,7 @@ public class MemberJoinAction implements Action {
 		mVo.setAddress2(request.getParameter("address_detail"));
 		mVo.setEmail(request.getParameter("email1") + "@" + request.getParameter("email2"));
 		mVo.setEmail_YorN(request.getParameter("EMAIL_YorN"));
-		
+
 		mVo.setNickname(request.getParameter("nickname"));
 		mVo.setMem_pic(request.getParameter("mem_pic"));
 		mVo.setShape(request.getParameter("shape"));
@@ -41,14 +41,14 @@ public class MemberJoinAction implements Action {
 		mVo.setHip(Integer.parseInt(request.getParameter("hip")));
 		mVo.setThigh(Integer.parseInt(request.getParameter("thigh")));
 		mVo.setLeg_length(Integer.parseInt(request.getParameter("leg_length")));
-		
+
 		MemberDAO mDao = MemberDAO.getInstance();
 		mDao.insertMember(mVo);
-		
+
 		request.setAttribute("message", "회원가입을 환영합니다!");
 		String url = "/SHS/memberLogin.jsp";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
-		// 회원가입 성공 후 로그인 페이지로 이동. 
+		// 회원가입 성공 후 로그인 페이지로 이동.
 	}
 }

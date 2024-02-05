@@ -29,7 +29,7 @@ public class DirectBuyFormAction implements Action {
 		ProductPictureDAO ppDao = ProductPictureDAO.getInstance();
 		ProductVO pVo = pDao.selectOneProductById(pid);
 		ProductPictureVO ppVo = ppDao.selectPicturesById(pid);
-		
+
 		CartVO cVo = new CartVO();
 		cVo.setMid(mid);
 		cVo.setPid(pVo.getid());
@@ -41,8 +41,7 @@ public class DirectBuyFormAction implements Action {
 //		System.out.println(request.getParameter("color")+"/"+request.getParameter("size"));
 //		cVo.setOption(request.getParameter("option"));
 		cVo.setPrice(pVo.getprice());
-		
-		
+
 		List<CartVO> cartList = new ArrayList<>();
 		cartList.add(cVo);
 		request.setAttribute("cartList", cartList);

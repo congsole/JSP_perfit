@@ -21,8 +21,7 @@ public class NoticeListAction implements Action {
 		request.setAttribute("noticeList", noticeList);
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
-		
-		
+
 	}
-		
+
 }

@@ -16,8 +16,8 @@ public class PictureDeleteAction implements Action {
 		String id = request.getParameter("id");
 		ProductPictureDAO ppDao = ProductPictureDAO.getInstance();
 		ppDao.deleteOneProductById(id);
-		
-		String url = "ProductServlet?command=Product_view&id="+id;
+
+		String url = "ProductServlet?command=Product_view&id=" + id;
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
 	}

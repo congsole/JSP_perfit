@@ -16,15 +16,14 @@ public class MemberPwdFindAction implements Action {
 		String id = request.getParameter("id");
 		String name = request.getParameter("name");
 		String phone = request.getParameter("phone");
-	     
-		
+
 		MemberDAO mDao = MemberDAO.getInstance();
 
 		String password = mDao.findPwd(id, name, phone);
-		request.setAttribute("password",password);
-		
+		request.setAttribute("password", password);
+
 		System.out.println("액션" + password);
-		
+
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/OHK/findPwdResult.jsp");
 		dispatcher.forward(request, response);
 	}

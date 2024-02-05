@@ -9,9 +9,9 @@ import perfit.dto.ProductPictureVO;
 
 public class PictureUploadAction implements Action {
 
-	@Override							
+	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+
 		ProductPictureVO ppVo = new ProductPictureVO();
 		System.out.print("id?" + request.getParameter("id"));
 		ppVo.setId(request.getParameter("id"));
@@ -24,7 +24,7 @@ public class PictureUploadAction implements Action {
 		ppVo.setDetail7(request.getParameter("detail7"));
 		ppVo.setDetail8(request.getParameter("detail8"));
 		ppVo.setDetail9(request.getParameter("detail9"));
-		
+
 		ppVo.setModel1(request.getParameter("model1"));
 		ppVo.setModel2(request.getParameter("model2"));
 		ppVo.setModel3(request.getParameter("model3"));
@@ -34,11 +34,10 @@ public class PictureUploadAction implements Action {
 		ppVo.setModel7(request.getParameter("model7"));
 		ppVo.setModel8(request.getParameter("model8"));
 		ppVo.setModel9(request.getParameter("model9"));
-		
-		ProductPictureDAO ppDao = ProductPictureDAO.getInstance();
-		ppDao.insertPicture(ppVo);	
 
-										
+		ProductPictureDAO ppDao = ProductPictureDAO.getInstance();
+		ppDao.insertPicture(ppVo);
+
 		new ProductListAction().execute(request, response);
 	}
 

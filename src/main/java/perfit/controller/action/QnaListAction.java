@@ -21,8 +21,7 @@ public class QnaListAction implements Action {
 		request.setAttribute("qnaList", qnaList);
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
-		
-		
+
 	}
-		
+
 }

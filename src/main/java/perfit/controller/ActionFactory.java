@@ -174,56 +174,54 @@ public class ActionFactory {
 
 		else if (command.equals("main")) {
 			action = new MainAction();
-		}
-		else if(command.equals("direct_buy_form")) {
+		} else if (command.equals("direct_buy_form")) {
 			action = new DirectBuyFormAction();
-		}
-		else if(command.equals("recommend")) {
+		} else if (command.equals("recommend")) {
 			action = new RecommendAction();
 		}
 
 		/* OHK */
 		/* OHK */
-		else if(command.equals("Qna_list")) {
+		else if (command.equals("Qna_list")) {
 			action = new QnaListAction();
-		}else if (command.equals("Qna_write_form")) {
+		} else if (command.equals("Qna_write_form")) {
 			action = new QnaWriteFormAction();
-		}else if(command.equals("Qna_write")) {
+		} else if (command.equals("Qna_write")) {
 			action = new QnaWriteAction();
-		}else if(command.equals("Qna_view")) {
+		} else if (command.equals("Qna_view")) {
 			action = new QnaViewAction();
-		}else if(command.equals("Qna_update_form")) {
+		} else if (command.equals("Qna_update_form")) {
 			action = new QnaUpdateFormAction();
-		}else if(command.equals("Qna_update")) {
+		} else if (command.equals("Qna_update")) {
 			action = new QnaUpdateAction();
-		}else if(command.equals("Qna_delete")) {
+		} else if (command.equals("Qna_delete")) {
 			action = new QnaDeleteAction();
-		}else if(command.equals("Qna_search")) {
+		} else if (command.equals("Qna_search")) {
 			action = new QnaSearchAction();
-		}else if(command.equals("Qna_answer")) {
+		} else if (command.equals("Qna_answer")) {
 			action = new QnaAnswerAction();
-	
-		}else if(command.equals("Qna_answer_delete")) {
-			action = new QnaAnswerDeleteAction();	
-		}else if(command.equals("FAQ_list"))	{
-		action = new FaqListAction();
-		}else if(command.equals("main_list"))	{
+
+		} else if (command.equals("Qna_answer_delete")) {
+			action = new QnaAnswerDeleteAction();
+		} else if (command.equals("FAQ_list")) {
+			action = new FaqListAction();
+		} else if (command.equals("main_list")) {
 			action = new MainListAction();
-		}else if(command.equals("main_view"))	{
+		} else if (command.equals("main_view")) {
 			action = new MainViewAction();
-		}else if(command.equals("notice_list")) {
+		} else if (command.equals("notice_list")) {
 			action = new NoticeListAction();
-		}else if (command.equals("notice_write_form")) {
+		} else if (command.equals("notice_write_form")) {
 			action = new NoticeWriteFormAction();
-		}else if(command.equals("notice_write")) {
+		} else if (command.equals("notice_write")) {
 			action = new NoticeWriteAction();
-		}else if(command.equals("notice_view")) {
+		} else if (command.equals("notice_view")) {
 			action = new NoticeViewAction();
-		}else if(command.equals("notice_update_form")) {
+		} else if (command.equals("notice_update_form")) {
 			action = new NoticeUpdateFormAction();
-		}else if(command.equals("notice_update")) {
+		} else if (command.equals("notice_update")) {
 			action = new NoticeUpdateAction();
-		}else if(command.equals("notice_delete")) {
+		} else if (command.equals("notice_delete")) {
 			action = new NoticeDeleteAction();
 		}
 

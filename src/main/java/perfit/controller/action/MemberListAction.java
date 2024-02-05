@@ -18,7 +18,7 @@ public class MemberListAction implements Action {
 		List<MemberVO> memberList = mDao.memberList();
 		System.out.println(memberList.size());
 		request.setAttribute("memberList", memberList);
-		
+
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
 

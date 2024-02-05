@@ -11,7 +11,6 @@ import javax.servlet.http.HttpSession;
 import perfit.dao.MemberDAO;
 import perfit.dto.MemberVO;
 
-
 public class MemberLoginAction implements Action {
 
 	@Override

@@ -23,8 +23,7 @@ public class NoticeUpdateAction implements Action {
 		NoticeDAO nDao = NoticeDAO.getInstance();
 		nDao.updateBoard(nVo);
 		new NoticeListAction().execute(request, response);
-	
-		
+
 	}
 
 }

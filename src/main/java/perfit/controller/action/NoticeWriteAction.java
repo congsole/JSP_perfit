@@ -20,7 +20,7 @@ public class NoticeWriteAction implements Action {
 		NoticeDAO nDao = NoticeDAO.getInstance();
 		nDao.insertBoard(nVo);
 		new NoticeListAction().execute(request, response);
-	
+
 	}
 
 }

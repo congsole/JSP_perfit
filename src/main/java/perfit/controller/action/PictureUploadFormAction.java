@@ -17,17 +17,17 @@ public class PictureUploadFormAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = "/SHS/pictureUpload.jsp";
-	
+
 		String id = request.getParameter("id");
 		System.out.println(id);
-		
+
 		ProductDAO pDao = ProductDAO.getInstance();
 		ProductVO pVo = pDao.selectOneProductById(id);
 		request.setAttribute("pVo", pVo);
 		ProductPictureDAO ppDao = ProductPictureDAO.getInstance();
 		ProductPictureVO ppVo = ppDao.selectPicturesById(id);
 		request.setAttribute("ppVo", ppVo);
-		
+
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
 	}

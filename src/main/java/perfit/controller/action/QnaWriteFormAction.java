@@ -14,8 +14,7 @@ public class QnaWriteFormAction implements Action {
 		String url = "/OHK/cs_QnA_write.jsp";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
-		
+
 	}
-	
-	
+
 }

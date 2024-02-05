@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import perfit.dao.MemberDAO;
 
-
 public class MemberIdCheckAction implements Action {
 
 	@Override
@@ -20,7 +19,7 @@ public class MemberIdCheckAction implements Action {
 
 		request.setAttribute("userid", userid);
 		request.setAttribute("result", result);
-		
+
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/SHS/idCheck.jsp");
 		dispatcher.forward(request, response);
 	}

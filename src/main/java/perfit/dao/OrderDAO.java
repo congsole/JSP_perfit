@@ -21,7 +21,6 @@ public class OrderDAO {
 	public static OrderDAO getInstance() {
 		return instance;
 	}
-	
 
 	public List<CartVO> shoppingBasketList() {
 		String sql = "select * from cart order by cart_num";
@@ -103,12 +102,12 @@ public class OrderDAO {
 		Connection conn = null;
 		Statement stmt = null;
 		ResultSet rs = null;
-		
+
 		try {
 			conn = DBManager.getConnection();
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
-			while(rs.next()) {
+			while (rs.next()) {
 				OrderVO oVo = new OrderVO();
 				oVo.setOrder_num(rs.getString("order_num"));
 				oVo.setM_id(rs.getString("m_id"));
@@ -136,15 +135,15 @@ public class OrderDAO {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		
+
 		try {
-			if (searchText != null&&!searchText.equals("")) {
-				sql += " like '%"+searchText.trim()+"%' order by order_num";
+			if (searchText != null && !searchText.equals("")) {
+				sql += " like '%" + searchText.trim() + "%' order by order_num";
 			}
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
-			while(rs.next()) {
+			while (rs.next()) {
 				OrderVO oVo = new OrderVO();
 				oVo.setOrder_num(rs.getString("order_num"));
 				oVo.setM_id(rs.getString("m_id"));
@@ -165,22 +164,23 @@ public class OrderDAO {
 		}
 		return list;
 	}
-	
+
 	public List<OrderVO> orderSearchByDate(String ds, String dl) {
 		String sql = "select * from order_tbl where order_date";
 		List<OrderVO> list = new ArrayList<OrderVO>();
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		
+
 		try {
-			if ((ds != null&&!ds.equals(""))&&(dl != null&&!dl.equals(""))) {
-				sql += " between to_date('"+ds+"','YYYY-MM-DD') and to_date('"+dl+"','YYYY-MM-DD') order by order_num";
+			if ((ds != null && !ds.equals("")) && (dl != null && !dl.equals(""))) {
+				sql += " between to_date('" + ds + "','YYYY-MM-DD') and to_date('" + dl
+						+ "','YYYY-MM-DD') order by order_num";
 			}
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
-			while(rs.next()) {
+			while (rs.next()) {
 				OrderVO oVo = new OrderVO();
 				oVo.setOrder_num(rs.getString("order_num"));
 				oVo.setM_id(rs.getString("m_id"));
@@ -201,8 +201,7 @@ public class OrderDAO {
 		}
 		return list;
 	}
-	
-	
+
 	public List<CartVO> basketSearchByCondition(String searchField, String searchText) {
 		String sql = "select * from cart where " + searchField.trim();
 		List<CartVO> list = new ArrayList<CartVO>();
@@ -239,16 +238,15 @@ public class OrderDAO {
 		}
 		return list;
 	}
-	
+
 	public void addOrder(OrderVO oVo) {
-		String sql = "insert into ORDER_TBL "
-				+ "values(LPAD(o_seq.NEXTVAL,5,0), ?, ?, ?, ?, ?, ?, sysdate, '', ?, '')";
+		String sql = "insert into ORDER_TBL " + "values(LPAD(o_seq.NEXTVAL,5,0), ?, ?, ?, ?, ?, ?, sysdate, '', ?, '')";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		try {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
-			
+
 			pstmt.setString(1, oVo.getM_id());
 			pstmt.setString(2, oVo.getD_name());
 			pstmt.setString(3, oVo.getD_phone());
@@ -256,7 +254,7 @@ public class OrderDAO {
 			pstmt.setString(5, oVo.getD_address1());
 			pstmt.setString(6, oVo.getD_address2());
 			pstmt.setString(7, oVo.getD_email());
-			
+
 			System.out.println(sql);
 			pstmt.executeUpdate();
 		} catch (Exception e) {
@@ -265,8 +263,6 @@ public class OrderDAO {
 			DBManager.close(conn, pstmt);
 		}
 	}
-
-	
 
 	public String getLatesOrdertNum() {
 		String latestOrderNum = "";
@@ -279,7 +275,7 @@ public class OrderDAO {
 			conn = DBManager.getConnection();
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
-			if(rs.next()) {
+			if (rs.next()) {
 				latestOrderNum = rs.getString("ORDER_NUM");
 				System.out.println(latestOrderNum);
 			}
@@ -290,6 +286,7 @@ public class OrderDAO {
 		}
 		return latestOrderNum;
 	}
+
 	public void addOrderDetail(OrderDetailVO odVo) {
 		String sql = "insert into ORDER_DETAIL values(LPAD(od_seq.NEXTVAL,5,0),?,?,?,?,?,?,?,'',?)";
 		Connection conn = null;
@@ -297,7 +294,7 @@ public class OrderDAO {
 		try {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
-			
+
 			pstmt.setString(1, odVo.getOrder_num());
 			pstmt.setString(2, odVo.getP_id());
 			pstmt.setString(3, odVo.getP_img());
@@ -306,7 +303,7 @@ public class OrderDAO {
 			pstmt.setString(6, odVo.getP_color());
 			pstmt.setString(7, odVo.getP_size());
 			pstmt.setInt(8, odVo.getP_price());
-			
+
 			pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -317,7 +314,7 @@ public class OrderDAO {
 
 	public List<OrderVO> orderList(String mid) {
 		List<OrderVO> list = new ArrayList<OrderVO>();
-		String sql = "select * from ORDER_TBL where M_ID ='" + mid +"'";
+		String sql = "select * from ORDER_TBL where M_ID ='" + mid + "'";
 		Connection conn = null;
 		Statement stmt = null;
 		ResultSet rs = null;
@@ -381,19 +378,19 @@ public class OrderDAO {
 	}
 
 	public List<OrderVO> selectOrderByOrderNum(String ordernum) {
-		String sql = "select * from order_tbl where order_num like '"+ordernum+"'";
+		String sql = "select * from order_tbl where order_num like '" + ordernum + "'";
 		List<OrderVO> list = new ArrayList<OrderVO>();
 		Connection conn = null;
 		Statement stmt = null;
 		ResultSet rs = null;
-		
+
 		System.out.println(sql);
-		
+
 		try {
 			conn = DBManager.getConnection();
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
-			while(rs.next()) {
+			while (rs.next()) {
 				OrderVO oVo = new OrderVO();
 				oVo.setD_name(rs.getString("d_name"));
 				oVo.setD_phone(rs.getString("d_phone"));
@@ -417,12 +414,12 @@ public class OrderDAO {
 		Connection conn = null;
 		Statement stmt = null;
 		ResultSet rs = null;
-		
+
 		try {
 			conn = DBManager.getConnection();
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
-			while(rs.next()) {
+			while (rs.next()) {
 				OrderVO oVo = new OrderVO();
 				oVo.setOrder_num(rs.getString("order_num"));
 				oVo.setM_id(rs.getString("m_id"));
@@ -444,12 +441,13 @@ public class OrderDAO {
 		}
 		return list;
 	}
+
 	public void delivery(String ordernum) {
-		String sql = "update order_tbl set d_date = sysdate where order_num = "+ordernum;
+		String sql = "update order_tbl set d_date = sysdate where order_num = " + ordernum;
 
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		
+
 		try {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
@@ -460,13 +458,13 @@ public class OrderDAO {
 			DBManager.close(conn, pstmt);
 		}
 	}
-	
+
 	public void deliveryCom(String ordernum) {
-		String sql = "update order_tbl set d_status = 1 where order_num = "+ordernum;
+		String sql = "update order_tbl set d_status = 1 where order_num = " + ordernum;
 
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		
+
 		try {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
@@ -477,20 +475,20 @@ public class OrderDAO {
 			DBManager.close(conn, pstmt);
 		}
 	}
-	
+
 	public int getStatusCount(String memId) {
-		String sql = "select count(*) count from order_tbl where m_id='"+memId+"'";
+		String sql = "select count(*) count from order_tbl where m_id='" + memId + "'";
 		int result = 0;
-		
+
 		Connection conn = null;
 		Statement stmt = null;
 		ResultSet rs = null;
-		
+
 		try {
 			conn = DBManager.getConnection();
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
-			if(rs.next()) {
+			if (rs.next()) {
 				result = rs.getInt("count");
 			}
 		} catch (Exception e) {
@@ -498,22 +496,23 @@ public class OrderDAO {
 		} finally {
 			DBManager.close(conn, stmt, rs);
 		}
-		
+
 		return result;
 	}
+
 	public int getStatusCount1(String memId) {
-		String sql = "select count(*) count from order_tbl where d_date is null and m_id='"+memId+"'";
+		String sql = "select count(*) count from order_tbl where d_date is null and m_id='" + memId + "'";
 		int result = 0;
-		
+
 		Connection conn = null;
 		Statement stmt = null;
 		ResultSet rs = null;
-		
+
 		try {
 			conn = DBManager.getConnection();
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
-			if(rs.next()) {
+			if (rs.next()) {
 				result = rs.getInt("count");
 			}
 		} catch (Exception e) {
@@ -521,23 +520,24 @@ public class OrderDAO {
 		} finally {
 			DBManager.close(conn, stmt, rs);
 		}
-		
+
 		return result;
 	}
-	
+
 	public int getStatusCount2(String memId) {
-		String sql = "select count(*) count from order_tbl where d_date is not null and d_status is null and m_id='"+memId+"'";
+		String sql = "select count(*) count from order_tbl where d_date is not null and d_status is null and m_id='"
+				+ memId + "'";
 		int result = 0;
-		
+
 		Connection conn = null;
 		Statement stmt = null;
 		ResultSet rs = null;
-		
+
 		try {
 			conn = DBManager.getConnection();
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
-			if(rs.next()) {
+			if (rs.next()) {
 				result = rs.getInt("count");
 			}
 		} catch (Exception e) {
@@ -545,23 +545,23 @@ public class OrderDAO {
 		} finally {
 			DBManager.close(conn, stmt, rs);
 		}
-		
+
 		return result;
 	}
-	
+
 	public int getStatusCount3(String memId) {
-		String sql = "select count(*) count from order_tbl where d_status = 1 and m_id='"+memId+"'";
+		String sql = "select count(*) count from order_tbl where d_status = 1 and m_id='" + memId + "'";
 		int result = 0;
-		
+
 		Connection conn = null;
 		Statement stmt = null;
 		ResultSet rs = null;
-		
+
 		try {
 			conn = DBManager.getConnection();
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
-			if(rs.next()) {
+			if (rs.next()) {
 				result = rs.getInt("count");
 			}
 		} catch (Exception e) {
@@ -569,10 +569,8 @@ public class OrderDAO {
 		} finally {
 			DBManager.close(conn, stmt, rs);
 		}
-		
+
 		return result;
 	}
 
-
-	
 }

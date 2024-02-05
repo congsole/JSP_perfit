@@ -16,19 +16,19 @@ public class MemberWithdrawalAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = "MemberServlet?command=member_withdrawal_form";
-		
+
 		HttpSession session = request.getSession();
 		MemberVO mVo = (MemberVO) session.getAttribute("mVo");
-		
+
 		String userid = mVo.getId();
 		String userpwd = request.getParameter("password");
-		
+
 		MemberDAO mDao = MemberDAO.getInstance();
 		int result = mDao.memCheck(userid, userpwd);
-		
+
 		if (result == 1) {
 			mDao.withdrawalMember(mVo);
-			//세션 말소
+			// 세션 말소
 			session.invalidate();
 			url = "MemberServlet?command=member_withdrawal_complete";
 		} else if (result == 0) {

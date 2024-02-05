@@ -16,8 +16,8 @@ public class MemberSizeAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		MemberVO mVo = (MemberVO)session.getAttribute("mVo");
-		
+		MemberVO mVo = (MemberVO) session.getAttribute("mVo");
+
 		mVo.setHeight(Integer.parseInt(request.getParameter("height")));
 		mVo.setWeight(Integer.parseInt(request.getParameter("weight")));
 		mVo.setShoulder(Integer.parseInt(request.getParameter("shoulder")));
@@ -32,17 +32,14 @@ public class MemberSizeAction implements Action {
 		mVo.setLeg_length(Integer.parseInt(request.getParameter("leg_length")));
 		mVo.setShape(request.getParameter("memberShape"));
 		System.out.println(request.getParameter("memberShape"));
-		
-		
-		
+
 		MemberDAO mDao = MemberDAO.getInstance();
 		mDao.updateMemberSize(mVo);
-		
+
 		String url = "/SHS/memberSize.jsp";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
-	
+
 	}
 
 }
-

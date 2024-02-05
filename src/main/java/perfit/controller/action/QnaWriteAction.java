@@ -1,5 +1,5 @@
 package perfit.controller.action;
-	
+
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -22,7 +22,7 @@ public class QnaWriteAction implements Action {
 		QnaDAO qDao = QnaDAO.getInstance();
 		qDao.insertBoard(qVo);
 		new QnaListAction().execute(request, response);
-	
+
 	}
 
 }

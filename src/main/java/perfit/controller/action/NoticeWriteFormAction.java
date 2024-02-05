@@ -14,8 +14,7 @@ public class NoticeWriteFormAction implements Action {
 		String url = "/OHK/cs_notice_write.jsp";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
-		
+
 	}
-	
-	
+
 }

@@ -15,10 +15,10 @@ public class MemberUpdateFormAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = "/SSJ/memberupdate.jsp";
-		
+
 		HttpSession session = request.getSession();
-		MemberVO mVo = (MemberVO)session.getAttribute("mVo"); // 로그인상태이므로 세션에 저장되어있는 mVo객체 가져옴.
-	
+		MemberVO mVo = (MemberVO) session.getAttribute("mVo"); // 로그인상태이므로 세션에 저장되어있는 mVo객체 가져옴.
+
 		request.setAttribute("memInfo", mVo);
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);

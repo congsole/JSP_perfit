@@ -57,11 +57,11 @@ public class ProductUpdateAction implements Action {
 		pVo.setCountry(request.getParameter("country"));
 		pVo.setWarranty(request.getParameter("warranty"));
 		pVo.setAs(request.getParameter("a_s"));
-		
+
 		ProductDAO pDao = ProductDAO.getInstance();
 		pDao.insertProduct(pVo);
 		pDao.getReadyProduct(pDao.selectOneProductByName(request.getParameter("name")));
-		
+
 		new ProductListAction().execute(request, response);
 
 	}

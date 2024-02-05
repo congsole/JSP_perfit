@@ -15,8 +15,7 @@ public class QnaAnswerAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		QnaVO qVo = new QnaVO();
-		
-		
+
 		String num = request.getParameter("num");
 		String answer = request.getParameter("answer");
 
@@ -25,10 +24,10 @@ public class QnaAnswerAction implements Action {
 		qVo.setAnswer(answer);
 		QnaDAO qDao = QnaDAO.getInstance();
 		qDao.updateAnswer(qVo);
-		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("CscServlet?command=Qna_view&num="+num);
+
+		RequestDispatcher dispatcher = request.getRequestDispatcher("CscServlet?command=Qna_view&num=" + num);
 		dispatcher.forward(request, response);
-		System.out.println("/OHK/cs_QnA_detail_Custom.jsp?num="+num);
+		System.out.println("/OHK/cs_QnA_detail_Custom.jsp?num=" + num);
 	}
 
 }

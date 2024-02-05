@@ -17,17 +17,16 @@ public class ProductSizeWriteFormAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = "/SHS/productSizeWrite.jsp";
-		
+
 		String id = request.getParameter("id");
-		
+
 		ProductDAO pDao = ProductDAO.getInstance();
 		ProductVO pVo = pDao.selectOneProductById(id);
 		request.setAttribute("pVo", pVo);
 		ProductPictureDAO ppDao = ProductPictureDAO.getInstance();
 		ProductPictureVO ppVo = ppDao.selectPicturesById(id);
 		request.setAttribute("ppVo", ppVo);
-		
-		
+
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
 	}

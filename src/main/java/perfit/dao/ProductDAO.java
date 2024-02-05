@@ -91,8 +91,7 @@ public class ProductDAO {
 	}
 
 	public List<ProductVO> getListWithPaging(int pageNum, int amount) {
-		String sql = "select * from "
-				+ "(select rownum rn, a.* from (SELECT * FROM PRODUCT ORDER BY P_ID desc) a) "
+		String sql = "select * from " + "(select rownum rn, a.* from (SELECT * FROM PRODUCT ORDER BY P_ID desc) a) "
 				+ "where rn > ? and rn <= ?";
 		System.out.println(sql);
 		List<ProductVO> list = new ArrayList<ProductVO>();
@@ -163,12 +162,10 @@ public class ProductDAO {
 
 		return list;
 	}
-	
+
 	public List<ProductVO> getListWithPaging(int pageNum, int amount, String type) {
-		String sql = "select * from "
-				+ "(select rownum rn, a.* from (SELECT * FROM PRODUCT WHERE P_TYPE='" + type
-				+ "' ORDER BY P_ID desc) a) "
-				+ "where rn > ? and rn <= ?";
+		String sql = "select * from " + "(select rownum rn, a.* from (SELECT * FROM PRODUCT WHERE P_TYPE='" + type
+				+ "' ORDER BY P_ID desc) a) " + "where rn > ? and rn <= ?";
 		System.out.println(sql);
 		List<ProductVO> list = new ArrayList<ProductVO>();
 		Connection conn = null;
@@ -238,12 +235,10 @@ public class ProductDAO {
 
 		return list;
 	}
+
 	public List<ProductVO> getListWithPaging(int pageNum, int amount, String type, String category) {
-		String sql = "select * from "
-				+ "(select rownum rn, a.* from (SELECT * FROM PRODUCT WHERE P_TYPE='" + type
-				+ "'AND P_CATEGORY='" + category
-				+ "' ORDER BY P_ID desc) a) "
-				+ "where rn > ? and rn <= ?";
+		String sql = "select * from " + "(select rownum rn, a.* from (SELECT * FROM PRODUCT WHERE P_TYPE='" + type
+				+ "'AND P_CATEGORY='" + category + "' ORDER BY P_ID desc) a) " + "where rn > ? and rn <= ?";
 		System.out.println(sql);
 		List<ProductVO> list = new ArrayList<ProductVO>();
 		Connection conn = null;
@@ -313,11 +308,10 @@ public class ProductDAO {
 
 		return list;
 	}
+
 	public List<ProductVO> recommendListWithPaging(int pageNum, int amount, String shape) {
-		String sql = "select * from "
-				+ "(select rownum rn, a.* from (SELECT * FROM PRODUCT WHERE P_SHAPE='" + shape
-				+ "' ORDER BY P_ID desc) a) "
-				+ "where rn > ? and rn <= ?";
+		String sql = "select * from " + "(select rownum rn, a.* from (SELECT * FROM PRODUCT WHERE P_SHAPE='" + shape
+				+ "' ORDER BY P_ID desc) a) " + "where rn > ? and rn <= ?";
 		System.out.println(sql);
 		List<ProductVO> list = new ArrayList<ProductVO>();
 		Connection conn = null;
@@ -356,7 +350,7 @@ public class ProductDAO {
 
 		return list;
 	}
-	
+
 	@SuppressWarnings("P_resource")
 	public void insertProduct(ProductVO pVo) {
 		String sql01 = "SELECT CODE FROM PRODUCT_CODE WHERE TYPE_NAME=? AND CATE_NAME=?";
@@ -671,11 +665,11 @@ public class ProductDAO {
 
 	public int headerSearchSize(String keyword) {
 		int size = 0;
-		String sql = "SELECT P_ID FROM PRODUCT " + "where P_NAME LIKE '%" + keyword + "%' " + "or P_TYPE LIKE '%" + keyword
-				+ "%' " + "or P_CATEGORY LIKE '%" + keyword + "%' " + "or P_DESCRIPTION LIKE '%" + keyword + "%' "
-				+ "or P_FABRIC LIKE '%" + keyword + "%' ";
+		String sql = "SELECT P_ID FROM PRODUCT " + "where P_NAME LIKE '%" + keyword + "%' " + "or P_TYPE LIKE '%"
+				+ keyword + "%' " + "or P_CATEGORY LIKE '%" + keyword + "%' " + "or P_DESCRIPTION LIKE '%" + keyword
+				+ "%' " + "or P_FABRIC LIKE '%" + keyword + "%' ";
 		System.out.println(sql);
-		
+
 		Connection conn = null;
 		Statement stmt = null;
 		ResultSet rs = null;
@@ -683,9 +677,9 @@ public class ProductDAO {
 			conn = DBManager.getConnection();
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
-			
+
 			while (rs.next()) {
-				size++ ;
+				size++;
 				System.out.println(rs.getString("P_ID"));
 			}
 			System.out.println(size);
@@ -697,14 +691,12 @@ public class ProductDAO {
 
 		return size;
 	}
+
 	public List<ProductVO> headerSearch(int pageNum, int amount, String word) {
-		String sql = "select * from "
-				+ "(select rownum rn, a.* from (SELECT * FROM PRODUCT " 
-				+ "where P_NAME LIKE '%" + word + "%' " + "or P_TYPE LIKE '%" + word
-				+ "%' " + "or P_CATEGORY LIKE '%" + word + "%' " + "or P_DESCRIPTION LIKE '%" + word + "%' "
-				+ "or P_FABRIC LIKE '%" + word + "%' "
-				+ "ORDER BY P_ID desc) a) "
-				+ "where rn > ? and rn <= ?";
+		String sql = "select * from " + "(select rownum rn, a.* from (SELECT * FROM PRODUCT " + "where P_NAME LIKE '%"
+				+ word + "%' " + "or P_TYPE LIKE '%" + word + "%' " + "or P_CATEGORY LIKE '%" + word + "%' "
+				+ "or P_DESCRIPTION LIKE '%" + word + "%' " + "or P_FABRIC LIKE '%" + word + "%' "
+				+ "ORDER BY P_ID desc) a) " + "where rn > ? and rn <= ?";
 		System.out.println(sql);
 		List<ProductVO> list = new ArrayList<ProductVO>();
 		Connection conn = null;
@@ -950,12 +942,10 @@ public class ProductDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			DBManager.close(conn, stmt, rs);			
+			DBManager.close(conn, stmt, rs);
 		}
 
 		return list;
 	}
-
-
 
 }

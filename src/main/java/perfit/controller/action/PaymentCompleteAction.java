@@ -16,10 +16,10 @@ public class PaymentCompleteAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String[] numArr = request.getParameterValues("cVo_num");
-		System.out.println("@@@@@@@@@@@@@@@@@@@@@"+numArr);
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@" + numArr);
 		CartDAO cDao = CartDAO.getInstance();
 		List<CartVO> cartList = cDao.selectCartByNumArr(numArr);
-		
+
 		String d_name = request.getParameter("d_name");
 		String d_zip = request.getParameter("d_zip");
 		String d_address1 = request.getParameter("d_address1");
@@ -34,12 +34,12 @@ public class PaymentCompleteAction implements Action {
 		request.setAttribute("d_address2", d_address2);
 		request.setAttribute("d_phone", d_phone);
 		request.setAttribute("d_email", d_email);
-		
+
 		String url = "SSJ/paymentCom.jsp";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
-		//ordernum 세션 정보 삭제
-		//cart 테이블에 있던 거 삭제
+		// ordernum 세션 정보 삭제
+		// cart 테이블에 있던 거 삭제
 		cDao.deleteCart(numArr);
 	}
 }

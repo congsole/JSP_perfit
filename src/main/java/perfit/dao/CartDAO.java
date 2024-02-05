@@ -11,11 +11,15 @@ import perfit.dto.CartVO;
 import perfit.util.DBManager;
 
 public class CartDAO {
-	private CartDAO() {}
+	private CartDAO() {
+	}
+
 	private static CartDAO instance = new CartDAO();
+
 	public static CartDAO getInstance() {
 		return instance;
 	}
+
 	public CartVO isExisting(String pid, String color, String size) {
 		CartVO existingCVo = null;
 		String sql = "select CART_NUM, P_AMOUNT from CART where P_ID=? and P_COLOR=? and P_SIZE=?";
@@ -29,7 +33,7 @@ public class CartDAO {
 			pstmt.setString(2, color);
 			pstmt.setString(3, size);
 			rs = pstmt.executeQuery();
-			if(rs.next()) {
+			if (rs.next()) {
 				existingCVo = new CartVO();
 				existingCVo.setCart_num(rs.getString("CART_NUM"));
 				existingCVo.setAmount(rs.getInt("P_AMOUNT"));
@@ -39,15 +43,15 @@ public class CartDAO {
 		} finally {
 			DBManager.close(conn, pstmt);
 		}
-		
+
 		return existingCVo;
 	}
+
 	public void insertCart(CartVO cVo) {
-		String sql = "insert into cart "
-				+ "values (LPAD(cart_seq.nextval,5,0), ?, ?, ?, ?, ?, ?, ?, '', ?)";
+		String sql = "insert into cart " + "values (LPAD(cart_seq.nextval,5,0), ?, ?, ?, ?, ?, ?, ?, '', ?)";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-	
+
 		try {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
@@ -66,6 +70,7 @@ public class CartDAO {
 			DBManager.close(conn, pstmt);
 		}
 	}
+
 	public void updateAmount(CartVO existingCVo, int newAmount) {
 		String sql = "update cart set P_AMOUNT=? where CART_NUM=?";
 		Connection conn = null;
@@ -75,7 +80,7 @@ public class CartDAO {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, totalAmount);
-			System.out.println(existingCVo.getAmount() +"+"+ newAmount +"+"+ totalAmount);
+			System.out.println(existingCVo.getAmount() + "+" + newAmount + "+" + totalAmount);
 			pstmt.setString(2, existingCVo.getCart_num());
 			pstmt.executeUpdate();
 		} catch (Exception e) {
@@ -87,14 +92,14 @@ public class CartDAO {
 
 	public void deleteCart(String[] numArr) {
 		String sql = "Delete from cart where ";
-		for(int i = 0; i<numArr.length; i++) {
-			if(i == 0)
+		for (int i = 0; i < numArr.length; i++) {
+			if (i == 0)
 				sql += "CART_NUM=" + numArr[i];
 			else
 				sql += " OR CART_NUM=" + numArr[i];
 		}
 		System.out.println(sql);
-		
+
 		Connection conn = null;
 		Statement stmt = null;
 		try {
@@ -107,6 +112,7 @@ public class CartDAO {
 			DBManager.close(conn, stmt);
 		}
 	}
+
 	public List<CartVO> selectCartByNumArr(String[] cart_num_arr) {
 		List<CartVO> list = new ArrayList<CartVO>();
 		String str = "";
@@ -115,25 +121,25 @@ public class CartDAO {
 		Statement stmt = null;
 		ResultSet rs = null;
 
-		for(int i = 0; i<cart_num_arr.length; i++) {
-			if(i == 0) {
-				str += "'" + cart_num_arr[i]+"'"; 
+		for (int i = 0; i < cart_num_arr.length; i++) {
+			if (i == 0) {
+				str += "'" + cart_num_arr[i] + "'";
 			} else {
-				str += ", '" + cart_num_arr[i]+"'";
+				str += ", '" + cart_num_arr[i] + "'";
 			}
 		}
-		
+
 		try {
 			sql = "select * from CART where CART_NUM in(" + str + ")";
 			System.out.println(sql);
-			
+
 			conn = DBManager.getConnection();
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
-			
+
 			while (rs.next()) {
-				
-				CartVO cVo= new CartVO();
+
+				CartVO cVo = new CartVO();
 				cVo.setCart_num(rs.getString("CART_NUM"));
 				cVo.setMid(rs.getString("M_ID"));
 				cVo.setPid(rs.getString("P_ID"));
@@ -144,7 +150,7 @@ public class CartDAO {
 				cVo.setSize(rs.getString("P_SIZE"));
 				cVo.setOption(rs.getString("P_OPTION"));
 				cVo.setPrice(rs.getInt("P_PRICE"));
-				
+
 				list.add(cVo);
 			}
 		} catch (Exception e) {
@@ -156,6 +162,3 @@ public class CartDAO {
 	}
 
 }
-
-	
-

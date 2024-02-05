@@ -11,11 +11,15 @@ import perfit.dto.ProductPictureVO;
 import perfit.util.DBManager;
 
 public class ProductPictureDAO {
-	private ProductPictureDAO() {}
+	private ProductPictureDAO() {
+	}
+
 	private static ProductPictureDAO instance = new ProductPictureDAO();
+
 	public static ProductPictureDAO getInstance() {
 		return instance;
 	}
+
 	public List<ProductPictureVO> selectAllPictures() {
 		String sql = "SELECT * FROM PRODUCT_PICTURE";
 		List<ProductPictureVO> list = new ArrayList<ProductPictureVO>();
@@ -47,21 +51,19 @@ public class ProductPictureDAO {
 				ppVo.setModel7(rs.getString("MODEL7"));
 				ppVo.setModel8(rs.getString("MODEL8"));
 				ppVo.setModel9(rs.getString("MODEL9"));
-				
+
 				list.add(ppVo);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			DBManager.close(conn, stmt, rs);
-		} 
+		}
 		return list;
 	}
-	
-	
-	
+
 	public ProductPictureVO selectPicturesById(String id) {
-		ProductPictureVO pppVo= null;
+		ProductPictureVO pppVo = null;
 		String sql = "SELECT * FROM PRODUCT_PICTURE WHERE ID = ?";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -92,17 +94,18 @@ public class ProductPictureDAO {
 				pppVo.setModel7(rs.getString("MODEL7"));
 				pppVo.setModel8(rs.getString("MODEL8"));
 				pppVo.setModel9(rs.getString("MODEL9"));
-			}//IF
+			} // IF
 		} catch (Exception e) {
 			e.printStackTrace();
 
-
 		} finally {
 			DBManager.close(conn, pstmt);
-		} return pppVo;
+		}
+		return pppVo;
 	}
+
 	public void insertPicture(ProductPictureVO ppVo) {
-		
+
 		String sql = "INSERT INTO PRODUCT_PICTURE VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -130,13 +133,14 @@ public class ProductPictureDAO {
 			pstmt.setString(19, ppVo.getModel9());
 
 			pstmt.executeUpdate();
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			DBManager.close(conn,  pstmt);
-		}			
+			DBManager.close(conn, pstmt);
+		}
 	}
+
 	public void deleteOneProductById(String id) {
 		String sql = "delete from Product_Picture where id = ?";
 		Connection conn = null;
@@ -148,11 +152,12 @@ public class ProductPictureDAO {
 			pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			DBManager.close(conn, pstmt);
 		}
 	}
-	public void updatePicture(ProductPictureVO ppVo) {																																	
+
+	public void updatePicture(ProductPictureVO ppVo) {
 		String sql = "update PRODUCT_PICTURE set detail1=?, detail2=?, detail3=?, detail4=?, detail5=?, detail6=?, detail7=?, detail8=?, detail9=?, model1=?, model2=?, model3=?, model4=?, model5=?, model6=?, model7=?, model8=?, model9=? where id=?";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -180,15 +185,12 @@ public class ProductPictureDAO {
 			pstmt.setString(19, ppVo.getId());
 
 			pstmt.executeUpdate();
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			DBManager.close(conn,  pstmt);
-		}			
+			DBManager.close(conn, pstmt);
+		}
 	}
 
-
 }
-
-

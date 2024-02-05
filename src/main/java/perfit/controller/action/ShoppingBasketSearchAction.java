@@ -16,8 +16,9 @@ public class ShoppingBasketSearchAction implements Action {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = "SSJ/shoppingBasket.jsp";
 		OrderDAO oDao = OrderDAO.getInstance();
-		List<CartVO> cVo = oDao.basketSearchByCondition(request.getParameter("searchField"),request.getParameter("searchText"));
-		
+		List<CartVO> cVo = oDao.basketSearchByCondition(request.getParameter("searchField"),
+				request.getParameter("searchText"));
+
 		request.setAttribute("sbList", cVo);
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);

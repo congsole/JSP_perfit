@@ -16,7 +16,7 @@ public class OrderDeliveryCompleteAction implements Action {
 		OrderDAO oDao = OrderDAO.getInstance();
 		String ordernum = request.getParameter("ordernum");
 		oDao.deliveryCom(ordernum);
-		
+
 		String url = "OrderServlet?command=order_manage";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);

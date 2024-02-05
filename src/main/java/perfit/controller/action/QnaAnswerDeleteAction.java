@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import perfit.dao.QnaDAO;
 
-
 public class QnaAnswerDeleteAction implements Action {
 
 	@Override
@@ -18,8 +17,8 @@ public class QnaAnswerDeleteAction implements Action {
 		int num = Integer.parseInt(request.getParameter("num"));
 		QnaDAO qDao = QnaDAO.getInstance();
 		qDao.deleteAnswer(num);
-		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("CscServlet?command=Qna_view&num="+num);
+
+		RequestDispatcher dispatcher = request.getRequestDispatcher("CscServlet?command=Qna_view&num=" + num);
 		dispatcher.forward(request, response);
 
 	}

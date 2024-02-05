@@ -14,17 +14,16 @@ import perfit.dto.QnaVO;
 public class QnaSearchAction implements Action {
 
 	@Override
-		public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		  QnaDAO qDao = QnaDAO.getInstance();
-	      List<QnaVO> qnaList = qDao.qnaSearch(request.getParameter("word"),request.getParameter("searchField"));
-	      request.setAttribute("qnaList",qnaList);
+		QnaDAO qDao = QnaDAO.getInstance();
+		List<QnaVO> qnaList = qDao.qnaSearch(request.getParameter("word"), request.getParameter("searchField"));
+		request.setAttribute("qnaList", qnaList);
 
-	      
-	      String url = "/OHK/cs_QnA.jsp";
-	      RequestDispatcher dispatcher = request.getRequestDispatcher(url);
-	      dispatcher.forward(request, response);
-	      
-	   }
+		String url = "/OHK/cs_QnA.jsp";
+		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
+		dispatcher.forward(request, response);
 
 	}
+
+}

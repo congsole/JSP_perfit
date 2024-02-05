@@ -24,22 +24,21 @@ public class ProductViewAction implements Action {
 		ProductVO pVo = pDao.selectOneProductById(id);
 		ProductPictureDAO ppDao = ProductPictureDAO.getInstance();
 		ProductPictureVO ppVo = ppDao.selectPicturesById(id);
-		
-		
+
 		request.setAttribute("pVo", pVo);
 		request.setAttribute("ppVo", ppVo);
-		
+
 		HttpSession session = request.getSession();
-		MemberVO mVo = (MemberVO)session.getAttribute("mVo");
-		
-		if(mVo == null) {
+		MemberVO mVo = (MemberVO) session.getAttribute("mVo");
+
+		if (mVo == null) {
 			url = "/SHS/productView.jsp";
-		}else if(mVo.getId().contains("perfit")) {
+		} else if (mVo.getId().contains("perfit")) {
 			url = "/SHS/productViewAdmin.jsp";
 		} else {
 			url = "/SHS/productView.jsp";
 		}
-		
+
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
 	}

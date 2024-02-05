@@ -1,29 +1,29 @@
 package perfit.dto;
 
 public class PageVO {
-	
+
 	private int startPage;
 	private int endPage;
 	private boolean prev, next;
 	private int pageNum;
 	private int amount = 12;
 	private int total;
-	
+
 	public PageVO(int pageNum, int amount, int total) {
 		this.pageNum = pageNum;
 		this.amount = amount;
 		this.total = total;
-		
-		this.endPage = (int)Math.ceil(this.pageNum * 0.1) * 10;
+
+		this.endPage = (int) Math.ceil(this.pageNum * 0.1) * 10;
 		this.startPage = this.endPage - 10 + 1;
-		
-		int realEnd = (int)Math.ceil(this.total / (double)this.amount);
-	
-		if(this.endPage > realEnd) {
+
+		int realEnd = (int) Math.ceil(this.total / (double) this.amount);
+
+		if (this.endPage > realEnd) {
 			this.endPage = realEnd;
 		}
-		
-		this.prev = this.startPage >1;
+
+		this.prev = this.startPage > 1;
 		this.next = this.endPage < realEnd;
 	}
 
@@ -82,7 +82,5 @@ public class PageVO {
 	public void setTotal(int total) {
 		this.total = total;
 	}
-	
-	
-	
+
 }

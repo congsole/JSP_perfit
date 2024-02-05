@@ -12,25 +12,28 @@ import javax.servlet.http.HttpSession;
 
 import perfit.dao.MemberDAO;
 
-
 @WebServlet("/idCheck.do")
 public class IdCheckServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		String userid = request.getParameter("userid");
 		MemberDAO mDao = MemberDAO.getInstance();
 		int result = mDao.confirmID(userid);
 
 		request.setAttribute("userid", userid);
 		request.setAttribute("result", result);
-		
+
 		RequestDispatcher dispatcher = request.getRequestDispatcher("SHS/idCheck.jsp");
 		dispatcher.forward(request, response);
-		
+
 		HttpSession session = request.getSession();
 		session.setAttribute("userid", userid);
 	}
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 	}
 
 }

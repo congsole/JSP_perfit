@@ -20,8 +20,7 @@ public class QnaAnswerUpdateAction implements Action {
 		QnaDAO qDao = QnaDAO.getInstance();
 		qDao.updateAnswer(qVo);
 		new QnaListAction().execute(request, response);
-	
-		
+
 	}
 
 }

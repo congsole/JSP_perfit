@@ -18,7 +18,7 @@ public class MemberWithdrawalFormAction implements Action {
 
 		HttpSession session = request.getSession();
 		MemberVO mVo = (MemberVO) session.getAttribute("mVo");
-		
+
 		request.setAttribute("memInfo", mVo);
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);

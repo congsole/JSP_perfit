@@ -23,8 +23,7 @@ public class QnaUpdateAction implements Action {
 		QnaDAO qDao = QnaDAO.getInstance();
 		qDao.updateBoard(qVo);
 		new QnaListAction().execute(request, response);
-	
-		
+
 	}
 
 }

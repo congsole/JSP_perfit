@@ -14,13 +14,11 @@ import perfit.dto.CartVO;
 import perfit.dto.ProductPictureVO;
 import perfit.dto.ProductVO;
 
-
 public class ShoppingBasketDeleteAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String[] numArr = request.getParameterValues("sbVo_num");
-		
 
 		CartDAO cDao = CartDAO.getInstance();
 		cDao.deleteCart(numArr);

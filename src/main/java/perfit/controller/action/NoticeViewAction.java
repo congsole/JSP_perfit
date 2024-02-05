@@ -20,8 +20,7 @@ public class NoticeViewAction implements Action {
 		NoticeVO nVo = nDao.selectOneBoardByNum(num);
 		NoticeVO bnVo = nDao.beforeView(nVo);
 		NoticeVO anVo = nDao.afterView(nVo);
-		
-		
+
 		request.setAttribute("notice", nVo);
 		request.setAttribute("beforeNotice", bnVo);
 		request.setAttribute("afterNotice", anVo);

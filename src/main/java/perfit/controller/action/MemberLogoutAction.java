@@ -16,7 +16,6 @@ public class MemberLogoutAction implements Action {
 		session.invalidate();
 		RequestDispatcher dispatcher = request.getRequestDispatcher("ProductServlet?command=member_login_form");
 		dispatcher.forward(request, response);
-		
 
 	}
 
