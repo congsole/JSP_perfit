@@ -315,7 +315,7 @@ button:active {
 				<div class="shape img"><img src="img/female_body_shape_inverted_triangle.jpg"></div>
 				<div class="shape name">
 					<h2>역삼각형</h2>
-					<input type="submit"value="추천상품 보러가기">
+					<input type="submit" value="추천상품 보러가기">
 				</div>
 			</div>
 

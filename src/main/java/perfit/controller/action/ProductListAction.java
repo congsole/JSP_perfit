@@ -11,42 +11,23 @@ import javax.servlet.http.HttpSession;
 
 import perfit.dao.ProductDAO;
 import perfit.dao.ProductPictureDAO;
-import perfit.dto.Criteria;
 import perfit.dto.MemberVO;
-import perfit.dto.PageDTO;
+import perfit.dto.PageVO;
 import perfit.dto.ProductPictureVO;
 import perfit.dto.ProductVO;
 
 
 
 public class ProductListAction implements Action {
-	Criteria cri = new Criteria();
+
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String type = request.getParameter("type");
-		request.setAttribute("type", type);
-		System.out.println(type);
+		// url 만들기
 		String url = "";
-		ProductDAO pDao = ProductDAO.getInstance();
-		List<ProductVO> productList = pDao.selectAllProducts();
-		
-		
-//		List<ProductVO> productList = pDao.getListWithPaging(cri);
-	
-		ProductPictureDAO ppDao = ProductPictureDAO.getInstance();
-		List<ProductPictureVO> pictureList = ppDao.selectAllPictures();
-		
-		request.setAttribute("productList", productList);
-		request.setAttribute("pictureList", pictureList);
-		
-		int total = pDao.thisTypeTotal(type);
-		//
-		request.setAttribute("PageDTO", new PageDTO(cri, total));
-		
-		
+
 		HttpSession session = request.getSession();
 		MemberVO mVo = (MemberVO)session.getAttribute("mVo");
-	
+		
 		if(mVo == null) {
 			url = "/SHS/productList.jsp";			
 		}else if(mVo.getId().contains("perfit")) {
@@ -54,7 +35,47 @@ public class ProductListAction implements Action {
 		} else {
 			url = "/SHS/productList.jsp";
 		}
+		
+		
+		// paging variables
+		/* 첫 페이지의 경우 */
+		int pageNum = 1;
+		int amount = 12;
+		/* 페이지 번호를 클릭하는 경우 */
+		if(request.getParameter("pageNum") != null && request.getParameter("amount") != null) {
+			pageNum = Integer.parseInt(request.getParameter("pageNum"));
+			amount = Integer.parseInt(request.getParameter("amount"));
+		}
+		
+		// type, product, productPicture
+		String type = request.getParameter("type");
+		String category = request.getParameter("category");
+		
+		ProductDAO pDao = ProductDAO.getInstance();
+		int total = pDao.thisTypeTotal(type);
+		PageVO pageVO = new PageVO(pageNum, amount, total);
+		
+		List<ProductVO> productList;
+		
+		if(category == null || category.equals("")) {
+			productList = pDao.getListWithPaging(pageNum, amount, type);
+		} else {
+			productList = pDao.getListWithPaging(pageNum, amount, type, category);
+		}
+		
+		
+		ProductPictureDAO ppDao = ProductPictureDAO.getInstance();
+		List<ProductPictureVO> pictureList = ppDao.selectAllPictures();
+		
 
+		request.setAttribute("type", type);
+		request.setAttribute("category", category);
+		request.setAttribute("pageVO", pageVO);
+		request.setAttribute("productList", productList);
+		request.setAttribute("pictureList", pictureList);
+		
+
+		// dispatcher
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
 	}

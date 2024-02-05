@@ -177,21 +177,25 @@
 			</div>
 		</c:if>
 
-		<ul id="prod_page_no">
-			<li>&lt;&lt;</li>
-			<li>&lt;</li>
-			<li>1</li>
-			<li>2</li>
-			<li>3</li>
-			<li>4</li>
-			<li>5</li>
-			<li>6</li>
-			<li>7</li>
-			<li>8</li>
-			<li>9</li>
-			<li>&gt;</li>
-			<li>&gt;&gt;</li>
-		</ul>
+		<div class='pull-right'>
+			<ul class="pagination">
+				<c:if test="${pageVO.prev }">
+					<li class="paginate_button previous"><a
+						href="ProductServlet?command=recommend&pageNum=${pageVO.startPage -1}&amount=${pageVO.amount}&shape=${shape}">Previous</a></li>
+				</c:if>
+				<c:forEach var="num" begin="${pageVO.startPage}" end="${pageVO.endPage}">
+					<li class="paginate_button ${PageVO.pageNum eq num ? 'active' : ''}">
+						<a href="ProductServlet?command=recommend&pageNum=${num}&amount=${pageVO.amount}&shape=${shape}">${num}</a>
+					</li>
+				</c:forEach>
+
+				<c:if test="${pageVO.next}">
+					<li class="paginate_button next"><a href="ProductServlet?command=recommend&pageNum=${pageVO.startPage +1}&amount=${pageVO.amount}&shape=${shape}">Next</a></li>
+				</c:if>
+			</ul>
+
+		</div>
+		<!--  end pull-right -->
 	</div>
 
 	<%@ include file="../common/footer.jsp"%>

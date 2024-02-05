@@ -3,6 +3,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <c:set var = "userid" value = "${mVo.id}"/>
+<style>
+	#slideMenu_left a {
+		text-decoration: none
+	}
+</style>
 <header>
 	<div id="top_menu">
 
@@ -78,64 +83,76 @@
 			<div>
 				<h4>OUTER</h4>
 				<ul>
-					<li>자켓</li>
-					<li>코드</li>
-					<li>점퍼</li>
-					<li>가디건</li>
-					<li>패딩</li>
+					<li id="1st_category"><a style="color: rgb(34, 34, 34)"
+						href="ProductServlet?command=Product_list&type=OUTER&category=Jacket">&nbsp;&nbsp;자켓&nbsp;&nbsp;</a></li>
+					<li id="2nd_category"><a style="color: rgb(34, 34, 34)"
+						href="ProductServlet?command=Product_list&type=OUTER&category=Coat">&nbsp;&nbsp;코트&nbsp;&nbsp;</a></li>
+					<li id="3rd_category"><a style="color: rgb(34, 34, 34)"
+						href="ProductServlet?command=Product_list&type=OUTER&category=Jumper">&nbsp;&nbsp;점퍼&nbsp;&nbsp;</a></li>
+					<li id="4th_category"><a style="color: rgb(34, 34, 34)"
+						href="ProductServlet?command=Product_list&type=OUTER&category=Cardigan">&nbsp;&nbsp;가디건&nbsp;&nbsp;</a></li>
+					<li id="5th_category"><a style="color: rgb(34, 34, 34)"
+						href="ProductServlet?command=Product_list&type=OUTER&category=Padding">&nbsp;&nbsp;패딩&nbsp;&nbsp;</a></li>
 				</ul>
 				<Br>
 				<h4>TOP</h4>
 				<ul>
-					<li>티셔츠</li>
-					<li>후드/맨투맨</li>
-					<li>니트</li>
-					<li>민소매</li>
+					<li id="1st_category"><a style="color: rgb(34, 34, 34)"
+						href="ProductServlet?command=Product_list&type=TOP&category=T-Shirts">&nbsp;&nbsp;티셔츠&nbsp;&nbsp;</a></li>
+					<li id="2nd_category"><a style="color: rgb(34, 34, 34)"
+						href="ProductServlet?command=Product_list&type=TOP&category=Hood">&nbsp;&nbsp;후드&nbsp;&nbsp;</a></li>
+					<li id="3rd_category"><a style="color: rgb(34, 34, 34)"
+						href="ProductServlet?command=Product_list&type=TOP&category=MANtoMAN">&nbsp;&nbsp;맨투맨&nbsp;&nbsp;</a></li>
+					<li id="4th_category"><a style="color: rgb(34, 34, 34)"
+						href="ProductServlet?command=Product_list&type=TOP&category=Knitted">&nbsp;&nbsp;니트&nbsp;&nbsp;</a></li>
+					<li id="5th_category"><a style="color: rgb(34, 34, 34)"
+						href="ProductServlet?command=Product_list&type=TOP&category=Sleeveless">&nbsp;&nbsp;민소매&nbsp;&nbsp;</a></li>
+					<li id="6th_category"><a style="color: rgb(34, 34, 34)"
+						href="ProductServlet?command=Product_list&type=TOP&category=Blouse">&nbsp;&nbsp;블라우스&nbsp;&nbsp;</a></li>
+					<li id="7th_category"><a style="color: rgb(34, 34, 34)"
+						href="ProductServlet?command=Product_list&type=TOP&category=Shirts">&nbsp;&nbsp;셔츠&nbsp;&nbsp;</a></li>
 				</ul>
 			</div>
 
 			<div>
-				<h4>SHIRT/BLOUSE</h4>
-				<ul>
-					<li>무지</li>
-					<li>패턴</li>
-					<li>리본/타이</li>
-					<li>오프숄더</li>
-					<li>레이스</li>
-				</ul>
-				<br>
+	
 				<h4>PANTS</h4>
 				<ul>
-					<li>데님</li>
-					<li>슬렉스</li>
-					<li>린넨</li>
-					<li>반바지</li>
-					<li>점프수트</li>
+					<li id="1st_category"><a style="color: rgb(34, 34, 34)"
+						href="ProductServlet?command=Product_list&type=PANTS&category=Denim">&nbsp;&nbsp;데님&nbsp;&nbsp;</a></li>
+					<li id="2nd_category"><a style="color: rgb(34, 34, 34)"
+						href="ProductServlet?command=Product_list&type=PANTS&category=Slacks">&nbsp;&nbsp;슬랙스&nbsp;&nbsp;</a></li>
+					<li id="3rd_category"><a style="color: rgb(34, 34, 34)"
+						href="ProductServlet?command=Product_list&type=PANTS&category=Linen">&nbsp;&nbsp;리넨&nbsp;&nbsp;</a></li>
+					<li id="4td_category"><a style="color: rgb(34, 34, 34)"
+						href="ProductServlet?command=Product_list&type=PANTS&category=Short">&nbsp;&nbsp;숏&nbsp;&nbsp;</a></li>
 				</ul>
 			</div>
 
 			<div>
 				<h4>SKIRT</h4>
 				<ul>
-					<li>미니</li>
-					<li>미디</li>
-					<li>롱</li>
-					<li>H라인</li>
-					<li>A라인</li>
-					<li>플리츠</li>
-					<li>머메이드</li>
+					<li id="1st_category"><a style="color: rgb(34, 34, 34)"
+						href="ProductServlet?command=Product_list&type=SKIRT&category=Mini">&nbsp;&nbsp;미니&nbsp;&nbsp;</a></li>
+					<li id="2nd_category"><a style="color: rgb(34, 34, 34)"
+						href="ProductServlet?command=Product_list&type=SKIRT&category=Medium">&nbsp;&nbsp;미디움&nbsp;&nbsp;</a></li>
+					<li id="3rd_category"><a style="color: rgb(34, 34, 34)"
+						href="ProductServlet?command=Product_list&type=SKIRT&category=Long">&nbsp;&nbsp;롱&nbsp;&nbsp;</a></li>
 				</ul>
 			</div>
 			<div>
 				<h4>ONEPIECE</h4>
 				<ul>
-					<li>미니</li>
-					<li>미디</li>
-					<li>롱</li>
-					<li>H라인</li>
-					<li>A라인</li>
-					<li>투피스</li>
-					<li>플레어</li>
+					<li id="1st_category"><a style="color: rgb(34, 34, 34)"
+						href="ProductServlet?command=Product_list&type=ONEPIECE&category=Mini">&nbsp;&nbsp;미니&nbsp;&nbsp;</a></li>
+					<li id="2nd_category"><a style="color: rgb(34, 34, 34)"
+						href="ProductServlet?command=Product_list&type=ONEPIECE&category=Medium">&nbsp;&nbsp;미디움&nbsp;&nbsp;</a></li>
+					<li id="3rd_category"><a style="color: rgb(34, 34, 34)"
+						href="ProductServlet?command=Product_list&type=ONEPIECE&category=Long">&nbsp;&nbsp;롱&nbsp;&nbsp;</a></li>
+					<li id="4th_category"><a style="color: rgb(34, 34, 34)"
+						href="ProductServlet?command=Product_list&type=ONEPIECE&category=JumpSuits">&nbsp;&nbsp;점프수트&nbsp;&nbsp;</a></li>
+					<li id="5th_category"><a style="color: rgb(34, 34, 34)"
+						href="ProductServlet?command=Product_list&type=ONEPIECE&category=TwoPeice">&nbsp;&nbsp;투피스&nbsp;&nbsp;</a></li>
 				</ul>
 			</div>
 		</div>
@@ -143,21 +160,13 @@
 		<div id="slideMenu_right">
 			<h2>체형 카테고리</h2>
 			<ul>
-				<li><img src="img/역삼각형.png"><br>역삼각형</li>
-				<li><img src="img/사각형.png"><br>사각형</li>
-				<li><img src="img/삼각형.png"><br>삼각형</li>
-				<li><img src="img/둥근형.png"><br>둥근형</li>
-				<li><img src="img/모래시계형.png"><br>모래시계형</li>
+				<li><img src="img/역삼각형.png"><br><a href="ProductServlet?command=recommend&shape=InvertedTriangle">역삼각형</a></li>
+				<li><img src="img/사각형.png"><br><a href="ProductServlet?command=recommend&shape=Rectangle">사각형</a></li>
+				<li><img src="img/삼각형.png"><br><a href="ProductServlet?command=recommend&shape=Triangle">삼각형</a></li>
+				<li><img src="img/둥근형.png"><br><a href="ProductServlet?command=recommend&shape=Circle">둥근형</a></li>
+				<li><img src="img/모래시계형.png"><br><a href="ProductServlet?command=recommend&shape=Hourglass">모래시계형</a></li>
 			</ul>
-			<div id="mapa">
-				<h4>마이페이지</h4>
-				<ul>
-					<li>배송조회</li>
-					<li>주문내역</li>
-					<li>장바구니</li>
-					<li>포인트</li>
-				</ul>
-			</div>
+
 			<div id="nusa">
 				<h4>너의 사이즈는...?</h4>
 				<ul>

@@ -20,50 +20,9 @@ public class ProductDAO {
 	public static ProductDAO getInstance() {
 		return instance;
 	}
-//	public List<ProductVO> getListWithPaging(Criteria cri) {
-//		String sql = "select * from ("
-//				+ "select * from (select rownum rn, p_id, p_type, p_category, p_name, p_price, p_date, p_color_01, p_color_02, p_color_03, p_color_04, p_color_05, p_color_06, p_color_07, p_color_08, p_color_09, p_color_10 from product order by p_date desc)"
-//				+ " where rownum <= ? * 12)"
-//				+ " where rn > (?-1)*12";
-//		List<ProductVO> list = new ArrayList<ProductVO>();
-//		Connection conn = null;
-//		PreparedStatement pstmt = null;
-//		ResultSet rs = null;
-//		try {
-//			conn = DBManager.getConnection();
-//			pstmt = conn.prepareStatement(sql);
-//			pstmt.setInt(1, cri.getPageNum());
-//			pstmt.setInt(2, cri.getPageNum());
-//			rs = pstmt.executeQuery();
-//			while (rs.next()) {
-//				ProductVO pVo = new ProductVO();
-//				pVo.setid(rs.getString("P_ID"));
-//				pVo.settype(rs.getString("P_TYPE"));
-//				pVo.setcategory(rs.getString("P_CATEGORY"));
-//				pVo.setname(rs.getString("P_NAME"));
-//				pVo.setprice(rs.getInt("P_PRICE"));
-//				pVo.setcolor_01(rs.getString("P_COLOR_01"));
-//				pVo.setcolor_02(rs.getString("P_COLOR_02"));
-//				pVo.setcolor_03(rs.getString("P_COLOR_03"));
-//				pVo.setcolor_04(rs.getString("P_COLOR_04"));
-//				pVo.setcolor_05(rs.getString("P_COLOR_05"));
-//				pVo.setcolor_06(rs.getString("P_COLOR_06"));
-//				pVo.setcolor_07(rs.getString("P_COLOR_07"));
-//				pVo.setcolor_08(rs.getString("P_COLOR_08"));
-//				pVo.setcolor_09(rs.getString("P_COLOR_09"));
-//				pVo.setcolor_10(rs.getString("P_COLOR_10"));
-//				list.add(pVo);
-//			}
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		} finally {
-//			DBManager.close(conn, pstmt, rs);
-//		}
-//		return list;
-//	}
 
 	public List<ProductVO> selectAllProducts() {
-		String sql = "SELECT * FROM PRODUCT ORDER BY P_ID";
+		String sql = "SELECT * FROM PRODUCT ORDER BY P_ID desc";
 		List<ProductVO> list = new ArrayList<ProductVO>();
 		Connection conn = null;
 		Statement stmt = null;
@@ -131,6 +90,273 @@ public class ProductDAO {
 		return list;
 	}
 
+	public List<ProductVO> getListWithPaging(int pageNum, int amount) {
+		String sql = "select * from "
+				+ "(select rownum rn, a.* from (SELECT * FROM PRODUCT ORDER BY P_ID desc) a) "
+				+ "where rn > ? and rn <= ?";
+		System.out.println(sql);
+		List<ProductVO> list = new ArrayList<ProductVO>();
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, (pageNum - 1) * amount);
+			pstmt.setInt(2, pageNum * amount);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				ProductVO pVo = new ProductVO();
+				pVo.setid(rs.getString("P_ID"));
+				pVo.settype(rs.getString("P_TYPE"));
+				pVo.setcategory(rs.getString("P_CATEGORY"));
+				pVo.setname(rs.getString("P_NAME"));
+				pVo.setprice(rs.getInt("P_PRICE"));
+				pVo.setdescription(rs.getString("P_DESCRIPTION"));
+				pVo.setfabric(rs.getString("P_FABRIC"));
+				pVo.setcleaning(rs.getString("P_CLEANING"));
+				pVo.setdate(rs.getTimestamp("P_DATE"));
+				pVo.setshape(rs.getString("P_SHAPE"));
+				pVo.setcolor_01(rs.getString("P_COLOR_01"));
+				pVo.setcolor_02(rs.getString("P_COLOR_02"));
+				pVo.setcolor_03(rs.getString("P_COLOR_03"));
+				pVo.setcolor_04(rs.getString("P_COLOR_04"));
+				pVo.setcolor_05(rs.getString("P_COLOR_05"));
+				pVo.setcolor_06(rs.getString("P_COLOR_06"));
+				pVo.setcolor_07(rs.getString("P_COLOR_07"));
+				pVo.setcolor_08(rs.getString("P_COLOR_08"));
+				pVo.setcolor_09(rs.getString("P_COLOR_09"));
+				pVo.setcolor_10(rs.getString("P_COLOR_10"));
+				pVo.setsize_01(rs.getString("P_SIZE_01"));
+				pVo.setsize_02(rs.getString("P_SIZE_02"));
+				pVo.setsize_03(rs.getString("P_SIZE_03"));
+				pVo.setsize_04(rs.getString("P_SIZE_04"));
+				pVo.setsize_05(rs.getString("P_SIZE_05"));
+				pVo.setsize_06(rs.getString("P_SIZE_06"));
+				pVo.setsize_07(rs.getString("P_SIZE_07"));
+				pVo.setsize_08(rs.getString("P_SIZE_08"));
+				pVo.setsize_09(rs.getString("P_SIZE_09"));
+				pVo.setsize_10(rs.getString("P_SIZE_10"));
+				pVo.setoption_01(rs.getString("P_OPTION_01"));
+				pVo.setoption_02(rs.getString("P_OPTION_02"));
+				pVo.setoption_03(rs.getString("P_OPTION_03"));
+				pVo.setoption_04(rs.getString("P_OPTION_04"));
+				pVo.setoption_05(rs.getString("P_OPTION_05"));
+				pVo.setoption_06(rs.getString("P_OPTION_06"));
+				pVo.setoption_07(rs.getString("P_OPTION_07"));
+				pVo.setoption_08(rs.getString("P_OPTION_08"));
+				pVo.setoption_09(rs.getString("P_OPTION_09"));
+				pVo.setoption_10(rs.getString("P_OPTION_10"));
+
+				pVo.setCompany(rs.getString("COMPANY"));
+				pVo.setCountry(rs.getString("COUNTRY"));
+				pVo.setWarranty(rs.getString("WARRANTY"));
+				pVo.setAs(rs.getString("A_S"));
+
+				list.add(pVo);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(conn, pstmt, rs);
+		}
+
+		return list;
+	}
+	
+	public List<ProductVO> getListWithPaging(int pageNum, int amount, String type) {
+		String sql = "select * from "
+				+ "(select rownum rn, a.* from (SELECT * FROM PRODUCT WHERE P_TYPE='" + type
+				+ "' ORDER BY P_ID desc) a) "
+				+ "where rn > ? and rn <= ?";
+		System.out.println(sql);
+		List<ProductVO> list = new ArrayList<ProductVO>();
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, (pageNum - 1) * amount);
+			pstmt.setInt(2, pageNum * amount);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				ProductVO pVo = new ProductVO();
+				pVo.setid(rs.getString("P_ID"));
+				pVo.settype(rs.getString("P_TYPE"));
+				pVo.setcategory(rs.getString("P_CATEGORY"));
+				pVo.setname(rs.getString("P_NAME"));
+				pVo.setprice(rs.getInt("P_PRICE"));
+				pVo.setdescription(rs.getString("P_DESCRIPTION"));
+				pVo.setfabric(rs.getString("P_FABRIC"));
+				pVo.setcleaning(rs.getString("P_CLEANING"));
+				pVo.setdate(rs.getTimestamp("P_DATE"));
+				pVo.setshape(rs.getString("P_SHAPE"));
+				pVo.setcolor_01(rs.getString("P_COLOR_01"));
+				pVo.setcolor_02(rs.getString("P_COLOR_02"));
+				pVo.setcolor_03(rs.getString("P_COLOR_03"));
+				pVo.setcolor_04(rs.getString("P_COLOR_04"));
+				pVo.setcolor_05(rs.getString("P_COLOR_05"));
+				pVo.setcolor_06(rs.getString("P_COLOR_06"));
+				pVo.setcolor_07(rs.getString("P_COLOR_07"));
+				pVo.setcolor_08(rs.getString("P_COLOR_08"));
+				pVo.setcolor_09(rs.getString("P_COLOR_09"));
+				pVo.setcolor_10(rs.getString("P_COLOR_10"));
+				pVo.setsize_01(rs.getString("P_SIZE_01"));
+				pVo.setsize_02(rs.getString("P_SIZE_02"));
+				pVo.setsize_03(rs.getString("P_SIZE_03"));
+				pVo.setsize_04(rs.getString("P_SIZE_04"));
+				pVo.setsize_05(rs.getString("P_SIZE_05"));
+				pVo.setsize_06(rs.getString("P_SIZE_06"));
+				pVo.setsize_07(rs.getString("P_SIZE_07"));
+				pVo.setsize_08(rs.getString("P_SIZE_08"));
+				pVo.setsize_09(rs.getString("P_SIZE_09"));
+				pVo.setsize_10(rs.getString("P_SIZE_10"));
+				pVo.setoption_01(rs.getString("P_OPTION_01"));
+				pVo.setoption_02(rs.getString("P_OPTION_02"));
+				pVo.setoption_03(rs.getString("P_OPTION_03"));
+				pVo.setoption_04(rs.getString("P_OPTION_04"));
+				pVo.setoption_05(rs.getString("P_OPTION_05"));
+				pVo.setoption_06(rs.getString("P_OPTION_06"));
+				pVo.setoption_07(rs.getString("P_OPTION_07"));
+				pVo.setoption_08(rs.getString("P_OPTION_08"));
+				pVo.setoption_09(rs.getString("P_OPTION_09"));
+				pVo.setoption_10(rs.getString("P_OPTION_10"));
+
+				pVo.setCompany(rs.getString("COMPANY"));
+				pVo.setCountry(rs.getString("COUNTRY"));
+				pVo.setWarranty(rs.getString("WARRANTY"));
+				pVo.setAs(rs.getString("A_S"));
+
+				list.add(pVo);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(conn, pstmt, rs);
+		}
+
+		return list;
+	}
+	public List<ProductVO> getListWithPaging(int pageNum, int amount, String type, String category) {
+		String sql = "select * from "
+				+ "(select rownum rn, a.* from (SELECT * FROM PRODUCT WHERE P_TYPE='" + type
+				+ "'AND P_CATEGORY='" + category
+				+ "' ORDER BY P_ID desc) a) "
+				+ "where rn > ? and rn <= ?";
+		System.out.println(sql);
+		List<ProductVO> list = new ArrayList<ProductVO>();
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, (pageNum - 1) * amount);
+			pstmt.setInt(2, pageNum * amount);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				ProductVO pVo = new ProductVO();
+				pVo.setid(rs.getString("P_ID"));
+				pVo.settype(rs.getString("P_TYPE"));
+				pVo.setcategory(rs.getString("P_CATEGORY"));
+				pVo.setname(rs.getString("P_NAME"));
+				pVo.setprice(rs.getInt("P_PRICE"));
+				pVo.setdescription(rs.getString("P_DESCRIPTION"));
+				pVo.setfabric(rs.getString("P_FABRIC"));
+				pVo.setcleaning(rs.getString("P_CLEANING"));
+				pVo.setdate(rs.getTimestamp("P_DATE"));
+				pVo.setshape(rs.getString("P_SHAPE"));
+				pVo.setcolor_01(rs.getString("P_COLOR_01"));
+				pVo.setcolor_02(rs.getString("P_COLOR_02"));
+				pVo.setcolor_03(rs.getString("P_COLOR_03"));
+				pVo.setcolor_04(rs.getString("P_COLOR_04"));
+				pVo.setcolor_05(rs.getString("P_COLOR_05"));
+				pVo.setcolor_06(rs.getString("P_COLOR_06"));
+				pVo.setcolor_07(rs.getString("P_COLOR_07"));
+				pVo.setcolor_08(rs.getString("P_COLOR_08"));
+				pVo.setcolor_09(rs.getString("P_COLOR_09"));
+				pVo.setcolor_10(rs.getString("P_COLOR_10"));
+				pVo.setsize_01(rs.getString("P_SIZE_01"));
+				pVo.setsize_02(rs.getString("P_SIZE_02"));
+				pVo.setsize_03(rs.getString("P_SIZE_03"));
+				pVo.setsize_04(rs.getString("P_SIZE_04"));
+				pVo.setsize_05(rs.getString("P_SIZE_05"));
+				pVo.setsize_06(rs.getString("P_SIZE_06"));
+				pVo.setsize_07(rs.getString("P_SIZE_07"));
+				pVo.setsize_08(rs.getString("P_SIZE_08"));
+				pVo.setsize_09(rs.getString("P_SIZE_09"));
+				pVo.setsize_10(rs.getString("P_SIZE_10"));
+				pVo.setoption_01(rs.getString("P_OPTION_01"));
+				pVo.setoption_02(rs.getString("P_OPTION_02"));
+				pVo.setoption_03(rs.getString("P_OPTION_03"));
+				pVo.setoption_04(rs.getString("P_OPTION_04"));
+				pVo.setoption_05(rs.getString("P_OPTION_05"));
+				pVo.setoption_06(rs.getString("P_OPTION_06"));
+				pVo.setoption_07(rs.getString("P_OPTION_07"));
+				pVo.setoption_08(rs.getString("P_OPTION_08"));
+				pVo.setoption_09(rs.getString("P_OPTION_09"));
+				pVo.setoption_10(rs.getString("P_OPTION_10"));
+
+				pVo.setCompany(rs.getString("COMPANY"));
+				pVo.setCountry(rs.getString("COUNTRY"));
+				pVo.setWarranty(rs.getString("WARRANTY"));
+				pVo.setAs(rs.getString("A_S"));
+
+				list.add(pVo);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(conn, pstmt, rs);
+		}
+
+		return list;
+	}
+	public List<ProductVO> recommendListWithPaging(int pageNum, int amount, String shape) {
+		String sql = "select * from "
+				+ "(select rownum rn, a.* from (SELECT * FROM PRODUCT WHERE P_SHAPE='" + shape
+				+ "' ORDER BY P_ID desc) a) "
+				+ "where rn > ? and rn <= ?";
+		System.out.println(sql);
+		List<ProductVO> list = new ArrayList<ProductVO>();
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, (pageNum - 1) * amount);
+			pstmt.setInt(2, pageNum * amount);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				ProductVO pVo = new ProductVO();
+				pVo = new ProductVO();
+				pVo.setid(rs.getString("P_ID"));
+				pVo.setname(rs.getString("P_NAME"));
+				pVo.setprice(rs.getInt("P_PRICE"));
+				pVo.setcolor_01(rs.getString("P_COLOR_01"));
+				pVo.setcolor_02(rs.getString("P_COLOR_02"));
+				pVo.setcolor_03(rs.getString("P_COLOR_03"));
+				pVo.setcolor_04(rs.getString("P_COLOR_04"));
+				pVo.setcolor_05(rs.getString("P_COLOR_05"));
+				pVo.setcolor_06(rs.getString("P_COLOR_06"));
+				pVo.setcolor_07(rs.getString("P_COLOR_07"));
+				pVo.setcolor_08(rs.getString("P_COLOR_08"));
+				pVo.setcolor_09(rs.getString("P_COLOR_09"));
+				pVo.setcolor_10(rs.getString("P_COLOR_10"));
+
+				list.add(pVo);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(conn, pstmt, rs);
+		}
+
+		return list;
+	}
+	
 	@SuppressWarnings("P_resource")
 	public void insertProduct(ProductVO pVo) {
 		String sql01 = "SELECT CODE FROM PRODUCT_CODE WHERE TYPE_NAME=? AND CATE_NAME=?";
@@ -443,11 +669,13 @@ public class ProductDAO {
 		return result;
 	}
 
-	public List<ProductVO> headerSearch(String word) {
-		String sql = "SELECT * FROM PRODUCT " + "where P_NAME LIKE '%" + word + "%' " + "or P_TYPE LIKE '%" + word
-				+ "%' " + "or P_CATEGORY LIKE '%" + word + "%' " + "or P_DESCRIPTION LIKE '%" + word + "%' "
-				+ "or P_FABRIC LIKE '%" + word + "%' ";
-		List<ProductVO> list = new ArrayList<ProductVO>();
+	public int headerSearchSize(String keyword) {
+		int size = 0;
+		String sql = "SELECT P_ID FROM PRODUCT " + "where P_NAME LIKE '%" + keyword + "%' " + "or P_TYPE LIKE '%" + keyword
+				+ "%' " + "or P_CATEGORY LIKE '%" + keyword + "%' " + "or P_DESCRIPTION LIKE '%" + keyword + "%' "
+				+ "or P_FABRIC LIKE '%" + keyword + "%' ";
+		System.out.println(sql);
+		
 		Connection conn = null;
 		Statement stmt = null;
 		ResultSet rs = null;
@@ -455,20 +683,46 @@ public class ProductDAO {
 			conn = DBManager.getConnection();
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
+			
+			while (rs.next()) {
+				size++ ;
+				System.out.println(rs.getString("P_ID"));
+			}
+			System.out.println(size);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(conn, stmt, rs);
+		}
+
+		return size;
+	}
+	public List<ProductVO> headerSearch(int pageNum, int amount, String word) {
+		String sql = "select * from "
+				+ "(select rownum rn, a.* from (SELECT * FROM PRODUCT " 
+				+ "where P_NAME LIKE '%" + word + "%' " + "or P_TYPE LIKE '%" + word
+				+ "%' " + "or P_CATEGORY LIKE '%" + word + "%' " + "or P_DESCRIPTION LIKE '%" + word + "%' "
+				+ "or P_FABRIC LIKE '%" + word + "%' "
+				+ "ORDER BY P_ID desc) a) "
+				+ "where rn > ? and rn <= ?";
+		System.out.println(sql);
+		List<ProductVO> list = new ArrayList<ProductVO>();
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, (pageNum - 1) * amount);
+			pstmt.setInt(2, pageNum * amount);
+			rs = pstmt.executeQuery();
 			System.out.println(sql);
 			while (rs.next()) {
 				System.out.println(rs.getString("P_NAME"));
 				ProductVO pVo = new ProductVO();
 				pVo.setid(rs.getString("P_ID"));
-				pVo.settype(rs.getString("P_TYPE"));
-				pVo.setcategory(rs.getString("P_CATEGORY"));
 				pVo.setname(rs.getString("P_NAME"));
 				pVo.setprice(rs.getInt("P_PRICE"));
-				pVo.setdescription(rs.getString("P_DESCRIPTION"));
-				pVo.setfabric(rs.getString("P_FABRIC"));
-				pVo.setcleaning(rs.getString("P_CLEANING"));
-				pVo.setdate(rs.getTimestamp("P_DATE"));
-				pVo.setshape(rs.getString("P_SHAPE"));
 				pVo.setcolor_01(rs.getString("P_COLOR_01"));
 				pVo.setcolor_02(rs.getString("P_COLOR_02"));
 				pVo.setcolor_03(rs.getString("P_COLOR_03"));
@@ -479,37 +733,12 @@ public class ProductDAO {
 				pVo.setcolor_08(rs.getString("P_COLOR_08"));
 				pVo.setcolor_09(rs.getString("P_COLOR_09"));
 				pVo.setcolor_10(rs.getString("P_COLOR_10"));
-				pVo.setsize_01(rs.getString("P_SIZE_01"));
-				pVo.setsize_02(rs.getString("P_SIZE_02"));
-				pVo.setsize_03(rs.getString("P_SIZE_03"));
-				pVo.setsize_04(rs.getString("P_SIZE_04"));
-				pVo.setsize_05(rs.getString("P_SIZE_05"));
-				pVo.setsize_06(rs.getString("P_SIZE_06"));
-				pVo.setsize_07(rs.getString("P_SIZE_07"));
-				pVo.setsize_08(rs.getString("P_SIZE_08"));
-				pVo.setsize_09(rs.getString("P_SIZE_09"));
-				pVo.setsize_10(rs.getString("P_SIZE_10"));
-				pVo.setoption_01(rs.getString("P_OPTION_01"));
-				pVo.setoption_02(rs.getString("P_OPTION_02"));
-				pVo.setoption_03(rs.getString("P_OPTION_03"));
-				pVo.setoption_04(rs.getString("P_OPTION_04"));
-				pVo.setoption_05(rs.getString("P_OPTION_05"));
-				pVo.setoption_06(rs.getString("P_OPTION_06"));
-				pVo.setoption_07(rs.getString("P_OPTION_07"));
-				pVo.setoption_08(rs.getString("P_OPTION_08"));
-				pVo.setoption_09(rs.getString("P_OPTION_09"));
-				pVo.setoption_10(rs.getString("P_OPTION_10"));
-				pVo.setCompany(rs.getString("COMPANY"));
-				pVo.setCountry(rs.getString("COUNTRY"));
-				pVo.setWarranty(rs.getString("WARRANTY"));
-				pVo.setAs(rs.getString("A_S"));
-
 				list.add(pVo);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			DBManager.close(conn, stmt, rs);
+			DBManager.close(conn, pstmt, rs);
 		}
 
 		return list;
@@ -702,15 +931,8 @@ public class ProductDAO {
 			while (rs.next()) {
 				pVo = new ProductVO();
 				pVo.setid(rs.getString("P_ID"));
-//				pVo.settype(rs.getString("P_TYPE"));
-//				pVo.setcategory(rs.getString("P_CATEGORY"));
 				pVo.setname(rs.getString("P_NAME"));
 				pVo.setprice(rs.getInt("P_PRICE"));
-//				pVo.setdescription(rs.getString("P_DESCRIPTION"));
-//				pVo.setfabric(rs.getString("P_FABRIC"));
-//				pVo.setcleaning(rs.getString("P_CLEANING"));
-//				pVo.setdate(rs.getTimestamp("P_DATE"));
-//				pVo.setshape(rs.getString("P_SHAPE"));
 				pVo.setcolor_01(rs.getString("P_COLOR_01"));
 				pVo.setcolor_02(rs.getString("P_COLOR_02"));
 				pVo.setcolor_03(rs.getString("P_COLOR_03"));
@@ -721,30 +943,7 @@ public class ProductDAO {
 				pVo.setcolor_08(rs.getString("P_COLOR_08"));
 				pVo.setcolor_09(rs.getString("P_COLOR_09"));
 				pVo.setcolor_10(rs.getString("P_COLOR_10"));
-//				pVo.setsize_01(rs.getString("P_SIZE_01"));
-//				pVo.setsize_02(rs.getString("P_SIZE_02"));
-//				pVo.setsize_03(rs.getString("P_SIZE_03"));
-//				pVo.setsize_04(rs.getString("P_SIZE_04"));
-//				pVo.setsize_05(rs.getString("P_SIZE_05"));
-//				pVo.setsize_06(rs.getString("P_SIZE_06"));
-//				pVo.setsize_07(rs.getString("P_SIZE_07"));
-//				pVo.setsize_08(rs.getString("P_SIZE_08"));
-//				pVo.setsize_09(rs.getString("P_SIZE_09"));
-//				pVo.setsize_10(rs.getString("P_SIZE_10"));
-//				pVo.setoption_01(rs.getString("P_OPTION_01"));
-//				pVo.setoption_02(rs.getString("P_OPTION_02"));
-//				pVo.setoption_03(rs.getString("P_OPTION_03"));
-//				pVo.setoption_04(rs.getString("P_OPTION_04"));
-//				pVo.setoption_05(rs.getString("P_OPTION_05"));
-//				pVo.setoption_06(rs.getString("P_OPTION_06"));
-//				pVo.setoption_07(rs.getString("P_OPTION_07"));
-//				pVo.setoption_08(rs.getString("P_OPTION_08"));
-//				pVo.setoption_09(rs.getString("P_OPTION_09"));
-//				pVo.setoption_10(rs.getString("P_OPTION_10"));
-//				pVo.setCompany(rs.getString("COMPANY"));
-//				pVo.setCountry(rs.getString("COUNTRY"));
-//				pVo.setWarranty(rs.getString("WARRANTY"));
-//				pVo.setAs(rs.getString("A_S"));
+
 				list.add(pVo);
 
 			}
@@ -756,5 +955,7 @@ public class ProductDAO {
 
 		return list;
 	}
+
+
 
 }
