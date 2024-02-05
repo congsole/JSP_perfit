@@ -1,0 +1,313 @@
+body {
+    width: 100%;
+    margin:0 auto;
+    font-family: '경기천년제목 Light';
+}
+.payment-main {
+    width: 1200px;
+    margin: auto;
+    margin-top: 50px;
+}
+.payment-main h2 {
+    text-align: center;
+}
+
+.payment-items {
+    border-collapse: collapse;
+    text-align: center;
+    margin: auto;
+    width: 800px;
+}
+
+.payment-items #tablehead{
+    background-color: rgb(210,124,125);
+    color: rgb(246,246,246);
+}
+.payment-items th {
+    border-left-color: rgb(210, 124, 125);
+    border-right-color: rgb(210, 124, 125);
+}
+.payment-items td {
+    border-top-color:#ffffff;
+    border-bottom-color: rgb(210, 124, 125);
+    border-left-color: #ffffff;
+    border-right-color: #ffffff;
+}
+
+.payment-items .tablebody{
+    height: 80px;
+}
+/* ìƒí’ˆ í‘œ */
+.tablebody img {
+    max-height: 80px;
+}
+
+.tablebody #goodsorderdate {
+    width: 150px;
+}
+
+.tablebody #goodsimg {
+    width: 155px;
+}
+
+.tablebody #goodsinfo {
+    width: 300px;
+}
+
+.tablebody #goodsamount {
+    width: 100px;
+}
+
+.tablebody #goodsprice {
+    width: 110px;
+}
+
+.tablebody #goodspoint {
+    width: 110px;
+}
+
+.tablebody p {
+    line-height: 12px;
+}
+
+#point-accp {
+    font-size: 15px;
+    color: red;
+}
+
+
+/* ê°€ê²© ê³„ì‚° */
+.price-calc {
+    width: 500px;
+    height: 100px;
+    border: 1px solid rgb(34,34,34) ;
+    border-radius: 10px;
+    background-color: rgb(139,151,141);
+    margin: auto;
+    margin-top: 30px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+}
+.price-calc .icon img {
+    float: left;
+    margin-top: 30px;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: rgb(246,246,246);
+}
+
+.price-calc .price-calc-thumb {
+    background-color: rgb(210,124,125);
+    color: rgb(246,246,246);
+    margin: auto;
+    height: 30px;
+}
+
+.price-calc .price-calc-thumb p {
+    margin: 0;
+    line-height: 30px;
+}
+
+.price-calc .price-calc-target {
+    width: 120px;
+    height: 80px;
+    border: 1px solid rgb(34,34,34) ;
+    background-color: rgb(246,246,246);
+    float: left;
+    text-align: center;
+}
+#do {
+    text-align: center;
+}
+
+/* ì—¬ê¸°ì„œë¶€í„° ì£¼ë¬¸ìž ì •ë³´ */
+.user-info-input {
+    width: 1200px;
+    margin: auto;
+    margin-top: 40px;
+}
+.user-info-input h4{
+    text-align: center;
+    margin: 15px;
+}
+.order-user-info {
+    width: 800px;
+    height: 640px;
+    margin: auto;
+    padding: 30px;
+}
+#address_order,
+#address_delivery {
+    line-height: 30px;
+    float: left;
+    
+}
+fieldset {
+    background-color: rgb(246,246,246);
+}
+
+#address_order label,
+#address_delivery label{
+    width: 140px;
+    display: block;
+    float: left;
+    font-size: 15px;
+    margin-top: -4px;
+}
+#address_order input,
+#address_delivery input{
+    margin-bottom: 9px;
+}
+
+#zip-codebtn,
+#r_zip-codebtn {
+    width: 100px;
+    height: 25px;
+    border-color: rgb(34,34,34);
+    background-color: rgb(246,246,246);
+    color: rgb(210,124,125);
+    font-size: medium;
+    font-weight: bold;
+    font-family: '경기천년제목 Light';
+}
+.addresschk {
+    float: right;
+}
+
+/* ì—¬ê¸°ì„œë¶€í„´ í¬ì¸íŠ¸ ì •ë³´ */
+.point-info {
+    width: 1200px;
+    margin: auto;
+}
+.point-info h4{
+    text-align: center;
+}
+.point-calc {
+    border: 1px solid rgb(210,124,125);
+    background-color: rgb(246,246,246);
+    width: 600px;
+    height: 200px;
+    margin: auto;
+    line-height: 30px;
+    padding: 20px;
+    border-radius: 10px;
+}
+.point-calc label {
+    display: block;
+    float: left;
+    width: 120px;
+    margin-top: -6px;
+}
+.point-calc input {
+    margin-bottom: 9px;
+}
+.point-calc #coupon-searchbtn,
+.point-calc #point-searchbtn { 
+    width: 80px;
+    height: 25px;
+    border-color: rgb(34,34,34);
+    background-color: rgb(246,246,246);
+    color: rgb(210,124,125);
+    font-size: medium;
+    font-weight: bold;
+    font-family: '경기천년제목 Light';
+}
+
+/* ì—¬ê¸°ì„œë¶€í„° ê²°ì œ ìˆ˜ë‹¨ ì„ íƒ */
+
+.payment-with-main {
+    width: 1200px;
+    height: 650px;
+    margin: auto;
+}
+.payment-with-main h4{
+    text-align: center;
+}
+.payment-with {
+    width: 606px;
+    height: 484px;
+    border: 1px solid rgb(210,124,125);
+    background-color: rgb(246,246,246);
+    margin: auto;
+    display: flex;
+    flex-flow:row wrap;
+    text-align: center;
+}
+.payment-with .payment-icon {
+    width: 200px;
+    height: 160px;
+    border: 1px solid rgb(210,124,125);
+}
+.payment-with p {
+    font-weight: bold;
+}
+.payment-with .payment-icon img {
+    max-width: 140px;
+    max-height: 120px;
+    margin: auto;
+    display: block;
+}
+.deliveryinfo {
+    width: 600px;
+    margin: auto;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    font-size: 18px;
+    line-height: 30px;
+    border: 1px solid rgb(210,124,125);
+    background-color: rgb(246,246,246);
+    border-radius: 10px;
+    padding: 5px;
+}
+.deliveryinfo h4 {
+    text-align: center;
+    line-height: 20px;
+}
+.deliveryinfo label {
+    width : 100px;
+    display: block;
+    float: left;
+}
+.selected {
+	background-color: rgb(210,124,125);
+}
+.deliveryinfo-tbl {
+    margin:0 auto;
+    font-size: 15px;
+    line-height: 30px;
+    background-color: white;
+    border: 1px solid rgb(210,124,125);
+    border-radius: 10px;
+    margin-bottom: 18px;
+    width: 66%;
+}
+.deliveryinfo-tbl th {
+    font-size: 18px;
+}
+.line {
+    border-top: 1px solid rgb(210,124,125);
+}
+
+#paybtn {
+	text-align: center;
+	margin: auto;
+    margin-top: 30px;
+    width: 120px;
+    height: 60px;
+    font-weight: bold;
+    font-size: 15px;
+    color: rgb(210,124,125);
+    background-color: ;rgb(246,246,246);
+    border: 2px solid rgb(34,34,34);
+    border-radius: 10px;
+    cursor:pointer;
+}
+
+#paybtn:hover {
+    background-color: rgb(210,124,125);
+    color: rgb(246,246,246);
+}

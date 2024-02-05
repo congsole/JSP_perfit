@@ -1,0 +1,179 @@
+body{
+    font-family: 경기천년제목 light;
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+
+.ozpage{
+    box-sizing: border-box;
+    border-style:solid;
+   border-left: 10px;
+   border-right: 10px;
+    margin: 0 auto;
+    /* float: left; */
+    display: flex;
+    width: 70%;
+    /* border-top: ; */
+    border-top-color: #eeeeee;
+    border-bottom-color:  rgb(210,124,125);
+    background-color: #eeeeee;
+    border-radius: 20px;
+    /* border-color: rgb(210,124,125); */
+}
+.ozpage>#title{
+    width: 70%;
+    text-align: center;
+    padding-left: 10%;
+    font-size: 30px;
+}
+.ozpage>#date{
+    width: 15%;
+    text-align: right;
+    font-size: 30px;
+}
+.oztext{
+    box-sizing: content-box;
+    border-style: unset;
+    margin: 0 auto;
+    display: flex;
+    width: 70%;
+    font-size: 30px;
+    border-top: 1px;
+    /* text-align: center; */
+    background-color: #eeeeee;
+    border-color: rgb(210,124,125);
+    border-radius: 20px;
+}
+.oztext p{
+	padding-left:20px;
+}
+.pb{
+    width: 83%;
+    text-align: right;
+}
+#bt{
+    font-size: 30px;
+    border-radius: 10px;
+    /* border-style: none   ; */
+    border-color:rgb(210,124,125) ;
+    background-color:#eeeeee;
+    /* color: #ffffff; */
+    font-family: 경기천년제목 light;
+
+}
+.dow{
+    box-sizing: content-box;
+    border-style: solid;
+    border-color:rgb(210,124,125);
+    background-color: #eeeeee;
+    text-align: center;
+    font-size: 25px;
+    border-radius: 20px;
+    margin: 0 auto;
+    width:70%;
+    margin-bottom: 50px;
+    
+
+}
+.dow>#lin{
+    border-bottom-color: #000000;
+    border:1px;
+}
+a{
+    text-decoration-line: none;
+    color: inherit;
+}
+.wbttn{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    /* margin: 20px 10px; */
+    margin-left: 1380px;
+    width: 200px;
+    text-align: right;
+    /* background-color: #000000; */
+}
+.wbttn p {
+    /* margin: 10px; */
+    text-align: right;
+    width: 70%;
+    /* background: #000000; */
+    margin: 0 auto;
+   
+    
+}
+.pb>input{
+    font-size: 30px;
+    border-radius: 10px;
+    border-color:rgb(210,124,125) ;
+    font-family: 경기천년제목 light;
+}
+input[type="submit"] {
+    font-size: 30px;
+    border-radius: 10px;
+    border-color: rgb(210,124,125);
+    font-family: 경기천년제목 light;
+}
+#nfile{
+    border-style: solid;
+    border-color:rgb(210,124,125);
+    background-color: #eeeeee;
+    padding-left: 10px;
+    border-radius: 10px;
+    /* background-color: #eeeeee; */
+    width: 69%;
+    margin: 0 auto;
+    text-align: center;
+    /* margin-left: 440px; */
+}
+#nfile input{
+	width:80%;
+    margin: 10px;
+    /* margin-top: 40px; */
+    font-size: 20px;
+}
+
+.bf1{
+    width:200px;
+    box-sizing: content-box;
+    
+    border-top: rgb(210,124,125);
+    border-left: none;
+    border-right: none;
+}
+.bf2{
+    width: 900px;
+   
+    border-top: rgb(210,124,125);
+    border-left: none;
+    border-right: none;
+}
+.bf3{
+    width:300px;
+   
+    border-top: rgb(210,124,125);
+    border-left: none;
+    border-right: none;
+    
+    
+    
+}
+.af1{
+    width:200px;
+    
+}
+.af2{
+    width: 900px;
+    
+}
+.af3{
+    width:300px;
+   
+    
+    
+    
+}
