@@ -1,0 +1,97 @@
+body{
+    font-family:경기천년제목 light ;
+}
+
+h1{
+    padding-top: 50px;
+    display: block;
+    margin: 0 auto;
+    text-align:center;
+    
+
+}
+
+
+
+#bt{
+    font-size: 22px;
+    border-radius: 10px;
+    background-color: black;
+    color: #ffffff;
+    font-family: 경기천년제목 light;
+    
+}
+.grid{
+    padding-top: 6%;
+    display: grid;
+    margin: 0 auto;
+    place-items: center;
+    grid-template-columns:repeat(2, 1fr);
+    grid-template-rows: minmax(200px, 100px);
+    min-height: 80vh;
+    max-width:  85vh;;
+}
+.one{
+    text-align:center;
+    justify-items: center;
+    margin: 10px ;
+    margin-top: 100px;
+    
+    /* float:left; */
+    border-style:solid;
+    border-radius: 25%;
+    border-color:rgb(210, 124, 125);
+    background-color:rgb(250, 246, 246);
+    font-size: 25px;
+    width:400px;
+    height: 300px;
+  }
+.one h2{
+	text-align:center;
+	margin:30px;
+}
+.one ul{
+    width: 399px;
+    padding: 0 ;
+    margin: 0 auto;
+    line-height: 37px;
+    text-align: left;
+    /* text-align: left; */
+    list-style-type: circle;
+}
+.one li{
+    font-size:20px;
+    text-align: left;
+    list-style-type: circle;
+    /* margin: 10px 10px 10px 10px; */
+    /* padding: 0 auto; */
+}
+hr{
+    background: rgb(210, 124, 125);
+    height: 1px;
+}
+.grid a{
+    text-decoration-line: none;
+    color: inherit;
+    
+}
+#ex_btn{
+    display: flex;
+    margin: 0 auto;
+    text-align: center;
+    width: 350px;
+    padding-left: 50px;
+    padding-top: 25px;
+    
+}
+#ex_btn button{
+    background:rgb(210, 124, 125);
+    color: #ffffff;
+    border-radius: 10px;
+    cursor:no-drop;
+    text-shadow: #000000 3px;
+    /* text-align: center; */
+    font-size: 25px;
+    width: 300px;
+    /* margin: 0 auto; */
+}

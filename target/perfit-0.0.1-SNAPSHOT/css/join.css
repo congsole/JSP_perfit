@@ -1,0 +1,145 @@
+#join_container { 
+	padding-left: 250px;
+    width: 600px;
+    margin: 0 auto;
+    font-size: 16px;
+}
+input {
+    font-family: '경기천년제목 Light';
+}
+.title_wrap {
+    background-image: url('../img/logo_small.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    
+}
+.title_wrap h1 {
+    width: 300px;
+    height: 50px;
+    margin: 0 auto;
+    padding: 50px 0 0 0;
+    text-align: center;
+}
+
+/***************************************************/
+#frm {
+    width: 100%;
+    margin: 0 auto;
+}
+#frm table tr td:first-child {
+    width: 65%;
+}
+#frm table tr td:last-child {
+    width: 35%;
+}
+p{
+    padding-left: 0;
+    margin: 20px 0 4px 0;
+    font-weight: bold;
+}
+td {
+	margin: 5px;
+    vertical-align: bottom;
+}
+input[type="text"], 
+input[type="password"], 
+input[type="submit"], 
+select {
+    width: 90%;
+    height: 34px;
+    font-size: 15px;
+    padding: 0 0 0 15px;
+    border: 3px solid rgb(210,124,125);
+    border-top-left-radius: 13px;
+    border-bottom-right-radius: 13px;
+    background-color: rgb(246,246,246);
+    color: rgb(34,34,34);
+}
+
+input[type="text"]:focus, 
+input[type="password"]:focus, 
+select:focus {
+    border: 3px solid rgb(34,34,34);
+    border-top-left-radius: 13px;
+    border-bottom-right-radius: 13px;
+}
+::placeholder {
+    color: rgb(200,200,200);
+}
+
+select {
+    width: 180px;
+    height: 32px;
+    font-size: 15px;
+    padding: 0 0 0 15px;
+    border: 3px solid rgb(210,124,125);
+    border-top-left-radius: 13px;
+    border-bottom-right-radius: 13px;
+    background-color: rgb(246,246,246);
+    color: rgb(34.34.34);
+}
+td>input[type="button"] {
+    width: 100px;
+    height: 32px;
+    border: 3px solid rgb(210,124,125);
+    background-color: rgb(210,124,125);
+    border-top-left-radius: 13px;
+    border-bottom-right-radius: 13px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    
+}
+input[type="button"], 
+select {
+    cursor: pointer;
+}
+input[type="button"]:active {
+    border-color: rgb(34,34,34);
+    background-color: rgb(34,34,34);
+}
+
+
+
+
+
+
+/****************** 라디오버튼 *******************/
+.title_wrap form table tr td label {
+    margin: 10px;
+}
+input[name="SMS_YorN"], input[name="EMAIL_YorN"] {
+    display: none;
+}
+input[name="SMS_YorN"]+label, input[name="EMAIL_YorN"]+label {
+    /* padding: 3px; */
+    border: 3px solid rgb(210,124,125);
+    cursor: pointer;
+    margin-right: 10px;
+}
+input[name="SMS_YorN"]:checked+label, input[name="EMAIL_YorN"]:checked+label{
+    background-image: url('../img/checked.jpg');    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+/*********************** 제출 버튼 ***********************/
+
+input[id="join_btn"], input[id="join_cle"] {
+    height: 70px;
+    background-color: rgb(210,124,125);
+    color: #fff;
+    width: 85%;
+    margin-top: 50px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+input[id="join_btn"]:active, input[id="join_cle"] {
+    border-color: rgb(34,34,34);
+    background-color: rgb(34,34,34);
+
+}
