@@ -20,7 +20,7 @@
 					<a style="color: yellow;" href="ProductServlet?command=member_list"> 회원목록 ♥&nbsp;&nbsp;</a>
 					<a style="color: yellow;" href="OrderServlet?command=order_manage"> 주문관리 ♥&nbsp;&nbsp;</a>
 				</c:when>
-				<c:when test="${mVo.nickname == null}">
+				<c:when test="${mVo.nickname == null || mVo.nickname == ''}">
  					<a>♥ ${mVo.id}님 환영합니다 ♥ &nbsp;&nbsp;&nbsp;</a>
 				</c:when>
 				<c:otherwise>
