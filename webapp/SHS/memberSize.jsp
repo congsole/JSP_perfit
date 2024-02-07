@@ -56,33 +56,33 @@ button:active {
 		<div id="guide">
 			<h1>측정 가이드</h1>
 			<ul>
-				<li><img src="img/어깨너비.jpg" alt="어깨너비">
+				<li><img src="img/shoulder.jpg" alt="어깨너비">
 					<h4>어깨너비</h4>
 					<p>
 						양쪽 어깨 끝 뼈의 간격을 측정해 주세요. <br> ※ 뒤 목점을 지나 곡선으로 측정합니다.
 					</p></li>
-				<li><img src="img/상동.jpg" alt="가슴둘레">
+				<li><img src="img/sangdong.jpg" alt="가슴둘레">
 					<h4>가슴둘레</h4>
 					<p>
 						양쪽 겨드랑이를 통과하여 가슴의 둘레를 측정해 주세요.<br> ※ 줄자의 안쪽으로 손가락을 넣어 여유 있게
 						측정해 주시기 바랍니다.
 					</p></li>
-				<li><img src="img/팔길이.jpg" alt=팔길이">
+				<li><img src="img/arm_length.jpg" alt=팔길이">
 					<h4>팔길이</h4>
 					<p>어깨끝점에서 손목까지의 길이를 측정해 주세요.</p></li>
-				<li><img src="img/팔통.jpg" alt="팔둘레">
+				<li><img src="img/arm_size.jpg" alt="팔둘레">
 					<h4>팔둘레</h4>
 					<p>어깨와 팔꿈치 사이의 가장 두꺼운 부분을 측정해 주세요.</p></li>
-				<li><img src="img/허리.jpg" alt="허리둘레">
+				<li><img src="img/waist.jpg" alt="허리둘레">
 					<h4>허리둘레</h4>
 					<p>허리의 가장 가는 부분의 둘레를 측정해 주세요.</p></li>
-				<li><img src="img/허벅지.jpg" alt="허벅지 둘레">
+				<li><img src="img/thigh.jpg" alt="허벅지 둘레">
 					<h4>허벅지</h4>
 					<p>사타구니와 무릎 사이에서 가장 두꺼운 부분의 둘레를 측정해 주세요.</p></li>
-				<li><img src="img/힙둘레.jpg" alt="엉덩이">
+				<li><img src="img/hip.jpg" alt="엉덩이">
 					<h4>엉덩이둘레</h4>
 					<p>엉덩이의 가장 튀어나온 부분의 둘레를 측정해 주세요.</p></li>
-				<li><img src="img/다리길이.jpg" alt="다리길이">
+				<li><img src="img/leg_length.jpg" alt="다리길이">
 					<h4>다리길이(안심길이)</h4>
 					<p>사타구니에서 복숭아뼈 중심까지의 길이를 측정해 주세요.</p></li>
 			</ul>

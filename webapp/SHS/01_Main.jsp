@@ -98,7 +98,7 @@
 
 		<div class="main_section03">
 			<img src="img/point1.PNG"> <img src="img/point2.PNG"> <img
-				src="img/포인트3.PNG"> <img src="img/포인트4.PNG">
+				src="img/point3.PNG"> <img src="img/point4.PNG">
 		</div>
 
 		<div class="main_section02">
