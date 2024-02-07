@@ -11,21 +11,23 @@ import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
 public class DBManager {
-	public static Connection getConnection() throws SQLException {
-		Connection conn = null;
+	public static Connection getConnection() throws SQLException, ClassNotFoundException {
+//		Connection conn = null;
 		String dbUrl = "";
 		try {
-			Context initContext = new InitialContext();
-			Context envContext = (Context) initContext.lookup("java:/comp/env");
-			DataSource ds = (DataSource) envContext.lookup("jdbc/prod-access");
-			conn = ds.getConnection();
-			dbUrl = System.getenv("JAWSDB_URL");
+//			Context initContext = new InitialContext();
+//			Context envContext = (Context) initContext.lookup("java:/comp/env");
+//			DataSource ds = (DataSource) envContext.lookup("jdbc/prod-access");
+//			conn = ds.getConnection();
+			dbUrl = "jdbc:" + System.getenv("JAWSDB_URL");
+			System.out.println(dbUrl);
 			
 		} catch (Exception e) {
 
 			e.printStackTrace();
 
 		}
+		Class.forName("com.mysql.cj.jdbc.Driver");
 		return /* conn */DriverManager.getConnection(dbUrl);
 	}
 
