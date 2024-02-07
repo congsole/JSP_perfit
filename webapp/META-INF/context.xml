@@ -10,7 +10,17 @@
 				maxTotal="20"
 				maxIdle="10" 
 				maxWaitMillis="-1" />
-				
+		<!-- <Resource 	name="jdbc/local-access" 
+				auth="Container"
+				type="javax.sql.DataSource" 
+				driverClassName="com.mysql.cj.jdbc.Driver"
+				url="jdbc:mysql://tuy8t6uuvh43khkk.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/oke6l1wwubsks7zb" 
+				username="mzlveglch9sg263k" 
+				password="gdji0q0sc5krzfc0" 
+				maxTotal="20"
+				maxIdle="10" 
+				maxWaitMillis="-1" />
+				mysql://mzlveglch9sg263k:gdji0q0sc5krzfc0@u28rhuskh0x5paau.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/cc4kqd55ivrw8401 -->
 	<!-- <Resource 	name="jdbc/prod-access" 
 				auth="Container"
 				type="javax.sql.DataSource" 
