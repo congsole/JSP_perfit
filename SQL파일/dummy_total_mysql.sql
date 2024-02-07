@@ -1,4 +1,4 @@
-use oke6l1wwubsks7zb;
+
 
 
 
@@ -31,7 +31,6 @@ CREATE TABLE MEMBER (
     HIP INTEGER default 0,
     THIGH INTEGER default 0,
     LEG_LENGTH INTEGER default 0);
-
 
 
  
@@ -865,7 +864,7 @@ values((select p_id FROM PRODUCT WHERE P_NAME='컷아웃 카라 반팔 원피스
 'ONEPIECE', 'Mini', 'M', 41, 47, 36, 49, 83, 18, 18, 0, 0, 54);
 --
 /***************************** cart, order etc...*********************************/
-DROP TABLE CART;
+
 CREATE TABLE CART (
     CART_NUM INTEGER AUTO_INCREMENT PRIMARY KEY,
     M_ID VARCHAR(20) NOT NULL,
@@ -931,19 +930,3 @@ INSERT INTO NOTICE_TABLE(N_TITLE, CONTENT, N_DATE, N_FILE) VALUES('여름 할인
 많은 이용 부탁드립니다 
 감사합니다.','2023/07/03','images.jpg');
 commit;
-
-SELECT * FROM PRODUCT;
-SELECT A.P_ID, A.P_DATE FROM (SELECT P_ID, P_DATE FROM PRODUCT ORDER BY P_DATE DESC) A;
-SELECT * FROM PRODUCT_PICTURE;
-SELECT D.* FROM (
-					SELECT C.P_ID_D P_ID, SUM(C.P_AMOUNT) AS QUANTITY FROM (
-																			select * from ORDER_TBL A, ORDER_DETAIL B 
-																				WHERE substr(A.ORDER_DATE, 1, 10) = substr(now(), 1,10) 
-																				  and A.ORDER_NUM = B.ORDER_NUM_D
-																		) C
-					GROUP BY P_ID ORDER BY QUANTITY DESC
-				) D 
-LIMIT 8;
-SELECT * FROM ORDER_TBL;
-SELECT * FROM PRODUCT WHERE P_TYPE='ONEPIECE' ORDER BY P_DATE DESC LIMIT ?,?;
-SELECT P_
