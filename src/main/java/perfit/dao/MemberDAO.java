@@ -147,7 +147,7 @@ public class MemberDAO {
 	}
 
 	public void memberUpdate(MemberVO mVo) {
-		String sql = "update member set password=?, name=?, phone=?, sms_yorn=?, zip=?, address1=?, address2=?, email=?, email_yorn=? where id=?";
+		String sql = "update MEMBER set PASSWORD=?, NAME=?, PHONE=?, SMS_YorN=?, ZIP=?, ADDRESS1=?, ADDRESS2=?, EMAIL=?, EMAIL_YorN=? where ID=?";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 
@@ -230,7 +230,7 @@ public class MemberDAO {
 		try {
 			conn = DBManager.getConnection();
 
-			String sql = "select id from MEMBER where Name=? and Phone=? ";
+			String sql = "select ID from MEMBER where NAME=? and PHONE=? ";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, Name);
 			pstmt.setString(2, Phone);
@@ -257,7 +257,7 @@ public class MemberDAO {
 		try {
 			conn = DBManager.getConnection();
 			System.out.println("연결됨");
-			String sql = "select password from MEMBER where Id=? and Name=? and Phone=? ";
+			String sql = "select PASSWORD from MEMBER where ID=? and NAME=? and PHONE=? ";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, Id);
 			pstmt.setString(2, Name);
@@ -277,7 +277,7 @@ public class MemberDAO {
 	}
 
 	public void updateMemberSize(MemberVO mVo) {
-		String sql = "update member set shape=?, height=?, weight=?, shoulder=?, bust=?, arm_length=?, arm_size=?, waist=?, hip=?, thigh=?, leg_length=? where id=?";
+		String sql = "update MEMBER set SHAPE=?, HEIGHT=?, WEIGHT=?, SHOULDER=?, BUST=?, ARM_LENGTH=?, ARM_SIZE=?, WAIST=?, HIP=?, THIGH=?, LEG_LENGTH=? where ID=?";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		try {
@@ -306,7 +306,7 @@ public class MemberDAO {
 	}
 
 	public void withdrawalMember(MemberVO mVo) {
-		String sql = "delete member where id = ?";
+		String sql = "delete MEMBER where ID = ?";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 

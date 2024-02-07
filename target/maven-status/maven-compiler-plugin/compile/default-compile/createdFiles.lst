@@ -37,7 +37,6 @@ perfit\controller\action\ProductListAction.class
 perfit\controller\action\ShoppingBasketSearchAction.class
 perfit\controller\action\ExchangeFormAction.class
 perfit\controller\action\ProductViewAction.class
-perfit\dao\Test.class
 perfit\controller\action\ProductUpdateFormAction.class
 perfit\controller\action\ProductSizeUpdateFormAction.class
 perfit\controller\action\QnaAnswerUpdateAction.class

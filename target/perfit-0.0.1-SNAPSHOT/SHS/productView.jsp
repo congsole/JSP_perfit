@@ -119,46 +119,46 @@
 
 					<input type="radio" name="color" id="color01" value="${pVo.color_01}" style="display: none">
 					<label for="color01">${pVo.color_01}</label>
-					<c:if test="${pVo.color_02 != null}">
+					<c:if test="${pVo.color_02 != ''}">
 						<input type="radio" name="color" id="color02" value="${pVo.color_02}" style="display: none">
 						<label for="color02">${pVo.color_02}</label>
 					</c:if>
-					<c:if test="${pVo.color_03 != null}">
+					<c:if test="${pVo.color_03 != ''}">
 						<input type="radio" name="color" id="color03" value="${pVo.color_03}"
 							style="display: none">
 						<label for="color03">${pVo.color_03}</label>
 					</c:if>
-					<c:if test="${pVo.color_04 != null}">
+					<c:if test="${pVo.color_04 != ''}">
 						<input type="radio" name="color" id="color04" value="${pVo.color_04}"
 							style="display: none">
 						<label for="color04">${pVo.color_04}</label>
 					</c:if>
-					<c:if test="${pVo.color_05 != null}">
+					<c:if test="${pVo.color_05 != ''}">
 						<input type="radio" name="color" id="color05" value="${pVo.color_05}"
 							style="display: none">
 						<label for="color05">${pVo.color_05}</label>
 					</c:if>
-					<c:if test="${pVo.color_06 != null}">
+					<c:if test="${pVo.color_06 != ''}">
 						<input type="radio" name="color" id="color06" value="${pVo.color_06}"
 							style="display: none">
 						<label for="color06">${pVo.color_06}</label>
 					</c:if>
-					<c:if test="${pVo.color_07 != null}">
+					<c:if test="${pVo.color_07 != ''}">
 						<input type="radio" name="color" id="color07" value="${pVo.color_07}"
 							style="display: none">
 						<label for="color07">${pVo.color_07}</label>
 					</c:if>
-					<c:if test="${pVo.color_08 != null}">
+					<c:if test="${pVo.color_08 != ''}">
 						<input type="radio" name="color" id="color08" value="${pVo.color_08}"
 							style="display: none">
 						<label for="color08">${pVo.color_08}</label>
 					</c:if>
-					<c:if test="${pVo.color_09 != null}">
+					<c:if test="${pVo.color_09 != ''}">
 						<input type="radio" name="color" id="color09" value="${pVo.color_09}"
 							style="display: none">
 						<label for="color09">${pVo.color_09}</label>
 					</c:if>
-					<c:if test="${pVo.color_10 != null}">
+					<c:if test="${pVo.color_10 != ''}">
 						<input type="radio" name="color" id="color10" value="${pVo.color_10}"
 							style="display: none">
 						<label for="color10">${pVo.color_10}</label>
@@ -171,39 +171,39 @@
 
 					<input type="radio" name="size" id="size01" style="display: none" value="${pVo.size_01}">
 					<label for="size01">${pVo.size_01}</label>
-					<c:if test="${pVo.size_02 != null}">
+					<c:if test="${pVo.size_02 != ''}">
 						<input type="radio" name="size" id="size02" style="display: none" value="${pVo.size_02}">
 						<label for="size02">${pVo.size_02}</label>
 					</c:if>
-					<c:if test="${pVo.size_03 != null }">
+					<c:if test="${pVo.size_03 != ''}">
 						<input type="radio" name="size" id="size03" style="display: none" value="${pVo.size_03}">
 						<label for="size03">${pVo.size_03}</label>
 					</c:if>
-					<c:if test="${pVo.size_04 != null}">
+					<c:if test="${pVo.size_04 != ''}">
 						<input type="radio" name="size" id="size04" style="display: none" value="${pVo.size_04}">
 						<label for="size04">${pVo.size_04}</label>
 					</c:if>
-					<c:if test="${pVo.size_05 != null}">
+					<c:if test="${pVo.size_05 != ''}">
 						<input type="radio" name="size" id="size05" style="display: none" value="${pVo.size_05}">
 						<label for="size05">${pVo.size_05}</label>
 					</c:if>
-					<c:if test="${pVo.size_06 != null}">
+					<c:if test="${pVo.size_06 != ''}">
 						<input type="radio" name="size" id="size06" style="display: none" value="${pVo.size_06}">
 						<label for="size06">${pVo.size_06}</label>
 					</c:if>
-					<c:if test="${pVo.size_07 != null}">
+					<c:if test="${pVo.size_07 != ''}">
 						<input type="radio" name="size" id="size07" style="display: none" value="${pVo.size_07}">
 						<label for="size07">${pVo.size_07}</label>
 					</c:if>
-					<c:if test="${pVo.size_08 != null}">
+					<c:if test="${pVo.size_08 != ''}">
 						<input type="radio" name="size" id="size08" style="display: none" value="${pVo.size_08}">
 						<label for="size08">${pVo.size_08}</label>
 					</c:if>
-					<c:if test="${pVo.size_09 != null}">
+					<c:if test="${pVo.size_09 != ''}">
 						<input type="radio" name="size" id="size09" style="display: none" value="${pVo.size_09}">
 						<label for="size09">${pVo.size_09}</label>
 					</c:if>
-					<c:if test="${pVo.size_10 != null}">
+					<c:if test="${pVo.size_10 != ''}">
 						<input type="radio" name="size" id="size10" style="display: none" value="${pVo.size_10}">
 						<label for="size10">${pVo.size_10}</label>
 					</c:if>

@@ -48,7 +48,8 @@ public class CartDAO {
 	}
 
 	public void insertCart(CartVO cVo) {
-		String sql = "insert into cart " + "values (LPAD(cart_seq.nextval,5,0), ?, ?, ?, ?, ?, ?, ?, '', ?)";
+		String sql = "insert into CART(M_ID, P_ID, P_IMG, P_NAME, P_AMOUNT, P_COLOR, P_SIZE, P_PRICE) "
+				+ "values (?, ?, ?, ?, ?, ?, ?, ?)";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 
@@ -72,7 +73,7 @@ public class CartDAO {
 	}
 
 	public void updateAmount(CartVO existingCVo, int newAmount) {
-		String sql = "update cart set P_AMOUNT=? where CART_NUM=?";
+		String sql = "update CART set P_AMOUNT=? where CART_NUM=?";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		int totalAmount = existingCVo.getAmount() + newAmount;
@@ -91,7 +92,7 @@ public class CartDAO {
 	}
 
 	public void deleteCart(String[] numArr) {
-		String sql = "Delete from cart where ";
+		String sql = "Delete from CART where ";
 		for (int i = 0; i < numArr.length; i++) {
 			if (i == 0)
 				sql += "CART_NUM=" + numArr[i];

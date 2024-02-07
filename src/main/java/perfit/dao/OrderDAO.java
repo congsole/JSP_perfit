@@ -23,7 +23,7 @@ public class OrderDAO {
 	}
 
 	public List<CartVO> shoppingBasketList() {
-		String sql = "select * from cart order by cart_num";
+		String sql = "select * from CART order by cart_num";
 		List<CartVO> list = new ArrayList<CartVO>();
 		Connection conn = null;
 		Statement stmt = null;
@@ -60,7 +60,7 @@ public class OrderDAO {
 	}
 
 	public List<CartVO> paymentList(String[] cart_num) {
-		String sql = "select * from cart order by " + cart_num;
+		String sql = "select * from CART order by " + cart_num;
 		List<CartVO> list = new ArrayList<CartVO>();
 		Connection conn = null;
 		Statement stmt = null;
@@ -97,7 +97,7 @@ public class OrderDAO {
 	}
 
 	public List<OrderVO> orderSearchAllList() {
-		String sql = "select * from ( select * from order_tbl order by order_num desc ) where rownum <= 10";
+		String sql = "select * from ( select * from ORDER_TBL order by order_num desc ) where rownum <= 10";
 		List<OrderVO> list = new ArrayList<OrderVO>();
 		Connection conn = null;
 		Statement stmt = null;
@@ -130,7 +130,7 @@ public class OrderDAO {
 	}
 
 	public List<OrderVO> orderSearchByCondition(String searchField, String searchText) {
-		String sql = "select * from order_tbl where order_num";
+		String sql = "select * from ORDER_TBL where order_num";
 		List<OrderVO> list = new ArrayList<OrderVO>();
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -166,7 +166,7 @@ public class OrderDAO {
 	}
 
 	public List<OrderVO> orderSearchByDate(String ds, String dl) {
-		String sql = "select * from order_tbl where order_date";
+		String sql = "select * from ORDER_TBL where order_date";
 		List<OrderVO> list = new ArrayList<OrderVO>();
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -203,7 +203,7 @@ public class OrderDAO {
 	}
 
 	public List<CartVO> basketSearchByCondition(String searchField, String searchText) {
-		String sql = "select * from cart where " + searchField.trim();
+		String sql = "select * from CART where " + searchField.trim();
 		List<CartVO> list = new ArrayList<CartVO>();
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -240,7 +240,7 @@ public class OrderDAO {
 	}
 
 	public void addOrder(OrderVO oVo) {
-		String sql = "insert into ORDER_TBL " + "values(LPAD(o_seq.NEXTVAL,5,0), ?, ?, ?, ?, ?, ?, sysdate, '', ?, '')";
+		String sql = "insert into ORDER_TBL(M_ID, D_NAME, D_PHONE, D_ZIP, D_ADDRESS1, D_ADDRESS2, ORDER_DATE, D_EMAIL) values(?, ?, ?, ?, ?, ?, now(), ?)";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		try {
@@ -288,7 +288,7 @@ public class OrderDAO {
 	}
 
 	public void addOrderDetail(OrderDetailVO odVo) {
-		String sql = "insert into ORDER_DETAIL values(LPAD(od_seq.NEXTVAL,5,0),?,?,?,?,?,?,?,'',?)";
+		String sql = "insert into ORDER_DETAIL(ORDER_NUM_D, P_ID_D, P_IMG, P_NAME, P_AMOUNT, P_COLOR, P_SIZE, P_PRICE) values(?,?,?,?,?,?,?,?)";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		try {
@@ -342,7 +342,7 @@ public class OrderDAO {
 
 	public List<OrderDetailVO> orderDetailList(String order_num) {
 		List<OrderDetailVO> list = new ArrayList<OrderDetailVO>();
-		String sql = "select * from ORDER_DETAIL where ORDER_NUM='" + order_num + "'";
+		String sql = "select * from ORDER_DETAIL where ORDER_NUM_D='" + order_num + "'";
 		Connection conn = null;
 		Statement stmt = null;
 		ResultSet rs = null;
@@ -365,7 +365,6 @@ public class OrderDAO {
 				odVo.setP_option(rs.getString("P_OPTION"));
 				odVo.setP_price(rs.getInt("P_PRICE"));
 				list.add(odVo);
-				System.out.println("rs가 있따?");
 			}
 
 		} catch (Exception e) {
@@ -378,7 +377,7 @@ public class OrderDAO {
 	}
 
 	public List<OrderVO> selectOrderByOrderNum(String ordernum) {
-		String sql = "select * from order_tbl where order_num like '" + ordernum + "'";
+		String sql = "select * from ORDER_TBL where order_num like '" + ordernum + "'";
 		List<OrderVO> list = new ArrayList<OrderVO>();
 		Connection conn = null;
 		Statement stmt = null;
@@ -409,7 +408,7 @@ public class OrderDAO {
 	}
 
 	public List<OrderVO> ordertblList() {
-		String sql = "select * from order_tbl order by order_num";
+		String sql = "select * from ORDER_TBL order by order_num";
 		List<OrderVO> list = new ArrayList<OrderVO>();
 		Connection conn = null;
 		Statement stmt = null;
@@ -443,7 +442,7 @@ public class OrderDAO {
 	}
 
 	public void delivery(String ordernum) {
-		String sql = "update order_tbl set d_date = sysdate where order_num = " + ordernum;
+		String sql = "update ORDER_TBL set d_date = now() where order_num = " + ordernum;
 
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -460,7 +459,7 @@ public class OrderDAO {
 	}
 
 	public void deliveryCom(String ordernum) {
-		String sql = "update order_tbl set d_status = 1 where order_num = " + ordernum;
+		String sql = "update ORDER_TBL set d_status = 1 where order_num = " + ordernum;
 
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -477,7 +476,7 @@ public class OrderDAO {
 	}
 
 	public int getStatusCount(String memId) {
-		String sql = "select count(*) count from order_tbl where m_id='" + memId + "'";
+		String sql = "select count(*) count from ORDER_TBL where m_id='" + memId + "'";
 		int result = 0;
 
 		Connection conn = null;
@@ -501,7 +500,7 @@ public class OrderDAO {
 	}
 
 	public int getStatusCount1(String memId) {
-		String sql = "select count(*) count from order_tbl where d_date is null and m_id='" + memId + "'";
+		String sql = "select count(*) count from ORDER_TBL where d_date is null and m_id='" + memId + "'";
 		int result = 0;
 
 		Connection conn = null;
@@ -525,7 +524,7 @@ public class OrderDAO {
 	}
 
 	public int getStatusCount2(String memId) {
-		String sql = "select count(*) count from order_tbl where d_date is not null and d_status is null and m_id='"
+		String sql = "select count(*) count from ORDER_TBL where d_date is not null and d_status is null and m_id='"
 				+ memId + "'";
 		int result = 0;
 
@@ -550,7 +549,7 @@ public class OrderDAO {
 	}
 
 	public int getStatusCount3(String memId) {
-		String sql = "select count(*) count from order_tbl where d_status = 1 and m_id='" + memId + "'";
+		String sql = "select count(*) count from ORDER_TBL where d_status = 1 and m_id='" + memId + "'";
 		int result = 0;
 
 		Connection conn = null;

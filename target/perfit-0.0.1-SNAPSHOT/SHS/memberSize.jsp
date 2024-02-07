@@ -90,7 +90,7 @@ button:active {
 
 		<form id="personal_size" name="frm" method="post"
 			action="ProductServlet">
-			<input type="hidden" name="command" value="member_size"> 
+			
 			<input type="text" name="memberShape" id="memberShape" style="border: none; color: rgb(210, 210, 210); text-align: center; width: 450px;" readonly>
 			<table>
 				<tr>
@@ -101,6 +101,7 @@ button:active {
 					</td>
 				</tr>
 				<c:if test="${mVo != null}">
+				<input type="hidden" name="command" value="member_size"> 
 					<tr>
 						<td>키</td>
 						<c:if test="${mVo.height != null}">
@@ -218,6 +219,7 @@ button:active {
 
 				</c:if>
 				<c:if test="${mVo == null}">
+				<input type="hidden" name="command" value="member_login_form"> 
 					<tr>
 						<td>키</td>
 						<td><input type="text" name="height" value="0" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"></td>

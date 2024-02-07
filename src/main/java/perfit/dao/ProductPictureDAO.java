@@ -142,7 +142,7 @@ public class ProductPictureDAO {
 	}
 
 	public void deleteOneProductById(String id) {
-		String sql = "delete from Product_Picture where id = ?";
+		String sql = "delete from PRODUCT_PICTURE where ID = ?";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		try {

@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context>
-	<Resource 
-		name="jdbc/myoracle" 
-		auth="Container"
-		type="javax.sql.DataSource" 
-		driverClassName="oracle.jdbc.OracleDriver"
-		url="jdbc:oracle:thin:@127.0.0.1:1521:XE" 
-		username="c##scott"
-		password="tiger" 
-		maxTotal="20" 
-		maxIdle="10" 
-		maxWaitMillis="-1" />
+	<Resource 	name="jdbc/local-access" 
+				auth="Container"
+				type="javax.sql.DataSource" 
+				driverClassName="com.mysql.cj.jdbc.Driver"
+				url="jdbc:mysql://tuy8t6uuvh43khkk.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/oke6l1wwubsks7zb" 
+				username="wowpn6ydpjtt6lyy" 
+				password="nuzs0utiidv73tin" 
+				maxTotal="20"
+				maxIdle="10" 
+				maxWaitMillis="-1" />
+				
+	<!-- <Resource 	name="jdbc/prod-access" 
+				auth="Container"
+				type="javax.sql.DataSource" 
+				driverClassName="com.mysql.jdbc.Driver"
+				url="#{JAWSDB_URL}"
+				maxTotal="20" 
+				maxIdle="10" 
+				maxWaitMillis="-1" /> -->
 </Context>

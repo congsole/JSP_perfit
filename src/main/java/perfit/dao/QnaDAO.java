@@ -57,8 +57,8 @@ public class QnaDAO {
 	}
 
 	public void insertBoard(QnaVO qVo) {
-		String sql = "insert into QNA_TABLE(" + "num, id, q_title, content, q_date, type, rep, q_file, answer, a_date) "
-				+ "values(QNA_seq.nextval,?,?,?,sysdate,?,'0',?,?,?)";
+		String sql = "insert into QNA_TABLE(id, q_title, content, q_date, type, rep, q_file, answer, a_date) "
+				+ "values(?,?,?,now(),?,'0',?,?,?)";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		try {
@@ -203,7 +203,7 @@ public class QnaDAO {
 	}
 
 	public void updateAnswer(QnaVO qVo) {
-		String sql = "update QNA_TABLE set answer=?," + " a_date=sysdate , rep='1' where num=?";
+		String sql = "update QNA_TABLE set answer=?," + " a_date=now() , rep='1' where num=?";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		try {

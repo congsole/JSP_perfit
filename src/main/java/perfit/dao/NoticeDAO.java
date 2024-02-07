@@ -22,7 +22,7 @@ public class NoticeDAO {
 	}
 
 	public List<NoticeVO> selectAllBoards() {
-		String sql = "select * from NOTICE_TABLE order by num desc";
+		String sql = "select * from NOTICE_TABLE order by NUM desc";
 		List<NoticeVO> list = new ArrayList<NoticeVO>();
 		Connection conn = null;
 		Statement stmt = null;
@@ -52,8 +52,7 @@ public class NoticeDAO {
 	}
 
 	public void insertBoard(NoticeVO qVo) {
-		String sql = "insert into NOTICE_TABLE(" + "num, n_title, content, n_date, n_file) "
-				+ "values(notice_seq.nextval,?,?,sysdate,?)";
+		String sql = "insert into NOTICE_TABLE(N_TITLE, CONTENT, N_DATE, N_FILE) " + "values(?,?,now(),?)";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		try {
@@ -74,7 +73,7 @@ public class NoticeDAO {
 
 	public NoticeVO selectOneBoardByNum(String num) {
 		NoticeVO nVo = null;
-		String sql = "select * from NOTICE_TABLE where num = ?";
+		String sql = "select * from NOTICE_TABLE where NUM = ?";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -86,11 +85,11 @@ public class NoticeDAO {
 			if (rs.next()) {
 
 				nVo = new NoticeVO();
-				nVo.setNum(rs.getInt("num"));
-				nVo.setN_title(rs.getString("n_title"));
-				nVo.setContent(rs.getString("content"));
-				nVo.setN_date(rs.getTimestamp("n_date"));
-				nVo.setN_file(rs.getString("n_file"));
+				nVo.setNum(rs.getInt("NUM"));
+				nVo.setN_title(rs.getString("N_TITLE"));
+				nVo.setContent(rs.getString("CONTENT"));
+				nVo.setN_date(rs.getTimestamp("N_DATE"));
+				nVo.setN_file(rs.getString("N_FILE"));
 
 			}
 		} catch (Exception e) {
@@ -103,7 +102,7 @@ public class NoticeDAO {
 	}
 
 	public void updateBoard(NoticeVO nVo) {
-		String sql = "update NOTICE_TABLE set n_title=?, content=?, n_file=? where num=?";
+		String sql = "update NOTICE_TABLE set N_TITLE=?, CONTENT=?, N_FILE=? where NUM=?";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		try {
@@ -129,7 +128,7 @@ public class NoticeDAO {
 	}
 
 	public void deleteBoard(String num) {
-		String sql = "delete NOTICE_TABLE where num=?";
+		String sql = "delete NOTICE_TABLE where NUM=?";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		try {
@@ -158,12 +157,11 @@ public class NoticeDAO {
 
 		try {
 			conn = DBManager.getConnection(); // 연결
-			System.out.println("연결");
+
 			pstmt = conn.prepareStatement(sql); // sql준비
 			pstmt.setInt(1, startRow);
 			pstmt.setInt(2, endRow);
 			rs = pstmt.executeQuery(); // sql문 실행
-			System.out.println("실행");
 
 			if (rs.next()) {
 
@@ -198,15 +196,15 @@ public class NoticeDAO {
 		try {
 			conn = DBManager.getConnection();
 
-			String sql = "select num, n_title, n_date from NOTICE_TABLE where num=(select max(num) from NOTICE_TABLE where num < ? )";
+			String sql = "select NUM, N_TITLE, N_DATE from NOTICE_TABLE where NUM=(select max(NUM) from NOTICE_TABLE where NUM < ? )";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, nVo.getNum());
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
-				bnVo.setNum(rs.getInt("num"));
-				bnVo.setN_title(rs.getString("n_title"));
-				bnVo.setN_date(rs.getTimestamp("n_date"));
+				bnVo.setNum(rs.getInt("NUM"));
+				bnVo.setN_title(rs.getString("N_TITLE"));
+				bnVo.setN_date(rs.getTimestamp("N_DATE"));
 			} else {
 				bnVo.setN_title("이전 글이 없습니다");
 			}
@@ -229,15 +227,15 @@ public class NoticeDAO {
 		try {
 			conn = DBManager.getConnection();
 
-			String sql = "select num, n_title, n_date from NOTICE_TABLE where num=(select min(num) from NOTICE_TABLE where num >	 ? )";
+			String sql = "select NUM, N_TITLE, N_DATE from NOTICE_TABLE where NUM=(select min(NUM) from NOTICE_TABLE where NUM > ? )";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, nVo.getNum());
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
-				anVo.setNum(rs.getInt("num"));
-				anVo.setN_title(rs.getString("n_title"));
-				anVo.setN_date(rs.getTimestamp("n_date"));
+				anVo.setNum(rs.getInt("NUM"));
+				anVo.setN_title(rs.getString("N_TITLE"));
+				anVo.setN_date(rs.getTimestamp("N_DATE"));
 			} else {
 				anVo.setN_title("다음 글이 없습니다");
 			}

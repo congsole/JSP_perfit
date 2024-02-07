@@ -132,41 +132,41 @@
 							<br>
 							<hr>
 							<ul id="color_list">
-								<c:if test="${pVo.color_01 != null}">
+								<c:if test="${pVo.color_01 != null && pVo.color_01 != '' && pVo.color_01 != ' '}">
 									<li id="1_color" style="color: ${pVo.color_01};">♥</li>
 								</c:if>
-								<c:if test="${pVo.color_02 != null}">
+								<c:if test="${pVo.color_02 != null && pVo.color_02 != '' && pVo.color_02 != ' '}">
 									<li id="2_color" style="color: ${pVo.color_02};">♥</li>
 								</c:if>
 
-								<c:if test="${pVo.color_03!=null}">
+								<c:if test="${pVo.color_03!=null && pVo.color_03 != '' && pVo.color_03 != ' '}">
 									<li id="3_color" style="color: ${pVo.color_03};">♥</li>
 								</c:if>
-								<c:if test="${pVo.color_04!=null}">
+								<c:if test="${pVo.color_04!=null && pVo.color_04 != '' && pVo.color_04 != ' '}">
 
 									<li id="4_color" style="color: ${pVo.color_04};">♥</li>
 								</c:if>
-								<c:if test="${pVo.color_05!=null}">
+								<c:if test="${pVo.color_05!=null && pVo.color_05 != '' && pVo.color_05 != ' '}">
 
 									<li id="5_color" style="color: ${pVo.color_05};">♥</li>
 								</c:if>
-								<c:if test="${pVo.color_06!=null}">
+								<c:if test="${pVo.color_06!=null && pVo.color_06 != '' && pVo.color_06 != ' '}">
 
 									<li id="6_color" style="color: ${pVo.color_06};">♥</li>
 								</c:if>
-								<c:if test="${pVo.color_07!=null}">
+								<c:if test="${pVo.color_07!=null && pVo.color_07 != '' && pVo.color_07 != ' '}">
 
 									<li id="7_color" style="color: ${pVo.color_07};">♥</li>
 								</c:if>
-								<c:if test="${pVo.color_08!=null}">
+								<c:if test="${pVo.color_08!=null && pVo.color_08 != '' && pVo.color_08 != ' '}">
 
 									<li id="8_color" style="color: ${pVo.color_08};">♥</li>
 								</c:if>
-								<c:if test="${pVo.color_09!=null}">
+								<c:if test="${pVo.color_09!=null && pVo.color_09 != '' && pVo.color_09 != ' '}">
 
 									<li id="9_color" style="color: ${pVo.color_09};">♥</li>
 								</c:if>
-								<c:if test="${pVo.color_10!=null}">
+								<c:if test="${pVo.color_10!=null && pVo.color_10 != '' && pVo.color_10 != ' '}">
 
 									<li id="10_color" style="color: ${pVo.color_10};">♥</li>
 								</c:if>

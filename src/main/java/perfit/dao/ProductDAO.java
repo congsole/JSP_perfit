@@ -22,7 +22,7 @@ public class ProductDAO {
 	}
 
 	public List<ProductVO> selectAllProducts() {
-		String sql = "SELECT * FROM PRODUCT ORDER BY P_ID desc";
+		String sql = "SELECT * FROM PRODUCT ORDER BY P_DATE desc";
 		List<ProductVO> list = new ArrayList<ProductVO>();
 		Connection conn = null;
 		Statement stmt = null;
@@ -91,8 +91,7 @@ public class ProductDAO {
 	}
 
 	public List<ProductVO> getListWithPaging(int pageNum, int amount) {
-		String sql = "select * from " + "(select rownum rn, a.* from (SELECT * FROM PRODUCT ORDER BY P_ID desc) a) "
-				+ "where rn > ? and rn <= ?";
+		String sql = "SELECT * FROM PRODUCT ORDER BY P_DATE desc limit ?,?";
 		System.out.println(sql);
 		List<ProductVO> list = new ArrayList<ProductVO>();
 		Connection conn = null;
@@ -102,7 +101,7 @@ public class ProductDAO {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, (pageNum - 1) * amount);
-			pstmt.setInt(2, pageNum * amount);
+			pstmt.setInt(2, amount);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				ProductVO pVo = new ProductVO();
@@ -164,8 +163,7 @@ public class ProductDAO {
 	}
 
 	public List<ProductVO> getListWithPaging(int pageNum, int amount, String type) {
-		String sql = "select * from " + "(select rownum rn, a.* from (SELECT * FROM PRODUCT WHERE P_TYPE='" + type
-				+ "' ORDER BY P_ID desc) a) " + "where rn > ? and rn <= ?";
+		String sql = "SELECT * FROM PRODUCT WHERE P_TYPE='" + type + "' ORDER BY P_DATE DESC LIMIT ?,?";
 		System.out.println(sql);
 		List<ProductVO> list = new ArrayList<ProductVO>();
 		Connection conn = null;
@@ -175,7 +173,7 @@ public class ProductDAO {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, (pageNum - 1) * amount);
-			pstmt.setInt(2, pageNum * amount);
+			pstmt.setInt(2, amount);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				ProductVO pVo = new ProductVO();
@@ -237,8 +235,8 @@ public class ProductDAO {
 	}
 
 	public List<ProductVO> getListWithPaging(int pageNum, int amount, String type, String category) {
-		String sql = "select * from " + "(select rownum rn, a.* from (SELECT * FROM PRODUCT WHERE P_TYPE='" + type
-				+ "'AND P_CATEGORY='" + category + "' ORDER BY P_ID desc) a) " + "where rn > ? and rn <= ?";
+		String sql = "SELECT * FROM PRODUCT WHERE P_TYPE='" + type
+				+ "'AND P_CATEGORY='" + category + "' ORDER BY P_DATE DESC LIMIT ?,?";
 		System.out.println(sql);
 		List<ProductVO> list = new ArrayList<ProductVO>();
 		Connection conn = null;
@@ -248,7 +246,7 @@ public class ProductDAO {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, (pageNum - 1) * amount);
-			pstmt.setInt(2, pageNum * amount);
+			pstmt.setInt(2, amount);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				ProductVO pVo = new ProductVO();
@@ -310,8 +308,8 @@ public class ProductDAO {
 	}
 
 	public List<ProductVO> recommendListWithPaging(int pageNum, int amount, String shape) {
-		String sql = "select * from " + "(select rownum rn, a.* from (SELECT * FROM PRODUCT WHERE P_SHAPE='" + shape
-				+ "' ORDER BY P_ID desc) a) " + "where rn > ? and rn <= ?";
+		String sql = "SELECT * FROM PRODUCT WHERE P_SHAPE='" + shape
+				+ "' ORDER BY P_DATE desc limit ?,?";
 		System.out.println(sql);
 		List<ProductVO> list = new ArrayList<ProductVO>();
 		Connection conn = null;
@@ -321,7 +319,7 @@ public class ProductDAO {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, (pageNum - 1) * amount);
-			pstmt.setInt(2, pageNum * amount);
+			pstmt.setInt(2, amount);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				ProductVO pVo = new ProductVO();
@@ -489,7 +487,7 @@ public class ProductDAO {
 
 	public ProductVO selectOneProductById(String id) {
 		ProductVO pVo = null;
-		String sql = "select * from product where p_id = ?";
+		String sql = "select * from PRODUCT where p_id = ?";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -556,7 +554,7 @@ public class ProductDAO {
 
 	public ProductVO selectOneProductByName(String name) {
 		ProductVO pVo = null;
-		String sql = "select * from product where p_name = ?";
+		String sql = "select * from PRODUCT where p_name = ?";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -645,7 +643,7 @@ public class ProductDAO {
 
 	public int deleteOneProductById(String id) {
 		int result = 0;
-		String sql = "delete from product where p_id = ?";
+		String sql = "delete from PRODUCT where p_id = ?";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		try {
@@ -692,11 +690,10 @@ public class ProductDAO {
 		return size;
 	}
 
-	public List<ProductVO> headerSearch(int pageNum, int amount, String word) {
-		String sql = "select * from " + "(select rownum rn, a.* from (SELECT * FROM PRODUCT " + "where P_NAME LIKE '%"
-				+ word + "%' " + "or P_TYPE LIKE '%" + word + "%' " + "or P_CATEGORY LIKE '%" + word + "%' "
-				+ "or P_DESCRIPTION LIKE '%" + word + "%' " + "or P_FABRIC LIKE '%" + word + "%' "
-				+ "ORDER BY P_ID desc) a) " + "where rn > ? and rn <= ?";
+	public List<ProductVO> headerSearch(int pageNum, int amount, String keyword) {
+		String sql = "SELECT * FROM PRODUCT " + "where P_NAME LIKE '%" + keyword + "%' " + "or P_TYPE LIKE '%"
+				+ keyword + "%' " + "or P_CATEGORY LIKE '%" + keyword + "%' " + "or P_DESCRIPTION LIKE '%" + keyword
+				+ "%' " + "or P_FABRIC LIKE '%" + keyword + "%' limit ?,?";
 		System.out.println(sql);
 		List<ProductVO> list = new ArrayList<ProductVO>();
 		Connection conn = null;
@@ -706,7 +703,7 @@ public class ProductDAO {
 			conn = DBManager.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, (pageNum - 1) * amount);
-			pstmt.setInt(2, pageNum * amount);
+			pstmt.setInt(2, amount);
 			rs = pstmt.executeQuery();
 			System.out.println(sql);
 			while (rs.next()) {
@@ -755,7 +752,7 @@ public class ProductDAO {
 		}
 
 		try {
-			sql = "select * from product where p_price>=" + price_L + " and p_price<=" + price_R + " and p_shape in("
+			sql = "select * from PRODUCT where p_price>=" + price_L + " and p_price<=" + price_R + " and p_shape in("
 					+ str + ")";
 			System.out.println(sql);
 
@@ -819,7 +816,7 @@ public class ProductDAO {
 	}
 
 	public void shapeUpdate(ProductVO pVo) {
-		String sql = "Update Product set P_SHAPE=? where P_ID=?";
+		String sql = "Update PRODUCT set P_SHAPE=? where P_ID=?";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		try {
@@ -837,8 +834,15 @@ public class ProductDAO {
 	}
 
 	public List<String> todayTop8Products() {
-		String sql = "SELECT * FROM (SELECT P_ID, SUM(P_AMOUNT) AS QUANTITY FROM (select * from ORDER_TBL, ORDER_DETAIL WHERE substr(ORDER_DATE, 1, 8) = substr(sysdate, 1,8) and ORDER_TBL.ORDER_NUM = ORDER_DETAIL.ORDER_NUM)"
-				+ "GROUP BY P_ID ORDER BY QUANTITY DESC) WHERE ROWNUM<9";
+		String sql = "SELECT D.* FROM ("
+				+ "					SELECT C.P_ID_D P_ID, SUM(C.P_AMOUNT) AS QUANTITY FROM ("
+				+ "																			select * from ORDER_TBL A, ORDER_DETAIL B "
+				+ "																				WHERE substr(A.ORDER_DATE, 1, 10) = substr(now(), 1,10) "
+				+ "																				  and A.ORDER_NUM = B.ORDER_NUM_D"
+				+ "																		) C"
+				+ "					GROUP BY P_ID ORDER BY QUANTITY DESC"
+				+ "				) D "
+				+ "LIMIT 8;";
 		List<String> list = new ArrayList<String>();
 		Connection conn = null;
 		Statement stmt = null;
@@ -862,8 +866,8 @@ public class ProductDAO {
 
 	public List<String> new8Products() {
 
-		String sql = "SELECT P_ID, P_DATE FROM (SELECT P_ID, P_DATE FROM PRODUCT ORDER BY P_DATE DESC)"
-				+ " WHERE ROWNUM<9";
+		String sql = "SELECT A.P_ID, A.P_DATE FROM (SELECT P_ID, P_DATE FROM PRODUCT ORDER BY P_DATE DESC) A"
+				+ " LIMIT 8";
 
 		List<String> list = new ArrayList<String>();
 		Connection conn = null;
@@ -887,7 +891,7 @@ public class ProductDAO {
 	}
 
 	public int thisTypeTotal(String type) {
-		String sql = "select count(*) TOTAL from product where p_type='" + type + "'";
+		String sql = "select count(*) TOTAL from PRODUCT where P_TYPE='" + type + "'";
 		int total = 0;
 		Connection conn = null;
 		Statement stmt = null;
@@ -910,7 +914,7 @@ public class ProductDAO {
 	public List<ProductVO> recommend(String shape) {
 		List<ProductVO> list = new ArrayList<>();
 		ProductVO pVo;
-		String sql = "SELECT * FROM PRODUCT WHERE p_shape='" + shape + "'";
+		String sql = "SELECT * FROM PRODUCT WHERE P_SHAPE='" + shape + "'";
 		Connection conn = null;
 		Statement stmt = null;
 		ResultSet rs = null;
