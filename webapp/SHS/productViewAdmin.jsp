@@ -52,62 +52,62 @@
 			<div id="detail_info">${pVo.fabric}</div>
 			<div id="detail_pic">
 				<ul id="detail_pic_01">
-					<c:if test="${ppVo.model1 != null}">
+					<c:if test="${ppVo.model1 != ''}">
 						<li><img src="img_product/${ppVo.model1}" id="pic1"></li>
 					</c:if>
-					<c:if test="${ppVo.model2 != null}">
+					<c:if test="${ppVo.model2 != ''}">
 						<li><img src="img_product/${ppVo.model2}" id="pic2"></li>
 					</c:if>
-					<c:if test="${ppVo.model3 != null}">
+					<c:if test="${ppVo.model3 != ''}">
 						<li><img src="img_product/${ppVo.model3}" id="pic3"></li>
 					</c:if>
-					<c:if test="${ppVo.model4 != null}">
+					<c:if test="${ppVo.model4 != ''}">
 						<li><img src="img_product/${ppVo.model4}" id="pic4"></li>
 					</c:if>
-					<c:if test="${ppVo.model5 != null}">
+					<c:if test="${ppVo.model5 != ''}">
 						<li><img src="img_product/${ppVo.model5}" id="pic5"></li>
 					</c:if>
-					<c:if test="${ppVo.model6 != null}">
+					<c:if test="${ppVo.model6 != ''}">
 						<li><img src="img_product/${ppVo.model6}" id="pic6"></li>
 					</c:if>
-					<c:if test="${ppVo.model7 != null}">
+					<c:if test="${ppVo.model7 != ''}">
 						<li><img src="img_product/${ppVo.model7}" id="pic7"></li>
 					</c:if>
-					<c:if test="${ppVo.model8 != null}">
+					<c:if test="${ppVo.model8 != ''}">
 						<li><img src="img_product/${ppVo.model8}" id="pic8"></li>
 					</c:if>
-					<c:if test="${ppVo.model9 != null}">
+					<c:if test="${ppVo.model9 != ''}">
 						<li><img src="img_product/${ppVo.model9}" id="pic9"></li>
 					</c:if>
 
 				</ul>
 
 				<ul id="detail_pic_02">
-					<c:if test="${ppVo.model1 != null}">
+					<c:if test="${ppVo.model1 != ''}">
 						<li><a href="#pic1"><img src="img_product/${ppVo.model1}"></a></li>
 					</c:if>
-					<c:if test="${ppVo.model2 != null}">
+					<c:if test="${ppVo.model2 != ''}">
 						<li><a href="#pic2"><img src="img_product/${ppVo.model2}"></a></li>
 					</c:if>
-					<c:if test="${ppVo.model3 != null}">
+					<c:if test="${ppVo.model3 != ''}">
 						<li><a href="#pic3"><img src="img_product/${ppVo.model3}"></a></li>
 					</c:if>
-					<c:if test="${ppVo.model4 != null}">
+					<c:if test="${ppVo.model4 != ''}">
 						<li><a href="#pic4"><img src="img_product/${ppVo.model4}"></a></li>
 					</c:if>
-					<c:if test="${ppVo.model5 != null}">
+					<c:if test="${ppVo.model5 != ''}">
 						<li><a href="#pic5"><img src="img_product/${ppVo.model5}"></a></li>
 					</c:if>
-					<c:if test="${ppVo.model6 != null}">
+					<c:if test="${ppVo.model6 != ''}">
 						<li><a href="#pic6"><img src="img_product/${ppVo.model6}"></a></li>
 					</c:if>
-					<c:if test="${ppVo.model7 != null}">
+					<c:if test="${ppVo.model7 != ''}">
 						<li><a href="#pic7"><img src="img_product/${ppVo.model7}"></a></li>
 					</c:if>
-					<c:if test="${ppVo.model8 != null}">
+					<c:if test="${ppVo.model8 != ''}">
 						<li><a href="#pic8"><img src="img_product/${ppVo.model8}"></a></li>
 					</c:if>
-					<c:if test="${ppVo.model9 != null}">
+					<c:if test="${ppVo.model9 != ''}">
 						<li><a href="#pic9"><img src="img_product/${ppVo.model9}"></a></li>
 					</c:if>
 				</ul>
@@ -126,47 +126,47 @@
 
 					<input type="radio" name="color" id="color01" style="display: none">
 					<label for="color01">${pVo.color_01}</label>
-					<c:if test="${pVo.color_02 != null}">
+					<c:if test="${pVo.color_02 != ''}">
 						<input type="radio" name="color" id="color02"
 							style="display: none">
 						<label for="color02">${pVo.color_02}</label>
 					</c:if>
-					<c:if test="${pVo.color_03 != null}">
+					<c:if test="${pVo.color_03 != ''}">
 						<input type="radio" name="color" id="color03"
 							style="display: none">
 						<label for="color03">${pVo.color_03}</label>
 					</c:if>
-					<c:if test="${pVo.color_04 != null}">
+					<c:if test="${pVo.color_04 != ''}">
 						<input type="radio" name="color" id="color04"
 							style="display: none">
 						<label for="color04">${pVo.color_04}</label>
 					</c:if>
-					<c:if test="${pVo.color_05 != null}">
+					<c:if test="${pVo.color_05 != ''}">
 						<input type="radio" name="color" id="color05"
 							style="display: none">
 						<label for="color05">${pVo.color_05}</label>
 					</c:if>
-					<c:if test="${pVo.color_06 != null}">
+					<c:if test="${pVo.color_06 != ''}">
 						<input type="radio" name="color" id="color06"
 							style="display: none">
 						<label for="color06">${pVo.color_06}</label>
 					</c:if>
-					<c:if test="${pVo.color_07 != null}">
+					<c:if test="${pVo.color_07 != ''}">
 						<input type="radio" name="color" id="color07"
 							style="display: none">
 						<label for="color07">${pVo.color_07}</label>
 					</c:if>
-					<c:if test="${pVo.color_08 != null}">
+					<c:if test="${pVo.color_08 != ''}">
 						<input type="radio" name="color" id="color08"
 							style="display: none">
 						<label for="color08">${pVo.color_08}</label>
 					</c:if>
-					<c:if test="${pVo.color_09 != null}">
+					<c:if test="${pVo.color_09 != ''}">
 						<input type="radio" name="color" id="color09"
 							style="display: none">
 						<label for="color09">${pVo.color_09}</label>
 					</c:if>
-					<c:if test="${pVo.color_10 != null}">
+					<c:if test="${pVo.color_10 != ''}">
 						<input type="radio" name="color" id="color10"
 							style="display: none">
 						<label for="color10">${pVo.color_10}</label>
@@ -179,42 +179,44 @@
 
 					<input type="radio" name="size" id="size01" style="display: none">
 					<label for="size01">${pVo.size_01}</label>
-					<c:if test="${pVo.size_02 != null}">
+					<c:if test="${pVo.size_02 != ''}">
 						<input type="radio" name="size" id="size02" style="display: none">
 						<label for="size02">${pVo.size_02}</label>
 					</c:if>
-					<c:if test="${pVo.size_03 != null }">
+					<c:if test="${pVo.size_03 != '' }">
 						<input type="radio" name="size" id="size03" style="display: none">
 						<label for="size03">${pVo.size_03}</label>
 					</c:if>
-					<c:if test="${pVo.size_04 != null}">
+					<c:if test="${pVo.size_04 != ''}">
 						<input type="radio" name="size" id="size04" style="display: none">
 						<label for="size04">${pVo.size_04}</label>
 					</c:if>
-					<c:if test="${pVo.size_05 != null}">
+					<c:if test="${pVo.size_05 != ''}">
 						<input type="radio" name="size" id="size05" style="display: none">
 						<label for="size05">${pVo.size_05}</label>
 					</c:if>
-					<c:if test="${pVo.size_06 != null}">
+					<c:if test="${pVo.size_06 != ''}">
 						<input type="radio" name="size" id="size06" style="display: none">
 						<label for="size06">${pVo.size_06}</label>
 					</c:if>
-					<c:if test="${pVo.size_07 != null}">
+					<c:if test="${pVo.size_07 != ''}">
 						<input type="radio" name="size" id="size07" style="display: none">
 						<label for="size07">${pVo.size_07}</label>
 					</c:if>
-					<c:if test="${pVo.size_08 != null}">
+					<c:if test="${pVo.size_08 != ''}">
 						<input type="radio" name="size" id="size08" style="display: none">
 						<label for="size08">${pVo.size_08}</label>
 					</c:if>
-					<c:if test="${pVo.size_09 != null}">
+					<c:if test="${pVo.size_09 != ''}">
 						<input type="radio" name="size" id="size09" style="display: none">
 						<label for="size09">${pVo.size_09}</label>
 					</c:if>
-					<c:if test="${pVo.size_10 != null}">
+					<c:if test="${pVo.size_10 != ''}">
 						<input type="radio" name="size" id="size10" style="display: none">
 						<label for="size10">${pVo.size_10}</label>
 					</c:if>
+					<h2>수량</h2>
+					<input type="number" name="amount" id="amount "value="1">
 					<br> <br> <br> <br> <input type="button"
 						value="바로구매" id="directBuy">&nbsp; <input type="submit"
 						value="장바구니" id="addToCart">
@@ -225,28 +227,28 @@
 		<div id="detail_02" class="detail">
 			<h2>제품 상세</h2>
 			<ul>
-				<c:if test="${ppVo.detail1 != null}">
+				<c:if test="${ppVo.detail1 != ''}">
 					<li><img src="img_product/${ppVo.detail1}"></li>
 				</c:if>
-				<c:if test="${ppVo.detail2 != null}">
+				<c:if test="${ppVo.detail2 != ''}">
 					<li><img src="img_product/${ppVo.detail2}"></li>
 				</c:if>
-				<c:if test="${ppVo.detail3 != null}">
+				<c:if test="${ppVo.detail3 != ''}">
 					<li><img src="img_product/${ppVo.detail3}"></li>
 				</c:if>
-				<c:if test="${ppVo.detail4 != null}">
+				<c:if test="${ppVo.detail4 != ''}">
 					<li><img src="img_product/${ppVo.detail4}"></li>
 				</c:if>
-				<c:if test="${ppVo.detail5 != null}">
+				<c:if test="${ppVo.detail5 != ''}">
 					<li><img src="img_product/${ppVo.detail5}"></li>
 				</c:if>
-				<c:if test="${ppVo.detail6 != null}">
+				<c:if test="${ppVo.detail6 != ''}">
 					<li><img src="img_product/${ppVo.detail6}"></li>
 				</c:if>
-				<c:if test="${ppVo.detail7 != null}">
+				<c:if test="${ppVo.detail7 != ''}">
 					<li><img src="img_product/${ppVo.detail7}"></li>
 				</c:if>
-				<c:if test="${ppVo.detail8 != null}">
+				<c:if test="${ppVo.detail8 != ''}">
 					<li><img src="img_product/${ppVo.detail8}"></li>
 				</c:if>
 			</ul>
@@ -254,7 +256,7 @@
 		<br> <Br>
 		<div id="detail_03" class="detail">
 			<h2>실측 사이즈</h2>
-			<c:if test="${ppVo.detail9 != null}">
+			<c:if test="${ppVo.detail9 != ''}">
 				<img src="img_product/${ppVo.detail9}">
 			</c:if>
 			<Br> <Br> <Br> <Br>
