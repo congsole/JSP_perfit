@@ -25,7 +25,9 @@
 				auth="Container"
 				type="javax.sql.DataSource" 
 				driverClassName="com.mysql.cj.jdbc.Driver"
-				url="${JAWSDB_URL}"
+				url="jdbc:mysql://u28rhuskh0x5paau.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/cc4kqd55ivrw8401"
+				username="mzlveglch9sg263k"
+				password="gdji0q0sc5krzfc0"
 				maxTotal="20" 
 				maxIdle="10" 
 				maxWaitMillis="-1" />
