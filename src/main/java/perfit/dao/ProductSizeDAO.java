@@ -25,8 +25,8 @@ public class ProductSizeDAO {
 			String waist_R, String sleeve_L, String sleeve_R) {
 
 		String sql = "";
-		String sqlpc1 = "";
-		String sqlpc2 = "";
+		String checked_types = "";
+		String checked_categories = "";
 		List<String> idList = new ArrayList<String>();
 		Connection conn = null;
 		Statement stmt = null;
@@ -34,21 +34,21 @@ public class ProductSizeDAO {
 
 		for (int i = 0; i < type_chk.length; i++) {
 			if (i == 0) {
-				sqlpc1 += "'" + type_chk[i] + "'";
+				checked_types += "'" + type_chk[i] + "'";
 			} else {
-				sqlpc1 += " ,'" + type_chk[i] + "'";
+				checked_types += " ,'" + type_chk[i] + "'";
 			}
 		}
 		for (int j = 0; j < category_chk.length; j++) {
 			if (j == 0) {
-				sqlpc2 += "'" + category_chk[j] + "'";
+				checked_categories += "'" + category_chk[j] + "'";
 			} else {
-				sqlpc2 += " ,'" + category_chk[j] + "'";
+				checked_categories += " ,'" + category_chk[j] + "'";
 			}
 		}
-		System.out.println(sqlpc1 + "/" + sqlpc2);
+		System.out.println(checked_types + "/" + checked_categories);
 
-		sql = "SELECT ID FROM PRODUCT_SIZE WHERE TYPE in(" + sqlpc1 + ") AND CATEGORY in(" + sqlpc2 + ")"
+		sql = "SELECT ID FROM PRODUCT_SIZE WHERE TYPE in(" + checked_types + ") AND CATEGORY in(" + checked_categories + ")"
 				+ " AND TOTAL_LENGTH>=" + total_length_L + " AND TOTAL_LENGTH<=" + total_length_R + " AND SHOULDER>="
 				+ shoulder_L + " AND SHOULDER<=" + shoulder_R + " AND BUST>=" + bust_L + " AND BUST<=" + bust_R
 				+ " AND WAIST>=" + waist_L + " AND WAIST<=" + waist_R + " AND ARM_LENGTH>=" + sleeve_L
